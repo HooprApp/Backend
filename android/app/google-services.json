@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "14852926768",
+    "firebase_url": "https://hoopr-51b5f.firebaseio.com",
+    "project_id": "hoopr-51b5f",
+    "storage_bucket": "hoopr-51b5f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14852926768:android:4bf1e4ef2399c3dc0eecf5",
+        "android_client_info": {
+          "package_name": "com.hoopr.hoopr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "14852926768-c25t0mv7v24lgad7g6dcdm1k6h5rql41.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPFSkLirFcJerBEe93ScgE1IeUdqZQ5SQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "14852926768-c25t0mv7v24lgad7g6dcdm1k6h5rql41.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "14852926768-mfjdrce6btiefh577e7hr583nnm6v3h9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hoopr.hoopr"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

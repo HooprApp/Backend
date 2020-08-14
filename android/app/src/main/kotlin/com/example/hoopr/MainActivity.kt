@@ -1,4 +1,4 @@
-package com.example.hoopr
+package com.hoopr.hoopr
 
 import io.flutter.embedding.android.FlutterActivity
 
