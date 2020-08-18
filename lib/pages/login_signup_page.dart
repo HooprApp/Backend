@@ -95,7 +95,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
-          title: new Text('Auth demo'),
+          title: new Text('Hoopr'),
         ),
         body: Stack(
           children: <Widget>[
