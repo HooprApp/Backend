@@ -30,9 +30,8 @@ class _RootPageState extends State<RootPage> {
         if (user != null) {
           _userId = user?.uid;
         }
-        authStatus = !user.isEmailVerified || user?.uid == null
-            ? AuthStatus.NOT_LOGGED_IN
-            : AuthStatus.LOGGED_IN;
+        authStatus =
+            user?.uid == null ? AuthStatus.NOT_LOGGED_IN : AuthStatus.LOGGED_IN;
       });
     });
   }
@@ -71,7 +70,7 @@ class _RootPageState extends State<RootPage> {
         return buildWaitingScreen();
         break;
       case AuthStatus.NOT_LOGGED_IN:
-        return new LoginSignupPage(
+        return LoginSignupPage(
           auth: widget.auth,
           loginCallback: loginCallback,
         );
