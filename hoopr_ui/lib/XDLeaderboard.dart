@@ -1,0 +1,2679 @@
+import 'package:flutter/material.dart';
+import 'package:adobe_xd/pinned.dart';
+import './XDLeaderboardPopup.dart';
+import 'package:adobe_xd/page_link.dart';
+import './XDUserProfile1.dart';
+import './XDChallenges1.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+//import 'drawer.dart';
+//import 'XDRaymondProfilePic.dart';
+
+class XDLeaderboard extends StatelessWidget {
+  XDLeaderboard({
+    Key key,
+  }) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      //appBar: AppBar(title: Text('Leaderboard')),
+      //drawer: MyDrawer(),
+      backgroundColor: const Color(0xff001331),
+      body: Stack(
+        children: <Widget>[
+          Transform.translate(
+            offset: Offset(93.0, 719.0),
+            child:
+                // Adobe XD layer: 'Raymond 6th place' (group)
+                SizedBox(
+              width: 260.0,
+              height: 65.0,
+              child: Stack(
+                children: <Widget>[
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 0.0, 260.0, 65.0),
+                    size: Size(260.0, 65.0),
+                    pinLeft: true,
+                    pinRight: true,
+                    pinTop: true,
+                    pinBottom: true,
+                    child: PageLink(
+                      links: [
+                        PageLinkInfo(
+                          transition: LinkTransition.Fade,
+                          ease: Curves.easeOut,
+                          duration: 0.3,
+                          pageBuilder: () => XDLeaderboardPopup(),
+                        ),
+                      ],
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.0),
+                          color: const Color(0xfff4f4f9),
+                          border: Border.all(
+                              width: 1.0, color: const Color(0xff707070)),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0x5eff8336),
+                              offset: Offset(0, 3),
+                              blurRadius: 6,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(17.0, 6.0, 48.0, 47.0),
+                    size: Size(260.0, 65.0),
+                    pinLeft: true,
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'raymond' (shape)
+                        Container(
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+                        image: DecorationImage(
+                          image: const AssetImage(''),
+                          fit: BoxFit.cover,
+                        ),
+                        border: Border.all(
+                            width: 1.0, color: const Color(0xff707070)),
+                      ),
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(75.0, 23.0, 102.0, 19.0),
+                    size: Size(260.0, 65.0),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      'Raymond Tran',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 16,
+                        color: const Color(0xff707070),
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(202.0, 26.0, 25.0, 14.0),
+                    size: Size(260.0, 65.0),
+                    pinRight: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      '4 BP',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 12,
+                        color: const Color(0xff707070),
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(233.1, 25.5, 14.5, 14.5),
+                    size: Size(260.0, 65.0),
+                    pinRight: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'Basketball' (group)
+                        Stack(
+                      children: <Widget>[
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 0.0, 14.5, 14.5),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinRight: true,
+                          pinTop: true,
+                          pinBottom: true,
+                          child: SvgPicture.string(
+                            _svg_zf8u14,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 7.0, 14.5, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinRight: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_luywuw,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(4.0, 0.0, 2.6, 14.4),
+                          size: Size(14.5, 14.5),
+                          pinTop: true,
+                          pinBottom: true,
+                          fixedWidth: true,
+                          child: SvgPicture.string(
+                            _svg_t5m4to,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(1.1, 9.6, 10.6, 3.7),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_88170p,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(1.1, 1.2, 10.6, 3.7),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinTop: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_n28olk,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_cfc08b,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_4k4og1,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_4k4og1,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(32.0, 743.0),
+            child: Text(
+              '6',
+              style: TextStyle(
+                fontFamily: 'Roboto',
+                fontSize: 15,
+                color: const Color(0xfff4f1de),
+                fontWeight: FontWeight.w700,
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(0.0, 703.0),
+            child: SvgPicture.string(
+              _svg_z8c7vy,
+              allowDrawingOutsideViewBox: true,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(313.8, 776.4),
+            child:
+                // Adobe XD layer: 'Profile Icon' (shape)
+                PageLink(
+              links: [
+                PageLinkInfo(
+                  transition: LinkTransition.Fade,
+                  ease: Curves.easeOut,
+                  duration: 0.3,
+                  pageBuilder: () => XDUserProfile1(),
+                ),
+              ],
+              child: SvgPicture.string(
+                _svg_c2taoi,
+                allowDrawingOutsideViewBox: true,
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(98.0, 30.0),
+            child: Text(
+              'LEADERBOARD',
+              style: TextStyle(
+                fontFamily: 'Segoe UI',
+                fontSize: 25,
+                color: const Color(0xfff4f1de),
+                fontWeight: FontWeight.w700,
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(29.0, 104.0),
+            child:
+                // Adobe XD layer: 'Leaderboard' (group)
+                SizedBox(
+              width: 320.0,
+              height: 174.0,
+              child: Stack(
+                children: <Widget>[
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(106.0, 0.0, 111.0, 111.0),
+                    size: Size(320.0, 174.0),
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'raymond' (shape)
+                        Container(
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+                        image: DecorationImage(
+                          image: const AssetImage(''),
+                          fit: BoxFit.cover,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(0xadff8336),
+                            offset: Offset(0, 3),
+                            blurRadius: 6,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(13.0, 55.0, 71.0, 71.0),
+                    size: Size(320.0, 174.0),
+                    pinLeft: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'raymond' (shape)
+                        Container(
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+                        image: DecorationImage(
+                          image: const AssetImage(''),
+                          fit: BoxFit.cover,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(0xadff8336),
+                            offset: Offset(0, 3),
+                            blurRadius: 6,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(239.0, 55.0, 71.0, 71.0),
+                    size: Size(320.0, 174.0),
+                    pinRight: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'raymond' (shape)
+                        Container(
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+                        image: DecorationImage(
+                          image: const AssetImage(''),
+                          fit: BoxFit.cover,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(0xadff8336),
+                            offset: Offset(0, 3),
+                            blurRadius: 6,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(144.0, 91.0, 35.0, 35.0),
+                    size: Size(320.0, 174.0),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+                        color: const Color(0xffffbb00),
+                      ),
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(36.0, 113.0, 25.0, 27.0),
+                    size: Size(320.0, 174.0),
+                    pinLeft: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+                        color: const Color(0xffababab),
+                      ),
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(263.0, 109.0, 25.0, 27.0),
+                    size: Size(320.0, 174.0),
+                    pinRight: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+                        color: const Color(0xffcd7f32),
+                      ),
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(157.0, 93.0, 8.0, 27.0),
+                    size: Size(320.0, 174.0),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      '1',
+                      style: TextStyle(
+                        fontFamily: 'Segoe UI',
+                        fontSize: 20,
+                        color: const Color(0xff000000),
+                        fontWeight: FontWeight.w600,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(44.0, 116.0, 8.0, 20.0),
+                    size: Size(320.0, 174.0),
+                    pinLeft: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      '2',
+                      style: TextStyle(
+                        fontFamily: 'Segoe UI',
+                        fontSize: 15,
+                        color: const Color(0xff000000),
+                        fontWeight: FontWeight.w600,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(272.0, 112.0, 8.0, 20.0),
+                    size: Size(320.0, 174.0),
+                    pinRight: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      '3',
+                      style: TextStyle(
+                        fontFamily: 'Segoe UI',
+                        fontSize: 15,
+                        color: const Color(0xff000000),
+                        fontWeight: FontWeight.w600,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(114.0, 127.0, 91.0, 17.0),
+                    size: Size(320.0, 174.0),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      'Raymond Tran',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 14,
+                        color: const Color(0xfff4f1de),
+                        fontWeight: FontWeight.w700,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 145.0, 91.0, 17.0),
+                    size: Size(320.0, 174.0),
+                    pinLeft: true,
+                    pinBottom: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      'Raymond Tran',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 14,
+                        color: const Color(0xfff4f1de),
+                        fontWeight: FontWeight.w700,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(229.0, 145.0, 91.0, 17.0),
+                    size: Size(320.0, 174.0),
+                    pinRight: true,
+                    pinBottom: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      'Raymond Tran',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 14,
+                        color: const Color(0xfff4f1de),
+                        fontWeight: FontWeight.w700,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(147.0, 145.0, 24.0, 11.0),
+                    size: Size(320.0, 174.0),
+                    pinBottom: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      '10 BP',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 9,
+                        color: const Color(0xfff4f1de),
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(174.8, 147.2, 7.9, 7.9),
+                    size: Size(320.0, 174.0),
+                    pinBottom: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'hooprlogo1' (group)
+                        Stack(
+                      children: <Widget>[
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 0.0, 7.9, 7.9),
+                          size: Size(7.9, 7.9),
+                          pinLeft: true,
+                          pinRight: true,
+                          pinTop: true,
+                          pinBottom: true,
+                          child: SvgPicture.string(
+                            _svg_gy2egu,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 3.8, 7.9, 1.0),
+                          size: Size(7.9, 7.9),
+                          pinLeft: true,
+                          pinRight: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_p9xc02,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(2.2, 0.0, 1.4, 7.9),
+                          size: Size(7.9, 7.9),
+                          pinTop: true,
+                          pinBottom: true,
+                          fixedWidth: true,
+                          child: SvgPicture.string(
+                            _svg_3bjwcg,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.6, 5.3, 5.9, 2.0),
+                          size: Size(7.9, 7.9),
+                          pinLeft: true,
+                          pinRight: true,
+                          pinBottom: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_ewlc3o,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.6, 0.7, 5.8, 2.0),
+                          size: Size(7.9, 7.9),
+                          pinLeft: true,
+                          pinRight: true,
+                          pinTop: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_r2377s,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(5.5, 6.6, 1.0, 1.0),
+                          size: Size(7.9, 7.9),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_bskwnv,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(5.5, 6.6, 1.0, 1.0),
+                          size: Size(7.9, 7.9),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_kn73hq,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(5.5, 6.6, 1.0, 1.0),
+                          size: Size(7.9, 7.9),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_kn73hq,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(35.0, 163.0, 19.0, 11.0),
+                    size: Size(320.0, 174.0),
+                    pinLeft: true,
+                    pinBottom: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      '9 BP',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 9,
+                        color: const Color(0xfff4f1de),
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(62.5, 165.2, 7.9, 7.9),
+                    size: Size(320.0, 174.0),
+                    pinBottom: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'hooprlogo1' (group)
+                        Stack(
+                      children: <Widget>[
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 0.0, 7.9, 7.9),
+                          size: Size(7.9, 7.9),
+                          pinLeft: true,
+                          pinRight: true,
+                          pinTop: true,
+                          pinBottom: true,
+                          child: SvgPicture.string(
+                            _svg_gy2egu,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 3.8, 7.9, 1.0),
+                          size: Size(7.9, 7.9),
+                          pinLeft: true,
+                          pinRight: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_p9xc02,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(2.2, 0.0, 1.4, 7.9),
+                          size: Size(7.9, 7.9),
+                          pinTop: true,
+                          pinBottom: true,
+                          fixedWidth: true,
+                          child: SvgPicture.string(
+                            _svg_3bjwcg,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.6, 5.3, 5.9, 2.0),
+                          size: Size(7.9, 7.9),
+                          pinLeft: true,
+                          pinRight: true,
+                          pinBottom: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_ewlc3o,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.6, 0.7, 5.8, 2.0),
+                          size: Size(7.9, 7.9),
+                          pinLeft: true,
+                          pinRight: true,
+                          pinTop: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_r2377s,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(5.5, 6.6, 1.0, 1.0),
+                          size: Size(7.9, 7.9),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_bskwnv,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(5.5, 6.6, 1.0, 1.0),
+                          size: Size(7.9, 7.9),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_kn73hq,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(5.5, 6.6, 1.0, 1.0),
+                          size: Size(7.9, 7.9),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_kn73hq,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(257.0, 163.0, 19.0, 11.0),
+                    size: Size(320.0, 174.0),
+                    pinRight: true,
+                    pinBottom: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      '8 BP',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 9,
+                        color: const Color(0xfff4f1de),
+                        fontWeight: FontWeight.w700,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(284.9, 165.2, 7.9, 7.9),
+                    size: Size(320.0, 174.0),
+                    pinRight: true,
+                    pinBottom: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'hooprlogo1' (group)
+                        Stack(
+                      children: <Widget>[
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 0.0, 7.9, 7.9),
+                          size: Size(7.9, 7.9),
+                          pinLeft: true,
+                          pinRight: true,
+                          pinTop: true,
+                          pinBottom: true,
+                          child: SvgPicture.string(
+                            _svg_gy2egu,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 3.8, 7.9, 1.0),
+                          size: Size(7.9, 7.9),
+                          pinLeft: true,
+                          pinRight: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_p9xc02,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(2.2, 0.0, 1.4, 7.9),
+                          size: Size(7.9, 7.9),
+                          pinTop: true,
+                          pinBottom: true,
+                          fixedWidth: true,
+                          child: SvgPicture.string(
+                            _svg_3bjwcg,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.6, 5.3, 5.9, 2.0),
+                          size: Size(7.9, 7.9),
+                          pinLeft: true,
+                          pinRight: true,
+                          pinBottom: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_ewlc3o,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.6, 0.7, 5.8, 2.0),
+                          size: Size(7.9, 7.9),
+                          pinLeft: true,
+                          pinRight: true,
+                          pinTop: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_r2377s,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(5.5, 6.6, 1.0, 1.0),
+                          size: Size(7.9, 7.9),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_bskwnv,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(5.5, 6.6, 1.0, 1.0),
+                          size: Size(7.9, 7.9),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_kn73hq,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(5.5, 6.6, 1.0, 1.0),
+                          size: Size(7.9, 7.9),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_kn73hq,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(31.0, 501.0),
+            child: Text(
+              '3',
+              style: TextStyle(
+                fontFamily: 'Roboto',
+                fontSize: 15,
+                color: const Color(0xfff4f1de),
+                fontWeight: FontWeight.w700,
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(45.0, 505.0),
+            child: SvgPicture.string(
+              _svg_9qnbft,
+              allowDrawingOutsideViewBox: true,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(33.0, 581.0),
+            child: Text(
+              '4',
+              style: TextStyle(
+                fontFamily: 'Roboto',
+                fontSize: 15,
+                color: const Color(0xfff4f1de),
+                fontWeight: FontWeight.w700,
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(45.0, 585.0),
+            child: SvgPicture.string(
+              _svg_mk83bj,
+              allowDrawingOutsideViewBox: true,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(32.0, 662.0),
+            child: Text(
+              '5',
+              style: TextStyle(
+                fontFamily: 'Roboto',
+                fontSize: 15,
+                color: const Color(0xfff4f1de),
+                fontWeight: FontWeight.w700,
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(168.6, 770.8),
+            child:
+                // Adobe XD layer: 'Leaderboard Icon' (group)
+                SizedBox(
+              width: 39.0,
+              height: 34.0,
+              child: Stack(
+                children: <Widget>[
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(21.4, 4.3, 13.6, 19.2),
+                    size: Size(38.6, 34.2),
+                    pinRight: true,
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_64ghr,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(22.5, 16.3, 1.3, 1.3),
+                    size: Size(38.6, 34.2),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_9zkbhr,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(19.1, 17.6, 7.5, 7.6),
+                    size: Size(38.6, 34.2),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_3avecj,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(23.6, 4.3, 15.0, 16.2),
+                    size: Size(38.6, 34.2),
+                    pinRight: true,
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_x45yk8,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(14.0, 17.1, 4.5, 6.3),
+                    size: Size(38.6, 34.2),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_vxa32g,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(19.1, 13.6, 1.9, 2.7),
+                    size: Size(38.6, 34.2),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_dmn6hb,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(21.6, 4.3, 6.0, 8.4),
+                    size: Size(38.6, 34.2),
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_dgnxbo,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(11.6, 17.1, 10.2, 8.1),
+                    size: Size(38.6, 34.2),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_i1v740,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(14.7, 16.3, 1.3, 1.2),
+                    size: Size(38.6, 34.2),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_ynj997,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(15.7, 11.0, 7.1, 5.8),
+                    size: Size(38.6, 34.2),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_28dyki,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(19.9, 4.3, 11.3, 10.9),
+                    size: Size(38.6, 34.2),
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_q3o5f4,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(21.4, 17.4, 2.7, 3.8),
+                    size: Size(38.6, 34.2),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_g8lrl1,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(12.1, 4.3, 8.5, 12.1),
+                    size: Size(38.6, 34.2),
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_q0gvnu,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(7.9, 0.0, 1.0, 1.0),
+                    size: Size(38.6, 34.2),
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_we9bj7,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(8.6, 4.3, 15.3, 13.2),
+                    size: Size(38.6, 34.2),
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_l7q63u,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(17.7, 17.1, 8.0, 5.7),
+                    size: Size(38.6, 34.2),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_rq0l8,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(13.8, 18.8, 2.9, 4.1),
+                    size: Size(38.6, 34.2),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_j6vnve,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.5, 0.0, 1.0, 1.0),
+                    size: Size(38.6, 34.2),
+                    pinLeft: true,
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_xo62w8,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(3.6, 4.3, 9.9, 14.0),
+                    size: Size(38.6, 34.2),
+                    pinLeft: true,
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_s8hkjt,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.5, 0.0, 1.0, 1.0),
+                    size: Size(38.6, 34.2),
+                    pinLeft: true,
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_cq8zfh,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 4.3, 16.0, 16.2),
+                    size: Size(38.6, 34.2),
+                    pinLeft: true,
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_p02co8,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(11.9, 17.6, 7.1, 7.0),
+                    size: Size(38.6, 34.2),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_k2cssq,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(20.0, 17.1, 4.0, 5.7),
+                    size: Size(38.6, 34.2),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_3i1zoy,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(7.9, 0.0, 1.0, 1.0),
+                    size: Size(38.6, 34.2),
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_dni4h6,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(11.0, 4.3, 8.5, 12.0),
+                    size: Size(38.6, 34.2),
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_6uquvb,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(7.9, 0.0, 1.0, 1.0),
+                    size: Size(38.6, 34.2),
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_we9bj7,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(7.4, 4.3, 16.4, 13.2),
+                    size: Size(38.6, 34.2),
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_hg6dig,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(16.7, 17.1, 9.7, 7.4),
+                    size: Size(38.6, 34.2),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_nr6ez1,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(10.7, 17.1, 17.1, 17.1),
+                    size: Size(38.6, 34.2),
+                    pinBottom: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_ipsxwq,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(10.7, 17.1, 17.1, 17.1),
+                    size: Size(38.6, 34.2),
+                    pinBottom: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_ipsxwq,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(25.2, 18.2, 2.5, 3.6),
+                    size: Size(38.6, 34.2),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_7iq2mu,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(25.3, 17.9, 1.0, 1.0),
+                    size: Size(38.6, 34.2),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_b6j8zr,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(92.0, 638.0),
+            child:
+                // Adobe XD layer: 'Raymond 5th Place' (group)
+                SizedBox(
+              width: 260.0,
+              height: 65.0,
+              child: Stack(
+                children: <Widget>[
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 0.0, 260.0, 65.0),
+                    size: Size(260.0, 65.0),
+                    pinLeft: true,
+                    pinRight: true,
+                    pinTop: true,
+                    pinBottom: true,
+                    child: PageLink(
+                      links: [
+                        PageLinkInfo(
+                          transition: LinkTransition.Fade,
+                          ease: Curves.easeOut,
+                          duration: 0.3,
+                          pageBuilder: () => XDLeaderboardPopup(),
+                        ),
+                      ],
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.0),
+                          color: const Color(0xfff4f4f9),
+                          border: Border.all(
+                              width: 1.0, color: const Color(0xff707070)),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0x5eff8336),
+                              offset: Offset(0, 3),
+                              blurRadius: 6,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(17.0, 6.0, 48.0, 47.0),
+                    size: Size(260.0, 65.0),
+                    pinLeft: true,
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'raymond' (shape)
+                        Container(
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+                        image: DecorationImage(
+                          image: const AssetImage(''),
+                          fit: BoxFit.cover,
+                        ),
+                        border: Border.all(
+                            width: 1.0, color: const Color(0xff707070)),
+                      ),
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(75.0, 23.0, 102.0, 19.0),
+                    size: Size(260.0, 65.0),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      'Raymond Tran',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 16,
+                        color: const Color(0xff707070),
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(202.0, 27.0, 25.0, 14.0),
+                    size: Size(260.0, 65.0),
+                    pinRight: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      '5 BP',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 12,
+                        color: const Color(0xff707070),
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(233.1, 26.5, 14.5, 14.5),
+                    size: Size(260.0, 65.0),
+                    pinRight: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'hooprlogo1' (group)
+                        Stack(
+                      children: <Widget>[
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 0.0, 14.5, 14.5),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinRight: true,
+                          pinTop: true,
+                          pinBottom: true,
+                          child: SvgPicture.string(
+                            _svg_zf8u14,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 7.0, 14.5, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinRight: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_luywuw,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(4.0, 0.0, 2.6, 14.4),
+                          size: Size(14.5, 14.5),
+                          pinTop: true,
+                          pinBottom: true,
+                          fixedWidth: true,
+                          child: SvgPicture.string(
+                            _svg_t5m4to,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(1.1, 9.6, 10.6, 3.7),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_88170p,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(1.1, 1.2, 10.6, 3.7),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinTop: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_n28olk,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_cfc08b,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_4k4og1,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_4k4og1,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(93.0, 557.0),
+            child:
+                // Adobe XD layer: 'Raymond 4th Place' (group)
+                SizedBox(
+              width: 260.0,
+              height: 65.0,
+              child: Stack(
+                children: <Widget>[
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 0.0, 260.0, 65.0),
+                    size: Size(260.0, 65.0),
+                    pinLeft: true,
+                    pinRight: true,
+                    pinTop: true,
+                    pinBottom: true,
+                    child: PageLink(
+                      links: [
+                        PageLinkInfo(
+                          transition: LinkTransition.Fade,
+                          ease: Curves.easeOut,
+                          duration: 0.3,
+                          pageBuilder: () => XDLeaderboardPopup(),
+                        ),
+                      ],
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.0),
+                          color: const Color(0xfff4f4f9),
+                          border: Border.all(
+                              width: 1.0, color: const Color(0xff707070)),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0x5eff8336),
+                              offset: Offset(0, 3),
+                              blurRadius: 6,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(17.0, 6.0, 48.0, 47.0),
+                    size: Size(260.0, 65.0),
+                    pinLeft: true,
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'raymond' (shape)
+                        Container(
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+                        image: DecorationImage(
+                          image: const AssetImage(''),
+                          fit: BoxFit.cover,
+                        ),
+                        border: Border.all(
+                            width: 1.0, color: const Color(0xff707070)),
+                      ),
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(74.0, 23.0, 102.0, 19.0),
+                    size: Size(260.0, 65.0),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      'Raymond Tran',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 16,
+                        color: const Color(0xff707070),
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(200.0, 27.0, 25.0, 14.0),
+                    size: Size(260.0, 65.0),
+                    pinRight: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      '6 BP',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 12,
+                        color: const Color(0xff707070),
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(231.1, 26.5, 14.5, 14.5),
+                    size: Size(260.0, 65.0),
+                    pinRight: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'hooprlogo1' (group)
+                        Stack(
+                      children: <Widget>[
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 0.0, 14.5, 14.5),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinRight: true,
+                          pinTop: true,
+                          pinBottom: true,
+                          child: SvgPicture.string(
+                            _svg_zf8u14,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 7.0, 14.5, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinRight: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_luywuw,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(4.0, 0.0, 2.6, 14.4),
+                          size: Size(14.5, 14.5),
+                          pinTop: true,
+                          pinBottom: true,
+                          fixedWidth: true,
+                          child: SvgPicture.string(
+                            _svg_t5m4to,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(1.1, 9.6, 10.6, 3.7),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_88170p,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(1.1, 1.2, 10.6, 3.7),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinTop: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_n28olk,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_cfc08b,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_4k4og1,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_4k4og1,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(93.0, 477.0),
+            child:
+                // Adobe XD layer: 'Raymond 3rd  Place' (group)
+                SizedBox(
+              width: 260.0,
+              height: 65.0,
+              child: Stack(
+                children: <Widget>[
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 0.0, 260.0, 65.0),
+                    size: Size(260.0, 65.0),
+                    pinLeft: true,
+                    pinRight: true,
+                    pinTop: true,
+                    pinBottom: true,
+                    child: SvgPicture.string(
+                      _svg_srblq6,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(17.0, 9.0, 48.0, 47.0),
+                    size: Size(260.0, 65.0),
+                    pinLeft: true,
+                    pinTop: true,
+                    pinBottom: true,
+                    fixedWidth: true,
+                    child:
+                        // Adobe XD layer: 'raymond' (shape)
+                        Container(
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+                        image: DecorationImage(
+                          image: const AssetImage(''),
+                          fit: BoxFit.cover,
+                        ),
+                        border: Border.all(
+                            width: 1.0, color: const Color(0xff707070)),
+                      ),
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(200.0, 26.0, 25.0, 14.0),
+                    size: Size(260.0, 65.0),
+                    pinRight: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      '8 BP',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 12,
+                        color: const Color(0xff707070),
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(231.1, 25.5, 14.5, 14.5),
+                    size: Size(260.0, 65.0),
+                    pinRight: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'hooprlogo1' (group)
+                        Stack(
+                      children: <Widget>[
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 0.0, 14.5, 14.5),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinRight: true,
+                          pinTop: true,
+                          pinBottom: true,
+                          child: SvgPicture.string(
+                            _svg_zf8u14,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 7.0, 14.5, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinRight: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_luywuw,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(4.0, 0.0, 2.6, 14.4),
+                          size: Size(14.5, 14.5),
+                          pinTop: true,
+                          pinBottom: true,
+                          fixedWidth: true,
+                          child: SvgPicture.string(
+                            _svg_t5m4to,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(1.1, 9.6, 10.6, 3.7),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_88170p,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(1.1, 1.2, 10.6, 3.7),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinTop: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_n28olk,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_cfc08b,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_4k4og1,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_4k4og1,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(74.0, 23.0, 102.0, 19.0),
+                    size: Size(260.0, 65.0),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      'Raymond Tran',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 16,
+                        color: const Color(0xff707070),
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(38.2, 778.0),
+            child:
+                // Adobe XD layer: 'Messages/Challenges…' (group)
+                PageLink(
+              links: [
+                PageLinkInfo(
+                  transition: LinkTransition.Fade,
+                  ease: Curves.easeOut,
+                  duration: 0.3,
+                  pageBuilder: () => XDChallenges1(),
+                ),
+              ],
+              child: SizedBox(
+                width: 24.0,
+                height: 24.0,
+                child: Stack(
+                  children: <Widget>[
+                    Pinned.fromSize(
+                      bounds: Rect.fromLTWH(0.0, 0.0, 24.1, 24.1),
+                      size: Size(24.1, 24.1),
+                      pinLeft: true,
+                      pinRight: true,
+                      pinTop: true,
+                      pinBottom: true,
+                      child: SvgPicture.string(
+                        _svg_ud36q7,
+                        allowDrawingOutsideViewBox: true,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    Pinned.fromSize(
+                      bounds: Rect.fromLTWH(0.0, 11.7, 24.1, 1.0),
+                      size: Size(24.1, 24.1),
+                      pinLeft: true,
+                      pinRight: true,
+                      fixedHeight: true,
+                      child: SvgPicture.string(
+                        _svg_ra7xtg,
+                        allowDrawingOutsideViewBox: true,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    Pinned.fromSize(
+                      bounds: Rect.fromLTWH(6.6, 0.0, 4.3, 24.0),
+                      size: Size(24.1, 24.1),
+                      pinTop: true,
+                      pinBottom: true,
+                      fixedWidth: true,
+                      child: SvgPicture.string(
+                        _svg_dfue39,
+                        allowDrawingOutsideViewBox: true,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    Pinned.fromSize(
+                      bounds: Rect.fromLTWH(1.8, 16.0, 17.8, 6.1),
+                      size: Size(24.1, 24.1),
+                      pinLeft: true,
+                      pinBottom: true,
+                      fixedWidth: true,
+                      fixedHeight: true,
+                      child: SvgPicture.string(
+                        _svg_udojr1,
+                        allowDrawingOutsideViewBox: true,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    Pinned.fromSize(
+                      bounds: Rect.fromLTWH(1.8, 2.0, 17.7, 6.1),
+                      size: Size(24.1, 24.1),
+                      pinLeft: true,
+                      pinTop: true,
+                      fixedWidth: true,
+                      fixedHeight: true,
+                      child: SvgPicture.string(
+                        _svg_nx4pzg,
+                        allowDrawingOutsideViewBox: true,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    Pinned.fromSize(
+                      bounds: Rect.fromLTWH(16.7, 20.1, 1.0, 1.0),
+                      size: Size(24.1, 24.1),
+                      pinBottom: true,
+                      fixedWidth: true,
+                      fixedHeight: true,
+                      child: SvgPicture.string(
+                        _svg_jiommn,
+                        allowDrawingOutsideViewBox: true,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    Pinned.fromSize(
+                      bounds: Rect.fromLTWH(16.7, 20.0, 1.0, 1.0),
+                      size: Size(24.1, 24.1),
+                      pinBottom: true,
+                      fixedWidth: true,
+                      fixedHeight: true,
+                      child: SvgPicture.string(
+                        _svg_xqtt15,
+                        allowDrawingOutsideViewBox: true,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    Pinned.fromSize(
+                      bounds: Rect.fromLTWH(16.7, 20.0, 1.0, 1.0),
+                      size: Size(24.1, 24.1),
+                      pinBottom: true,
+                      fixedWidth: true,
+                      fixedHeight: true,
+                      child: SvgPicture.string(
+                        _svg_xqtt15,
+                        allowDrawingOutsideViewBox: true,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(31.0, 422.0),
+            child: Text(
+              '2',
+              style: TextStyle(
+                fontFamily: 'Roboto',
+                fontSize: 15,
+                color: const Color(0xfff4f1de),
+                fontWeight: FontWeight.w700,
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(93.0, 398.0),
+            child:
+                // Adobe XD layer: 'Raymond 2nd Place' (group)
+                SizedBox(
+              width: 260.0,
+              height: 65.0,
+              child: Stack(
+                children: <Widget>[
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 0.0, 260.0, 65.0),
+                    size: Size(260.0, 65.0),
+                    pinLeft: true,
+                    pinRight: true,
+                    pinTop: true,
+                    pinBottom: true,
+                    child: SvgPicture.string(
+                      _svg_lbtdbu,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(17.0, 9.0, 48.0, 47.0),
+                    size: Size(260.0, 65.0),
+                    pinLeft: true,
+                    pinTop: true,
+                    pinBottom: true,
+                    fixedWidth: true,
+                    child:
+                        // Adobe XD layer: 'raymond' (shape)
+                        Container(
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+                        image: DecorationImage(
+                          image: const AssetImage(''),
+                          fit: BoxFit.cover,
+                        ),
+                        border: Border.all(
+                            width: 1.0, color: const Color(0xff707070)),
+                      ),
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(200.0, 26.0, 25.0, 14.0),
+                    size: Size(260.0, 65.0),
+                    pinRight: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      '9 BP',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 12,
+                        color: const Color(0xff707070),
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(231.1, 25.5, 14.5, 14.5),
+                    size: Size(260.0, 65.0),
+                    pinRight: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'hooprlogo1' (group)
+                        Stack(
+                      children: <Widget>[
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 0.0, 14.5, 14.5),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinRight: true,
+                          pinTop: true,
+                          pinBottom: true,
+                          child: SvgPicture.string(
+                            _svg_zf8u14,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 7.0, 14.5, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinRight: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_luywuw,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(4.0, 0.0, 2.6, 14.4),
+                          size: Size(14.5, 14.5),
+                          pinTop: true,
+                          pinBottom: true,
+                          fixedWidth: true,
+                          child: SvgPicture.string(
+                            _svg_t5m4to,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(1.1, 9.6, 10.6, 3.7),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_88170p,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(1.1, 1.2, 10.6, 3.7),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinTop: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_n28olk,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_cfc08b,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_4k4og1,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_4k4og1,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(74.0, 23.0, 102.0, 19.0),
+                    size: Size(260.0, 65.0),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      'Raymond Tran',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 16,
+                        color: const Color(0xff707070),
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(31.0, 343.0),
+            child:
+                // Adobe XD layer: '1st Place Increase' (group)
+                SizedBox(
+              width: 24.0,
+              height: 18.0,
+              child: Stack(
+                children: <Widget>[
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 0.0, 9.0, 18.0),
+                    size: Size(24.0, 18.0),
+                    pinLeft: true,
+                    pinTop: true,
+                    pinBottom: true,
+                    fixedWidth: true,
+                    child: Text(
+                      '1',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 15,
+                        color: const Color(0xfff4f1de),
+                        fontWeight: FontWeight.w700,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(14.0, 5.0, 10.0, 9.0),
+                    size: Size(24.0, 18.0),
+                    pinRight: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_2eg7ge,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(93.0, 319.0),
+            child:
+                // Adobe XD layer: 'Raymond 1st Place' (group)
+                SizedBox(
+              width: 260.0,
+              height: 65.0,
+              child: Stack(
+                children: <Widget>[
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 0.0, 260.0, 65.0),
+                    size: Size(260.0, 65.0),
+                    pinLeft: true,
+                    pinRight: true,
+                    pinTop: true,
+                    pinBottom: true,
+                    child: SvgPicture.string(
+                      _svg_dr1d58,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(17.0, 9.0, 48.0, 47.0),
+                    size: Size(260.0, 65.0),
+                    pinLeft: true,
+                    pinTop: true,
+                    pinBottom: true,
+                    fixedWidth: true,
+                    child:
+                        // Adobe XD layer: 'raymond' (shape)
+                        Container(
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+                        image: DecorationImage(
+                          image: const AssetImage(''),
+                          fit: BoxFit.cover,
+                        ),
+                        border: Border.all(
+                            width: 1.0, color: const Color(0xff707070)),
+                      ),
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(195.0, 26.0, 31.0, 14.0),
+                    size: Size(260.0, 65.0),
+                    pinRight: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      '10 BP',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 12,
+                        color: const Color(0xff707070),
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(231.1, 25.5, 14.5, 14.5),
+                    size: Size(260.0, 65.0),
+                    pinRight: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'hooprlogo1' (group)
+                        Stack(
+                      children: <Widget>[
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 0.0, 14.5, 14.5),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinRight: true,
+                          pinTop: true,
+                          pinBottom: true,
+                          child: SvgPicture.string(
+                            _svg_zf8u14,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(0.0, 7.0, 14.5, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinRight: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_luywuw,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(4.0, 0.0, 2.6, 14.4),
+                          size: Size(14.5, 14.5),
+                          pinTop: true,
+                          pinBottom: true,
+                          fixedWidth: true,
+                          child: SvgPicture.string(
+                            _svg_t5m4to,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(1.1, 9.6, 10.6, 3.7),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_88170p,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(1.1, 1.2, 10.6, 3.7),
+                          size: Size(14.5, 14.5),
+                          pinLeft: true,
+                          pinTop: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_n28olk,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_cfc08b,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_4k4og1,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Pinned.fromSize(
+                          bounds: Rect.fromLTWH(10.0, 12.0, 1.0, 1.0),
+                          size: Size(14.5, 14.5),
+                          pinBottom: true,
+                          fixedWidth: true,
+                          fixedHeight: true,
+                          child: SvgPicture.string(
+                            _svg_4k4og1,
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(74.0, 23.0, 102.0, 19.0),
+                    size: Size(260.0, 65.0),
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: Text(
+                      'Raymond Tran',
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 16,
+                        color: const Color(0xff707070),
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(61.0, 345.0),
+            child: SizedBox(
+              width: 12.0,
+              height: 13.0,
+              child: SingleChildScrollView(
+                  child: Text(
+                '🔥',
+                style: TextStyle(
+                  fontFamily: 'Segoe UI',
+                  fontSize: 10,
+                  color: const Color(0xff707070),
+                ),
+                textAlign: TextAlign.left,
+              )),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(61.0, 583.0),
+            child: SizedBox(
+              width: 12.0,
+              height: 13.0,
+              child: SingleChildScrollView(
+                  child: Text(
+                '❄️',
+                style: TextStyle(
+                  fontFamily: 'Segoe UI',
+                  fontSize: 10,
+                  color: const Color(0xff707070),
+                ),
+                textAlign: TextAlign.left,
+              )),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+const String _svg_zf8u14 =
+    '<svg viewBox="0.0 0.0 14.5 14.5" ><path transform="translate(-5.66, -6.49)" d="M 20.12120056152344 13.71989822387695 C 20.12120056152344 13.79931831359863 20.12120056152344 13.87814331054688 20.11734962463379 13.95696830749512 C 20.04948043823242 16.08027267456055 19.04979133605957 18.06588554382324 17.38453674316406 19.38495826721191 C 17.22175025939941 19.51416206359863 17.05333137512207 19.63644790649414 16.8792839050293 19.75182342529297 C 15.6969108581543 20.53574562072754 14.30924224853516 20.95276832580566 12.89060020446777 20.95050430297852 C 12.55090141296387 20.95050430297852 12.21295547485352 20.92697525024414 11.87787055969238 20.88008689880371 C 11.69152641296387 20.85419273376465 11.50651359558105 20.8209056854248 11.32416725158691 20.78040885925293 C 9.582965850830078 20.39352989196777 8.04606819152832 19.37702369689941 7.008625984191895 17.92609786987305 C 6.915773868560791 17.79650115966797 6.826871395111084 17.66383934020996 6.74192476272583 17.52811622619629 C 6.074585437774658 16.45334053039551 5.702706336975098 15.22147750854492 5.663852691650391 13.95696830749512 C 5.661185741424561 13.87814331054688 5.660000324249268 13.79931831359863 5.660000324249268 13.71989822387695 C 5.660000324249268 13.64048194885254 5.660000324249268 13.5616569519043 5.663852691650391 13.48283195495605 C 5.703130722045898 12.21441268920898 6.077544689178467 10.9790096282959 6.749034881591797 9.902198791503906 C 6.766518592834473 9.872566223144531 6.784299850463867 9.845597267150879 6.802376747131348 9.817445755004883 C 6.87053394317627 9.711357116699219 6.941455841064453 9.607146263122559 7.015145778656006 9.504810333251953 C 7.034999370574951 9.476658821105957 7.055446147918701 9.448802947998047 7.076190948486328 9.42094898223877 C 8.181098937988281 7.925699234008789 9.81962776184082 6.913648128509521 11.65132522583008 6.595083713531494 C 11.84157180786133 6.562093257904053 12.03428649902344 6.536805152893066 12.2294750213623 6.519222736358643 C 12.4467887878418 6.499466896057129 12.66716384887695 6.489588737487793 12.89060020446777 6.489588737487793 C 14.30602836608887 6.486941814422607 15.69079780578613 6.901836395263672 16.87158203125 7.682342052459717 C 16.9948558807373 7.763538360595703 17.11526489257812 7.848388195037842 17.23281288146973 7.93689489364624 C 17.28170776367188 7.973640441894531 17.33030700683594 8.010980606079102 17.37831687927246 8.049503326416016 C 17.47047233581543 8.121809005737305 17.56056022644043 8.197672843933105 17.64886856079102 8.274421691894531 C 19.1601619720459 9.591880798339844 20.05493927001953 11.47891426086426 20.11853408813477 13.48283195495605 C 20.12001419067383 13.5616569519043 20.12120056152344 13.64048194885254 20.12120056152344 13.71989822387695 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_luywuw =
+    '<svg viewBox="0.0 7.0 14.5 1.0" ><path transform="translate(-5.66, -235.49)" d="M 20.12120056152344 242.7171020507812 C 20.12120056152344 242.7964477539062 20.12120056152344 242.8753051757812 20.11734962463379 242.9540710449219 L 5.663852691650391 242.9540710449219 C 5.661185741424561 242.8753051757812 5.660000324249268 242.7964477539062 5.660000324249268 242.7171020507812 C 5.660000324249268 242.6376037597656 5.660000324249268 242.5588073730469 5.663852691650391 242.47998046875 L 20.11734962463379 242.47998046875 C 20.12001419067383 242.5588073730469 20.12120056152344 242.6376037597656 20.12120056152344 242.7171020507812 Z" fill="#3d332a" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_t5m4to =
+    '<svg viewBox="4.0 0.0 2.6 14.4" ><path transform="translate(-135.72, -7.46)" d="M 141.6579742431641 21.16621971130371 C 141.7516174316406 21.40328598022461 141.8447570800781 21.63117218017578 141.9374237060547 21.8498649597168 C 141.7497100830078 21.82378768920898 141.5647430419922 21.79050064086914 141.3824005126953 21.75000190734863 C 141.3270416259766 21.61763763427734 141.2719268798828 21.48151969909668 141.2170104980469 21.34165000915527 C 140.8021545410156 20.28936386108398 140.3371734619141 18.94369506835938 140.0316772460938 17.54024314880371 C 139.9975128173828 17.38437080383301 139.9656219482422 17.2279052734375 139.9359436035156 17.07084846496582 C 139.7969055175781 16.36426544189453 139.7156524658203 15.64752674102783 139.6929779052734 14.92774868011475 C 139.6908874511719 14.84832668304443 139.6900024414062 14.76950168609619 139.6900024414062 14.69067573547363 C 139.6900024414062 14.61185073852539 139.6900024414062 14.53539752960205 139.6929779052734 14.45360946655273 C 139.7151489257812 13.73253059387207 139.8025665283203 13.01494312286377 139.9540252685547 12.30961132049561 C 139.9856719970703 12.15769386291504 140.0211029052734 12.00142288208008 140.0604095458984 11.8408088684082 C 140.2924346923828 10.88838481903076 140.6581268310547 9.790458679199219 141.2229614257812 8.56125545501709 C 141.3885803222656 8.200908660888672 141.5536346435547 7.867532730102539 141.7103881835938 7.565861701965332 C 141.9006652832031 7.532868385314941 142.0933990478516 7.50758171081543 142.2885894775391 7.49000072479248 C 142.0867919921875 7.8607177734375 141.8674774169922 8.291886329650879 141.6491088867188 8.767803192138672 C 141.2679748535156 9.597541809082031 140.845703125 10.66435527801514 140.5493621826172 11.83517932891846 C 140.5086669921875 11.99322700500488 140.4708404541016 12.15354251861572 140.4358978271484 12.31613445281982 C 140.2792053222656 13.01858806610107 140.1890258789062 13.73423767089844 140.16650390625 14.45360660552979 C 140.1641387939453 14.53243160247803 140.1632537841797 14.61155223846436 140.1632537841797 14.69067573547363 C 140.1632537841797 14.76979732513428 140.1632537841797 14.84536170959473 140.16650390625 14.92774295806885 C 140.1807403564453 15.48396587371826 140.2474365234375 16.19487953186035 140.4175109863281 17.0684757232666 C 140.4481201171875 17.22553634643555 140.482177734375 17.38812637329102 140.5197448730469 17.55624580383301 C 140.7455444335938 18.56468391418457 141.103515625 19.76514053344727 141.6579742431641 21.16621971130371 Z" fill="#3d332a" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_88170p =
+    '<svg viewBox="1.1 9.6 10.6 3.7" ><path transform="translate(-41.12, -320.88)" d="M 52.84173202514648 333.7743835449219 C 52.67894744873047 333.903564453125 52.51053237915039 334.02587890625 52.33648681640625 334.1412048339844 C 51.88338851928711 334.024658203125 51.43979263305664 333.8740539550781 51.00948715209961 333.6904602050781 C 49.58707046508789 333.074951171875 48.6331672668457 332.4437866210938 47.86654663085938 331.9364624023438 C 47.0919303894043 331.424072265625 46.54518127441406 331.0622253417969 45.91872787475586 330.974853515625 C 45.820556640625 330.9609680175781 45.72153472900391 330.9541320800781 45.62239074707031 330.9541320800781 C 45.55838012695312 330.9541320800781 45.49447250366211 330.9557189941406 45.43065643310547 330.9588623046875 C 44.53216934204102 331.0036926269531 43.64908981323242 331.3639221191406 42.80363845825195 332.0316467285156 C 42.69063186645508 332.1208801269531 42.57832336425781 332.2155456542969 42.46670150756836 332.3153991699219 C 42.37385559082031 332.1858520507812 42.28496170043945 332.0531921386719 42.20000839233398 331.9174194335938 C 42.30095291137695 331.8284301757812 42.4025993347168 331.743408203125 42.50493621826172 331.66259765625 C 43.40906143188477 330.9482116699219 44.35911178588867 330.5546569824219 45.33524703979492 330.4894409179688 C 45.43086242675781 330.483154296875 45.52668380737305 330.4800109863281 45.62268447875977 330.4800109863281 C 45.68866729736328 330.4800109863281 45.75366973876953 330.4822998046875 45.81767272949219 330.4870300292969 C 46.62549209594727 330.5463256835938 47.2664680480957 330.9701232910156 48.12910461425781 331.5411682128906 C 48.88000869750977 332.0381164550781 49.81466293334961 332.6565856933594 51.1988410949707 333.2554321289062 C 51.70646286010742 333.4750671386719 52.26387786865234 333.6446228027344 52.84173202514648 333.7743835449219 Z" fill="#3d332a" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_n28olk =
+    '<svg viewBox="1.1 1.2 10.6 3.7" ><path transform="translate(-41.32, -45.55)" d="M 53.03809356689453 47.10711669921875 C 52.46141815185547 47.23573303222656 51.90370941162109 47.40346527099609 51.39697265625 47.62274169921875 C 50.01219940185547 48.21986389160156 49.07666778564453 48.83772277832031 48.32516479492188 49.33320617675781 C 47.46133422851562 49.90305328369141 46.81976318359375 50.32621765136719 46.011962890625 50.38401031494141 C 45.94795227050781 50.38875579833984 45.88294982910156 50.39112091064453 45.81697082519531 50.39112091064453 C 45.72095489501953 50.39112091064453 45.62513732910156 50.38777160644531 45.52951812744141 50.38105010986328 C 44.55458068847656 50.31526947021484 43.60511779785156 49.91994476318359 42.70218658447266 49.20429229736328 C 42.6033935546875 49.12626647949219 42.50600433349609 49.04476165771484 42.40998840332031 48.95982360839844 C 42.42747116088867 48.93019104003906 42.44525909423828 48.90321350097656 42.46333312988281 48.87506103515625 C 42.53149032592773 48.76898956298828 42.60242462158203 48.66476440429688 42.67610168457031 48.56243896484375 C 42.78337860107422 48.65843963623047 42.89144134521484 48.74951934814453 43.00028991699219 48.83564758300781 C 43.84485626220703 49.50448608398438 44.72734069824219 49.86600494384766 45.62583160400391 49.91194915771484 C 45.68955230712891 49.91520690917969 45.75355529785156 49.91669464111328 45.81756591796875 49.91698455810547 C 45.91668701171875 49.91694641113281 46.01570892333984 49.91011047363281 46.1138916015625 49.89653778076172 C 46.7403564453125 49.81000518798828 47.28768157958984 49.44877624511719 48.06289672851562 48.93759155273438 C 48.83041381835938 48.43115234375 49.784912109375 47.8011474609375 51.20821380615234 47.18743133544922 C 51.63776397705078 47.00514221191406 52.08045959472656 46.85556793212891 52.53253936767578 46.73996734619141 C 52.65581512451172 46.82115173339844 52.77622985839844 46.906005859375 52.89377593994141 46.99451446533203 C 52.94148254394531 47.03125762939453 52.99008178710938 47.068603515625 53.03809356689453 47.10711669921875 Z" fill="#3d332a" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_cfc08b =
+    '<svg viewBox="10.0 12.0 1.0 1.0" ><path transform="translate(-332.62, -399.72)" d="M 342.6000061035156 411.7300109863281" fill="none" stroke="#3d332a" stroke-width="16" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
+const String _svg_4k4og1 =
+    '<svg viewBox="10.0 12.0 1.0 1.0" ><path transform="translate(-332.67, -399.48)" d="M 342.6600036621094 411.4800109863281" fill="none" stroke="#3d332a" stroke-width="16" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
+const String _svg_z8c7vy =
+    '<svg viewBox="0.0 703.0 375.7 109.0" ><defs><linearGradient id="gradient" x1="0.5" y1="-0.042471" x2="0.5" y2="1.0"><stop offset="0.0" stop-color="#00030e13" stop-opacity="0.0" /><stop offset="0.719543" stop-color="#6d040b0e" stop-opacity="0.43" /><stop offset="0.949794" stop-color="#f2060707" stop-opacity="0.95" /><stop offset="1.0" stop-color="#ff0a1417"  /></linearGradient></defs><path transform="translate(-931.0, 348.0)" d="M 931 464.0000305175781 L 931 355 L 1306.731323242188 355 L 1306.731323242188 464.0000305175781 L 931 464.0000305175781 Z" fill="url(#gradient)" stroke="none" stroke-width="0.25" stroke-miterlimit="4" stroke-linecap="butt" /><path transform="translate(-931.0, 409.67)" d="M 931 402.3251953125 L 931 355 L 1306.731323242188 355 L 1306.731323242188 402.3251953125 L 931 402.3251953125 Z" fill="#001331" stroke="#ffffff" stroke-width="0.25" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_c2taoi =
+    '<svg viewBox="313.8 776.4 23.5 27.7" ><path transform="translate(313.7, 776.44)" d="M 0.05490000173449516 23.30190086364746 C 1.032299995422363 17.74259948730469 5.942699909210205 13.51440048217773 11.85300064086914 13.51440048217773 C 17.56890106201172 13.51440048217773 22.34970092773438 17.4689998626709 23.54129981994629 22.75920104980469 C 20.4507007598877 25.81560134887695 16.20090103149414 27.7047004699707 11.51100063323975 27.7047004699707 C 7.104599952697754 27.7047004699707 3.087000131607056 26.03790092468262 0.05490000173449516 23.30190086364746 Z M 6.720300197601318 5.06790018081665 C 6.720300197601318 2.268900156021118 9.018000602722168 0 11.85300064086914 0 C 14.68710041046143 0 16.98480033874512 2.268900156021118 16.98480033874512 5.06790018081665 C 16.98480033874512 7.866899967193604 14.68710041046143 10.1358003616333 11.85300064086914 10.1358003616333 C 9.018000602722168 10.1358003616333 6.720300197601318 7.866899967193604 6.720300197601318 5.06790018081665 Z" fill="#707070" stroke="#707070" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_gy2egu =
+    '<svg viewBox="0.0 0.0 7.9 7.9" ><path transform="translate(-5.66, -6.49)" d="M 13.60965251922607 10.46424674987793 C 13.60965251922607 10.50790405273438 13.60965251922607 10.55123615264893 13.60753536224365 10.59456920623779 C 13.57022762298584 11.76179695129395 13.02067470550537 12.85333442687988 12.10524559020996 13.57845687866211 C 12.0157585144043 13.6494836807251 11.92317485809326 13.71670722961426 11.8274974822998 13.78013134002686 C 11.17751979827881 14.21107196807861 10.41468524932861 14.44031715393066 9.63482666015625 14.43907356262207 C 9.448085784912109 14.43907356262207 9.262309074401855 14.42613887786865 9.078104972839355 14.40036296844482 C 8.975667953491211 14.38612937927246 8.873963356018066 14.36783027648926 8.773722648620605 14.34556770324707 C 7.816543579101562 14.13289070129395 6.971675872802734 13.57409572601318 6.401370048522949 12.77648830413818 C 6.350327491760254 12.705246925354 6.301456451416016 12.63231945037842 6.254758358001709 12.55770969390869 C 5.887907028198242 11.96688079833984 5.68347692489624 11.28969860076904 5.662117481231689 10.59457015991211 C 5.660651683807373 10.55123710632324 5.660000324249268 10.50790405273438 5.660000324249268 10.46424674987793 C 5.660000324249268 10.42058849334717 5.660000324249268 10.37725639343262 5.662117481231689 10.33392524719238 C 5.68371057510376 9.63664722442627 5.889533996582031 8.957518577575684 6.258667469024658 8.365570068359375 C 6.268278121948242 8.34928035736084 6.278053283691406 8.334455490112305 6.287990093231201 8.31898021697998 C 6.325457572937012 8.260661125183105 6.364445209503174 8.203373908996582 6.404954433441162 8.147117614746094 C 6.415868759155273 8.13164234161377 6.427108764648438 8.116329193115234 6.438512325286865 8.101016044616699 C 7.045905590057373 7.279045104980469 7.946642875671387 6.722697734832764 8.953567504882812 6.547576427459717 C 9.058151245117188 6.529440402984619 9.164092063903809 6.515538692474365 9.271390914916992 6.505873680114746 C 9.390852928161621 6.495013236999512 9.511998176574707 6.489583015441895 9.63482666015625 6.489583015441895 C 10.41291904449463 6.488128185272217 11.17415904998779 6.716204643249512 11.82326316833496 7.145266056060791 C 11.89102935791016 7.189901351928711 11.95722198486328 7.236546039581299 12.02184009552002 7.285200119018555 C 12.04871845245361 7.305399894714355 12.07543563842773 7.325926303863525 12.10182666778564 7.347102642059326 C 12.15248775482178 7.38685131072998 12.20201110839844 7.428555011749268 12.25055599212646 7.470746040344238 C 13.08134937286377 8.194982528686523 13.57322788238525 9.232327461242676 13.60818672180176 10.33392524719238 C 13.60900115966797 10.37725639343262 13.60965251922607 10.42058849334717 13.60965251922607 10.46424674987793 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_p9xc02 =
+    '<svg viewBox="0.0 3.8 7.9 1.0" ><path transform="translate(-5.66, -238.64)" d="M 13.60965251922607 242.6103210449219 C 13.60965251922607 242.6539611816406 13.60965251922607 242.6972961425781 13.60753536224365 242.7406311035156 L 5.662117481231689 242.7406311035156 C 5.660651683807373 242.6972961425781 5.660000324249268 242.6539611816406 5.660000324249268 242.6103210449219 C 5.660000324249268 242.566650390625 5.660000324249268 242.5233154296875 5.662117481231689 242.47998046875 L 13.60753536224365 242.47998046875 C 13.60900115966797 242.5233154296875 13.60965251922607 242.566650390625 13.60965251922607 242.6103210449219 Z" fill="#3d332a" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_3bjwcg =
+    '<svg viewBox="2.2 0.0 1.4 7.9" ><path transform="translate(-137.51, -7.47)" d="M 140.7718353271484 15.00812339782715 C 140.8233184814453 15.13844394683838 140.87451171875 15.26371765136719 140.9254608154297 15.38393974304199 C 140.8222808837891 15.36960506439209 140.7205810546875 15.35130500793457 140.6203460693359 15.32904148101807 C 140.5899353027344 15.2562780380249 140.5596313476562 15.18145275115967 140.5294342041016 15.1045618057251 C 140.3013763427734 14.52609539031982 140.0457763671875 13.78635215759277 139.8778381347656 13.01484489440918 C 139.8590545654297 12.92915821075439 139.8415069580078 12.8431453704834 139.8252105712891 12.75680732727051 C 139.748779296875 12.36838340759277 139.7041015625 11.97437572479248 139.6916351318359 11.57869625091553 C 139.6904907226562 11.53503704071045 139.6900024414062 11.49170589447021 139.6900024414062 11.44837379455566 C 139.6900024414062 11.4050407409668 139.6900024414062 11.36301231384277 139.6916351318359 11.31805229187012 C 139.7038269042969 10.92165851593018 139.7518768310547 10.52718448638916 139.8351440429688 10.13944816589355 C 139.8525390625 10.05593490600586 139.8720245361328 9.970029830932617 139.8936157226562 9.88173770904541 C 140.0211791992188 9.358168601989746 140.2221984863281 8.754613876342773 140.5326995849609 8.078892707824707 C 140.6237640380859 7.880803108215332 140.7144927978516 7.697537422180176 140.8006744384766 7.531702995300293 C 140.9052581787109 7.513565540313721 141.0111999511719 7.499664783477783 141.1184997558594 7.489999771118164 C 141.007568359375 7.693791389465332 140.8870086669922 7.930814743041992 140.7669525146484 8.192437171936035 C 140.5574645996094 8.648563385009766 140.3253173828125 9.235013961791992 140.1624145507812 9.878642082214355 C 140.1400451660156 9.965523719787598 140.1192474365234 10.05365371704102 140.1000366210938 10.14303398132324 C 140.0139007568359 10.52918910980225 139.9643249511719 10.92259693145752 139.9519500732422 11.31805038452148 C 139.9506530761719 11.36138248443604 139.9501647949219 11.40487766265869 139.9501647949219 11.44837379455566 C 139.9501647949219 11.491868019104 139.9501647949219 11.53340721130371 139.9519500732422 11.57869434356689 C 139.9597778320312 11.88446235656738 139.9964294433594 12.27526664733887 140.0899353027344 12.75550365447998 C 140.1067504882812 12.84184265136719 140.12548828125 12.9312219619751 140.1461334228516 13.02364158630371 C 140.270263671875 13.57800006866455 140.467041015625 14.23791885375977 140.7718353271484 15.00812339782715 Z" fill="#3d332a" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_ewlc3o =
+    '<svg viewBox="0.6 5.3 5.9 2.0" ><path transform="translate(-41.6, -325.2)" d="M 48.05000686645508 332.2909851074219 C 47.96051788330078 332.3619995117188 47.86793518066406 332.4292297363281 47.77225875854492 332.49267578125 C 47.52318572998047 332.4285888671875 47.27932739257812 332.3457641601562 47.04277801513672 332.244873046875 C 46.26084136962891 331.9065246582031 45.7364616394043 331.5595397949219 45.31503295898438 331.2806396484375 C 44.88920593261719 330.9989929199219 44.58864593505859 330.8000793457031 44.24427032470703 330.7520446777344 C 44.19030380249023 330.7444152832031 44.13587188720703 330.7406311035156 44.08137130737305 330.7406311035156 C 44.04618072509766 330.7406311035156 44.01104736328125 330.7415161132812 43.97596740722656 330.7432556152344 C 43.48205184936523 330.7678527832031 42.99660110473633 330.9659423828125 42.53183746337891 331.3329467773438 C 42.4697151184082 331.3820495605469 42.40797424316406 331.4340515136719 42.34661483764648 331.4889831542969 C 42.29557418823242 331.417724609375 42.24670791625977 331.3448181152344 42.20000457763672 331.2702026367188 C 42.25550079345703 331.2212524414062 42.31137847900391 331.174560546875 42.36763381958008 331.1300964355469 C 42.86465072631836 330.7373657226562 43.38691329956055 330.5210571289062 43.92351913452148 330.4851989746094 C 43.97608184814453 330.4817504882812 44.02875518798828 330.47998046875 44.0815315246582 330.47998046875 C 44.11780166625977 330.47998046875 44.15353775024414 330.4812927246094 44.188720703125 330.48388671875 C 44.63279342651367 330.5164489746094 44.98515319824219 330.7494201660156 45.45936584472656 331.0633239746094 C 45.87215805053711 331.3365478515625 46.38595581054688 331.6764831542969 47.14687347412109 332.0057373046875 C 47.42592239379883 332.12646484375 47.73234558105469 332.2196350097656 48.05000686645508 332.2909851074219 Z" fill="#3d332a" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_r2377s =
+    '<svg viewBox="0.6 0.7 5.8 2.0" ><path transform="translate(-41.81, -46.08)" d="M 48.25249862670898 46.94179534912109 C 47.93548965454102 47.01250076293945 47.62890243530273 47.10470199584961 47.35033798217773 47.22524261474609 C 46.58909225463867 47.55349349975586 46.07481384277344 47.89314651489258 45.66169357299805 48.16552352905273 C 45.18682861328125 48.47878265380859 44.83414459228516 48.71140670776367 44.39007186889648 48.7431755065918 C 44.35488891601562 48.74578475952148 44.31915283203125 48.74708557128906 44.28287887573242 48.74708557128906 C 44.2301025390625 48.74708557128906 44.17742919921875 48.74524307250977 44.1248664855957 48.74155044555664 C 43.58891677856445 48.70538711547852 43.06697845458984 48.48806762695312 42.57061004638672 48.09465789794922 C 42.51630783081055 48.05176544189453 42.4627685546875 48.00696182250977 42.40998840332031 47.96026611328125 C 42.41959762573242 47.94397735595703 42.42937469482422 47.92914962768555 42.43931198120117 47.91367340087891 C 42.47677993774414 47.8553581237793 42.51576995849609 47.79806518554688 42.5562744140625 47.74181365966797 C 42.6152458190918 47.79459381103516 42.67465209960938 47.84465789794922 42.73448944091797 47.89200592041016 C 43.19876480102539 48.25968170166016 43.68389129638672 48.45841598510742 44.17781066894531 48.48366928100586 C 44.21283721923828 48.48546600341797 44.24802398681641 48.48628234863281 44.28320693969727 48.48644256591797 C 44.33769989013672 48.48641967773438 44.39213562011719 48.48266220092773 44.44610977172852 48.47520065307617 C 44.79048919677734 48.42763137817383 45.09136581420898 48.22905731201172 45.51752090454102 47.94804763793945 C 45.93943786621094 47.66964340209961 46.46414947509766 47.32331848144531 47.2465705871582 46.98594284057617 C 47.48270797729492 46.88573837280273 47.72606658935547 46.80351257324219 47.97458648681641 46.73995971679688 C 48.04235458374023 46.78459167480469 48.10854721069336 46.83123779296875 48.17316436767578 46.8798942565918 C 48.19938659667969 46.90009307861328 48.22610473632812 46.92061996459961 48.25249862670898 46.94179534912109 Z" fill="#3d332a" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_bskwnv =
+    '<svg viewBox="5.5 6.6 1.0 1.0" ><path transform="translate(-337.11, -405.13)" d="M 342.6000061035156 411.7300109863281" fill="none" stroke="#3d332a" stroke-width="16" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
+const String _svg_kn73hq =
+    '<svg viewBox="5.5 6.6 1.0 1.0" ><path transform="translate(-337.17, -404.88)" d="M 342.6600036621094 411.4800109863281" fill="none" stroke="#3d332a" stroke-width="16" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
+const String _svg_9qnbft =
+    '<svg viewBox="45.0 505.0 10.0 9.0" ><path transform="translate(45.0, 505.0)" d="M 4.999999523162842 0 L 10 9 L 0 9 L 4.999999523162842 0 Z" fill="#009e20" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_mk83bj =
+    '<svg viewBox="45.0 585.0 10.0 9.0" ><path transform="matrix(-1.0, 0.0, 0.0, -1.0, 55.0, 594.0)" d="M 4.999999523162842 0 L 10 9 L 0 9 Z" fill="#e90000" fill-opacity="0.78" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_64ghr =
+    '<svg viewBox="21.4 4.3 13.6 19.2" ><path transform="translate(-251.33, -50.43)" d="M 272.7598876953125 73.91685485839844 L 273.4419860839844 72.95578765869141 L 274.3016662597656 71.74324798583984 L 274.8910522460938 70.91419982910156 L 275.941650390625 69.43289947509766 L 276.0870971679688 69.22858428955078 L 276.4021911621094 68.78537750244141 L 276.4100036621094 68.77438354492188 L 276.5435791015625 68.58578491210938 L 276.6756591796875 68.39875030517578 L 276.6772766113281 68.39640045166016 L 286.3767700195312 54.73000717163086" fill="none" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_9zkbhr =
+    '<svg viewBox="22.5 16.3 1.3 1.3" ><path transform="translate(-268.94, -203.84)" d="M 292.8024291992188 221.3718566894531 C 292.3792114257812 221.1271820068359 291.9369506835938 220.9169616699219 291.47998046875 220.7431335449219 L 291.92236328125 220.1199951171875 L 292.8024291992188 221.3718566894531 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_3avecj =
+    '<svg viewBox="19.1 17.6 7.5 7.6" ><path transform="translate(-228.16, -219.1)" d="M 254.7324829101562 240.369384765625 L 251.9624481201172 244.2734527587891 L 250.4512939453125 243.2007446289062 L 249.5908203125 242.5901794433594 L 248.6234588623047 241.9033203125 L 248.6234588623047 241.9033203125 L 247.219970703125 240.9076843261719 L 247.5712127685547 240.4126281738281 L 248.1598205566406 239.5828094482422 L 249.3558349609375 237.8971862792969 L 249.9451904296875 237.068115234375 L 250.22021484375 236.679931640625 C 251.1472778320312 237.0047302246094 252.0110778808594 237.4875183105469 252.7733764648438 238.1069946289062 C 253.0726623535156 238.3490905761719 253.3546447753906 238.6116638183594 253.6174163818359 238.8927917480469 C 253.6897125244141 238.9713745117188 253.7588806152344 239.0452575683594 253.8263854980469 239.1230163574219 C 254.1656799316406 239.5101470947266 254.4689178466797 239.9273376464844 254.7324829101562 240.3694152832031 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_x45yk8 =
+    '<svg viewBox="23.6 4.3 15.0 16.2" ><path transform="translate(-276.39, -50.43)" d="M 315.0054321289062 54.73000717163086 L 303.5181884765625 70.915771484375 L 301.7398681640625 68.39640045166016 L 301.73828125 68.39875030517578 L 301.6746215820312 68.30915832519531 L 299.9599609375 65.87937164306641 L 299.9599609375 65.87859344482422 L 307.8724365234375 54.73000717163086 L 315.0054321289062 54.73000717163086 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_vxa32g =
+    '<svg viewBox="14.0 17.1 4.5 6.3" ><path transform="translate(-164.37, -200.82)" d="M 178.3899536132812 224.2970581054688 L 179.9301910400391 222.1266174316406 L 181.71484375 219.6119079589844 L 181.8617401123047 219.4052734375 L 182.4495544433594 218.575439453125 L 182.8943176269531 217.9499206542969" fill="none" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_dmn6hb =
+    '<svg viewBox="19.1 13.6 1.9 2.7" ><path transform="translate(-224.09, -158.91)" d="M 243.1999359130859 175.2056579589844 L 243.3633880615234 174.9754333496094 L 243.9512023925781 174.1455841064453 L 245.1480407714844 172.4599609375" fill="none" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_dgnxbo =
+    '<svg viewBox="21.6 4.3 6.0 8.4" ><path transform="translate(21.65, 4.3)" d="M 5.977033615112305 0 L 0 8.422539710998535" fill="none" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_i1v740 =
+    '<svg viewBox="11.6 17.1 10.2 8.1" ><path transform="translate(-141.17, -213.47)" d="M 163.001220703125 230.9700317382812 L 162.8142395019531 231.2325134277344 L 162.2248077392578 232.0623168945312 L 161.0311279296875 233.7471466064453 L 160.4425659179688 234.5762329101562 L 157.5648498535156 238.6302795410156 L 156.0560607910156 237.5615539550781 L 155.1916351318359 236.9470520019531 L 154.21484375 236.2539215087891 L 152.8200073242188 235.2638244628906 L 153.1688995361328 234.7718505859375 L 154.3869476318359 233.0564117431641 L 154.3869476318359 233.0564117431641 C 154.6056060791016 232.8378601074219 154.8364868164062 232.6319122314453 155.0784759521484 232.4395141601562 C 155.8453826904297 231.8250122070312 156.7129211425781 231.3479919433594 157.6426391601562 231.0297546386719 C 157.7212219238281 231.0030212402344 157.7998199462891 230.9771118164062 157.8783874511719 230.9511566162109 C 158.2085113525391 230.8487091064453 158.5447540283203 230.7668151855469 158.8850250244141 230.7059631347656 C 159.1511840820312 230.6577911376953 159.4214935302734 230.6224365234375 159.6960144042969 230.5998992919922 C 159.9317932128906 230.5804901123047 160.1698760986328 230.570556640625 160.4103393554688 230.570068359375 C 160.6759643554688 230.570068359375 160.9399871826172 230.5826416015625 161.2001342773438 230.6069641113281 L 161.2001342773438 230.6069641113281 C 161.6509399414062 230.6471862792969 162.0977172851562 230.7241973876953 162.5360412597656 230.8372344970703 C 162.6947937011719 230.8765258789062 162.8487548828125 230.9181823730469 163.001220703125 230.9700317382812 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_ynj997 =
+    '<svg viewBox="14.7 16.3 1.3 1.2" ><path transform="translate(-177.2, -203.73)" d="M 192.7671356201172 220 L 193.1954040527344 220.6066589355469 C 192.7561950683594 220.7697296142578 192.3298645019531 220.9657287597656 191.9200439453125 221.1929016113281 L 192.7671356201172 220 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_28dyki =
+    '<svg viewBox="15.7 11.0 7.1 5.8" ><path transform="translate(-188.86, -142.37)" d="M 211.6958312988281 158.4386901855469 L 211.1669921875 159.1836547851562 C 210.2434234619141 158.8617553710938 209.2749481201172 158.6872711181641 208.297119140625 158.6666107177734 L 208.0920104980469 158.6666107177734 L 207.97021484375 158.6666107177734 C 206.9884948730469 158.677978515625 206.0147705078125 158.8450622558594 205.08544921875 159.1616821289062 L 204.5699462890625 158.4308471679688 L 205.1592712402344 157.6025848388672 L 206.3553161621094 155.9169464111328 L 206.9439392089844 155.0863647460938 L 208.1399536132812 153.3999633789062 L 209.9175109863281 155.9193115234375 L 211.6958312988281 158.4386901855469 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_q3o5f4 =
+    '<svg viewBox="19.9 4.3 11.3 10.9" ><path transform="translate(-232.99, -50.43)" d="M 264.1814575195312 54.73000717163086 L 256.4158630371094 65.67269897460938 L 254.6375122070312 63.15254211425781 L 252.8599700927734 60.63317108154297 L 257.0484313964844 54.73000717163086 L 264.1814575195312 54.73000717163086 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_g8lrl1 =
+    '<svg viewBox="21.4 17.4 2.7 3.8" ><path transform="translate(-250.5, -203.61)" d="M 274.5419921875 224.7710571289062 L 274.0618896484375 224.0904998779297 L 272.2843627929688 221.5703430175781 L 272.1381225585938 221.3636474609375 L 271.8599853515625 220.9699554443359" fill="none" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_q0gvnu =
+    '<svg viewBox="12.1 4.3 8.5 12.1" ><path transform="translate(-142.4, -50.43)" d="M 154.5499725341797 54.73000717163086 L 160.4900512695312 63.14704132080078 L 162.2676086425781 65.66719818115234 L 163.0958557128906 66.84044647216797" fill="none" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_we9bj7 =
+    '<svg viewBox="7.9 0.0 1.0 1.0" ><path transform="translate(-93.05, -0.08)" d="M 100.9978485107422 0.09392917156219482 L 100.9899826049805 0.09392917156219482 L 100.9947052001953 0.09000003337860107 L 100.9978485107422 0.09392917156219482 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_l7q63u =
+    '<svg viewBox="8.6 4.3 15.3 13.2" ><path transform="translate(-105.3, -63.43)" d="M 129.1680603027344 80.95709228515625 C 128.7447509765625 80.71246337890625 128.3025054931641 80.50222778320312 127.8455200195312 80.32841491699219 C 127.7669372558594 80.29856872558594 127.6883544921875 80.27027893066406 127.6097717285156 80.24356079101562 C 126.6870803833008 79.92277526855469 125.7197189331055 79.74908447265625 124.7430419921875 79.72882080078125 L 124.5379638671875 79.72882080078125 L 124.4161376953125 79.72882080078125 C 123.7756042480469 79.73692321777344 123.1376190185547 79.81063842773438 122.512092590332 79.9488525390625 L 121.6052398681641 78.66481781005859 L 113.8899383544922 67.72998046875 L 119.8347625732422 67.72998046875 L 124.5858917236328 74.46218872070312 L 126.3634338378906 76.9815673828125 L 128.142578125 79.50094604492188 L 128.2887268066406 79.70840454101562 L 129.1680603027344 80.95709228515625 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_rq0l8 =
+    '<svg viewBox="17.7 17.1 8.0 5.7" ><path transform="translate(-212.29, -213.47)" d="M 237.9588775634766 233.4917602539062 L 237.92822265625 233.5137634277344 L 236.3353729248047 234.6382446289062 L 235.5495300292969 235.1883544921875 L 234.4037933349609 235.9962005615234 L 233.9566192626953 236.310546875 L 232.2899169921875 233.9483184814453 L 232.1461029052734 233.7471466064453 L 230.3677673339844 231.2269592285156 L 230 230.7059631347656 C 230.26611328125 230.6577911376953 230.5364379882812 230.6224365234375 230.8109741210938 230.5998992919922 C 231.0467224121094 230.5804901123047 231.2847900390625 230.570556640625 231.5252990722656 230.570068359375 C 231.7908935546875 230.570068359375 232.054931640625 230.5826416015625 232.3150787353516 230.6069641113281 L 232.3150787353516 230.6069641113281 C 232.765869140625 230.6471862792969 233.2126312255859 230.7241973876953 233.6509399414062 230.8372344970703 C 233.8080749511719 230.8765258789062 233.9613494873047 230.9212799072266 234.1138000488281 230.9700317382812 C 234.1923828125 230.9944000244141 234.2709655761719 231.0218811035156 234.3495788574219 231.0486145019531 C 235.2765960693359 231.3734130859375 236.1403961181641 231.8562164306641 236.9027099609375 232.4756774902344 C 237.2019348144531 232.7177734375 237.4839172363281 232.9803161621094 237.7467041015625 233.2615203857422 C 237.8221435546875 233.3369445800781 237.8912963867188 233.4139251708984 237.9588775634766 233.4917602539062 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_j6vnve =
+    '<svg viewBox="13.8 18.8 2.9 4.1" ><path transform="translate(-161.58, -220.25)" d="M 175.3599853515625 239.0298767089844 L 175.4872741699219 239.2106628417969 L 177.1382751464844 241.550048828125 L 178.2251281738281 243.0910949707031" fill="none" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_xo62w8 =
+    '<svg viewBox="0.5 0.0 1.0 1.0" ><path transform="translate(0.52, 0.0)" d="M 0.007858314551413059 0.01100163534283638 L 0 0" fill="none" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_s8hkjt =
+    '<svg viewBox="3.6 4.3 9.9 14.0" ><path transform="translate(3.56, 4.3)" d="M 9.886547088623047 14.01058292388916 L 0 0" fill="none" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_cq8zfh =
+    '<svg viewBox="0.5 0.0 1.0 1.0" ><path transform="translate(-5.98, 0.0)" d="M 6.512786388397217 0.01100163534283638 L 6.489997863769531 0.01100163534283638 L 6.504928588867188 0 L 6.512786388397217 0.01100163534283638 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_p02co8 =
+    '<svg viewBox="0.0 4.3 16.0 16.2" ><path transform="translate(-4.63, -63.43)" d="M 20.62323760986328 80.30563354492188 C 18.75549697875977 80.99927520751953 17.1584644317627 82.27193450927734 16.0654125213623 83.937744140625 L 4.629999160766602 67.72998046875 L 11.74884605407715 67.72998046875 L 20.1949577331543 79.69582366943359 L 20.62323760986328 80.30563354492188 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_k2cssq =
+    '<svg viewBox="11.9 17.6 7.1 7.0" ><path transform="translate(-144.54, -218.84)" d="M 163.5596923828125 240.0032653808594 L 161.1833648681641 241.6802062988281 L 159.4191284179688 242.9241485595703 L 158.8054046630859 243.357177734375 L 157.5787658691406 241.6165771484375 L 156.5328063964844 240.1313171386719 L 156.4699401855469 240.041748046875 L 156.4699401855469 240.041748046875 C 156.8293914794922 239.4500732421875 157.259521484375 238.9043884277344 157.7508544921875 238.4165954589844 L 157.7508544921875 238.4165954589844 L 157.7508544921875 238.4165954589844 C 157.9694976806641 238.1980743408203 158.2003936767578 237.9921417236328 158.4423828125 237.7997436523438 C 159.209228515625 237.1852111816406 160.0768280029297 236.7082366943359 161.0065612792969 236.3899993896484 L 161.8780670166016 237.6244812011719 L 163.5596923828125 240.0032653808594 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_3i1zoy =
+    '<svg viewBox="20.0 17.1 4.0 5.7" ><path transform="translate(-234.82, -200.91)" d="M 254.8499603271484 218.0399017333984 L 254.8507537841797 218.0399017333984 L 255.8754730224609 219.4937133789062 L 256.0216369628906 219.6995849609375 L 257.7991638183594 222.2197570800781 L 258.0852355957031 222.6244506835938 L 258.8852233886719 223.757568359375" fill="none" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_dni4h6 =
+    '<svg viewBox="7.9 0.0 1.0 1.0" ><path transform="translate(7.94, 0.01)" d="M 0.003143325448036194 0.003929155878722668 L 0 0" fill="none" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_6uquvb =
+    '<svg viewBox="11.0 4.3 8.5 12.0" ><path transform="translate(-128.64, -50.43)" d="M 139.6099243164062 54.73000717163086 L 146.1354522705078 63.9776611328125 L 147.9137878417969 66.49703979492188 L 148.0772399902344 66.72885131835938" fill="none" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_hg6dig =
+    '<svg viewBox="7.4 4.3 16.4 13.2" ><path transform="translate(-91.58, -63.43)" d="M 115.4482192993164 80.95709228515625 C 115.0248947143555 80.71246337890625 114.5826416015625 80.50222778320312 114.1256561279297 80.32841491699219 C 114.0470733642578 80.29856872558594 113.968505859375 80.27027893066406 113.8899078369141 80.24356079101562 C 112.9672164916992 79.92277526855469 111.9998474121094 79.74908447265625 111.023193359375 79.72882080078125 L 110.8181076049805 79.72882080078125 L 110.6962890625 79.72882080078125 C 109.7145843505859 79.74018859863281 108.7408599853516 79.90731048583984 107.8115234375 80.22389221191406 L 107.2960052490234 79.49308013916016 L 98.99998474121094 67.72998046875 L 106.1188125610352 67.72998046875 L 110.8660430908203 74.46218872070312 L 112.6435852050781 76.9815673828125 L 114.4227142333984 79.50094604492188 L 114.5688934326172 79.70840454101562 L 115.4482192993164 80.95709228515625 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_nr6ez1 =
+    '<svg viewBox="16.7 17.1 9.7 7.4" ><path transform="translate(-200.57, -213.47)" d="M 227.0069274902344 234.6476745605469 L 224.63134765625 236.3246765136719 L 222.864013671875 237.5709991455078 L 222.2550048828125 238.0016479492188 L 221.0361938476562 236.2728271484375 L 221.0361938476562 236.2728271484375 L 219.9839782714844 234.7797241210938 L 219.8378295898438 234.5722961425781 L 218.0594482421875 232.0528564453125 L 217.2798919677734 230.9480590820312 C 217.6078186035156 230.8468933105469 217.9416198730469 230.7660827636719 218.2795104980469 230.7059631347656 C 218.5456237792969 230.6577911376953 218.8159332275391 230.6224365234375 219.0904846191406 230.5998992919922 C 219.3262329101562 230.5804901123047 219.5643157958984 230.570556640625 219.8047790527344 230.570068359375 C 220.0704345703125 230.570068359375 220.3344421386719 230.5826416015625 220.5945434570312 230.6069641113281 L 220.5945434570312 230.6069641113281 C 221.0453643798828 230.6471862792969 221.4921569824219 230.7241973876953 221.9304809570312 230.8372344970703 C 222.087646484375 230.8765258789062 222.2408294677734 230.9212799072266 222.393310546875 230.9700317382812 C 222.4719085693359 230.9944000244141 222.5505065917969 231.0218811035156 222.6290893554688 231.0486145019531 C 223.5560913085938 231.3734130859375 224.4198913574219 231.8562164306641 225.1822052001953 232.4756774902344 C 225.4814453125 232.7177734375 225.763427734375 232.9803161621094 226.0262451171875 233.2615203857422 L 226.20458984375 233.5137634277344 L 227.0069274902344 234.6476745605469 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_ipsxwq =
+    '<svg viewBox="10.7 17.1 17.1 17.1" ><path transform="translate(-130.01, -213.47)" d="M 157.7864990234375 239.1128234863281 C 157.7864990234375 242.728515625 155.5118865966797 245.951904296875 152.1063842773438 247.1633605957031 C 148.7021179199219 248.3748474121094 144.9026489257812 247.3126678466797 142.6195373535156 244.5104370117188 C 140.3363647460938 241.708251953125 140.0637512207031 237.7725372314453 141.9386138916016 234.6822814941406 L 141.9386138916016 234.6822814941406 C 142.2981414794922 234.0906372070312 142.7282409667969 233.5448913574219 143.2195434570312 233.0571594238281 L 143.2195434570312 233.0572052001953 L 143.2195434570312 233.0572052001953 C 143.4382171630859 232.8386535644531 143.6690673828125 232.6327056884766 143.9111022949219 232.4403076171875 C 144.6779479980469 231.8258361816406 145.5455169677734 231.3488464355469 146.4752502441406 231.030517578125 C 146.5538635253906 231.0038299560547 146.6324310302734 230.9778747558594 146.7109680175781 230.9519500732422 C 147.0409088134766 230.8492431640625 147.3768005371094 230.76708984375 147.7168884277344 230.7059631347656 C 147.9830017089844 230.6577911376953 148.2533111572266 230.6224365234375 148.5278472900391 230.5998992919922 C 148.7635955810547 230.5804901123047 149.001708984375 230.570556640625 149.2421569824219 230.570068359375 C 149.5077819824219 230.570068359375 149.7717895507812 230.5826416015625 150.0319366455078 230.6069641113281 L 150.0319366455078 230.6069641113281 C 150.4827575683594 230.6471862792969 150.9295349121094 230.7241973876953 151.3678588867188 230.8372344970703 C 151.5249938964844 230.8765258789062 151.6782531738281 230.9212799072266 151.8306732177734 230.9700317382812 C 151.9092712402344 230.9944000244141 151.9878845214844 231.0218811035156 152.0664672851562 231.0486145019531 C 152.9934387207031 231.3734130859375 153.8572692871094 231.8562164306641 154.6195831298828 232.4756774902344 C 154.9188079833984 232.7177734375 155.2007904052734 232.9803161621094 155.4636077880859 233.2615203857422 C 155.535888671875 233.3400726318359 155.6050415039062 233.4139251708984 155.672607421875 233.4917602539062 C 157.0344085693359 235.047607421875 157.7845458984375 237.045166015625 157.7833251953125 239.1128234863281 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_7iq2mu =
+    '<svg viewBox="25.2 18.2 2.5 3.6" ><path transform="translate(25.22, 18.16)" d="M 2.509945392608643 3.555099964141846 L 0 0" fill="none" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_b6j8zr =
+    '<svg viewBox="25.3 17.9 1.0 1.0" ><path transform="translate(-296.49, -209.63)" d="M 321.8450317382812 227.5986633300781 L 321.8435668945312 227.60107421875 L 321.77978515625 227.511474609375 L 321.7821960449219 227.5098876953125 L 321.8450317382812 227.5986633300781 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_srblq6 =
+    '<svg viewBox="85.0 477.0 260.0 65.0" ><defs><filter id="shadow"><feDropShadow dx="0" dy="3" stdDeviation="6"/></filter></defs><path transform="translate(85.0, 477.0)" d="M 20 0 L 240 0 C 251.0457000732422 0 260 8.954304695129395 260 20 L 260 45 C 260 56.04569625854492 251.0457000732422 65 240 65 L 20 65 C 8.954304695129395 65 0 56.04569625854492 0 45 L 0 20 C 0 8.954304695129395 8.954304695129395 0 20 0 Z" fill="#f4f4f9" stroke="#707070" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" filter="url(#shadow)"/></svg>';
+const String _svg_ud36q7 =
+    '<svg viewBox="0.0 0.0 24.1 24.1" ><path transform="translate(-5.66, -6.49)" d="M 29.80850601196289 18.56335830688477 C 29.80850601196289 18.69598388671875 29.80850601196289 18.82761192321777 29.80207633972168 18.9592399597168 C 29.68873977661133 22.50490760803223 28.01937675476074 25.82064437866211 25.23859786987305 28.02334213256836 C 24.96676445007324 28.23909759521484 24.68552398681641 28.44330215454102 24.3948860168457 28.63596153259277 C 22.42046165466309 29.94502258300781 20.10321807861328 30.64140319824219 17.73425102233887 30.63761901855469 C 17.16699600219727 30.63761901855469 16.60266494750977 30.59832763671875 16.04311370849609 30.5200309753418 C 15.73194217681885 30.4767894744873 15.42298984527588 30.42120361328125 15.11849117279053 30.35358238220215 C 12.21089267730713 29.70753479003906 9.644453048706055 28.01009178161621 7.912046432495117 25.58721542358398 C 7.756994247436523 25.37080574035645 7.608536720275879 25.1492748260498 7.466686248779297 24.92263221740723 C 6.352306842803955 23.12788391113281 5.731313228607178 21.07082176208496 5.66643238067627 18.9592399597168 C 5.661979198455811 18.82761192321777 5.659999370574951 18.69598388671875 5.659999370574951 18.56335830688477 C 5.659999370574951 18.43074417114258 5.659999370574951 18.29911613464355 5.66643238067627 18.16748809814453 C 5.732021331787109 16.04937744140625 6.357249736785889 13.98639869689941 7.478559494018555 12.18825244903564 C 7.507755279541016 12.13876914978027 7.537447929382324 12.09373378753662 7.567634582519531 12.04672431945801 C 7.681447982788086 11.86956882476807 7.799880027770996 11.69554901123047 7.922933578491211 11.52466106414795 C 7.956086158752441 11.47765064239502 7.990230560302734 11.43113422393799 8.024871826171875 11.38462162017822 C 9.869938850402832 8.88773250579834 12.60608768463135 7.197726249694824 15.66480922698975 6.66576099395752 C 15.98249912261963 6.610671043395996 16.30430793762207 6.568442344665527 16.6302490234375 6.539081573486328 C 16.99313735961914 6.506092071533203 17.36113929748535 6.489596366882324 17.73425102233887 6.489596366882324 C 20.09785270690918 6.485176086425781 22.41024971008301 7.178001403808594 24.38202285766602 8.481354713439941 C 24.58787727355957 8.616940498352051 24.78894424438477 8.758630752563477 24.98523902893066 8.906427383422852 C 25.06688499450684 8.967788696289062 25.14804077148438 9.03014087677002 25.22820854187012 9.094470024108887 C 25.38210105895996 9.215211868286133 25.53253555297852 9.34189510345459 25.68000030517578 9.470057487487793 C 28.20368194580078 11.67005825042725 29.69785499572754 14.82118225097656 29.80405426025391 18.16748809814453 C 29.8065242767334 18.29911613464355 29.80850601196289 18.43074417114258 29.80850601196289 18.56335830688477 Z" fill="#707070" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_ra7xtg =
+    '<svg viewBox="0.0 11.7 24.1 1.0" ><path transform="translate(-5.66, -230.8)" d="M 29.80850601196289 242.8758850097656 C 29.80850601196289 243.0083923339844 29.80850601196289 243.1400756835938 29.80207633972168 243.2716064453125 L 5.66643238067627 243.2716064453125 C 5.661979198455811 243.1400756835938 5.659999370574951 243.0083923339844 5.659999370574951 242.8758850097656 C 5.659999370574951 242.7431335449219 5.659999370574951 242.6115417480469 5.66643238067627 242.4799194335938 L 29.80207633972168 242.4799194335938 C 29.8065242767334 242.6115417480469 29.80850601196289 242.7431335449219 29.80850601196289 242.8758850097656 Z" fill="#030e13" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_dfue39 =
+    '<svg viewBox="6.6 0.0 4.3 24.0" ><path transform="translate(-133.06, -7.44)" d="M 142.9762573242188 30.32766914367676 C 143.1326446533203 30.72354316711426 143.2881774902344 31.10408592224121 143.4429321289062 31.46927833557129 C 143.1294708251953 31.42573356628418 142.8205871582031 31.37014579772949 142.5160980224609 31.30251502990723 C 142.4236602783203 31.08148384094238 142.3316345214844 30.85418510437012 142.2399139404297 30.62061882019043 C 141.5471649169922 28.86342239379883 140.7706909179688 26.6163158416748 140.2605438232422 24.2727165222168 C 140.2034759521484 24.01242828369141 140.1502532958984 23.75115013122559 140.1006774902344 23.48888397216797 C 139.8685150146484 22.30897521972656 139.7328338623047 21.11210632324219 139.6949615478516 19.91016006469727 C 139.6914672851562 19.77753639221191 139.6900024414062 19.64590835571289 139.6900024414062 19.5142765045166 C 139.6900024414062 19.38264846801758 139.6900024414062 19.25498199462891 139.6949615478516 19.1184024810791 C 139.7319793701172 17.91428756713867 139.8779602050781 16.71600151062012 140.1308746337891 15.53818035125732 C 140.1837158203125 15.28449535369873 140.2429046630859 15.02354335784912 140.3085327148438 14.75533580780029 C 140.6959838867188 13.1648998260498 141.306640625 11.33149147033691 142.2498474121094 9.278867721557617 C 142.5264129638672 8.677131652832031 142.8020324707031 8.12043285369873 143.0637969970703 7.616678714752197 C 143.3815307617188 7.561583995819092 143.7033843994141 7.519357204437256 144.0293273925781 7.489999294281006 C 143.6923370361328 8.109053611755371 143.3261260986328 8.82905387878418 142.9614715576172 9.623778343200684 C 142.3250274658203 11.00934505462646 141.6198883056641 12.79079627990723 141.1250152587891 14.74593448638916 C 141.0570678710938 15.00985622406006 140.9938812255859 15.27756404876709 140.9355316162109 15.54907321929932 C 140.6738891601562 16.72208786010742 140.5233001708984 17.91713905334473 140.4857025146484 19.11839866638184 C 140.4817504882812 19.25002670288086 140.4802551269531 19.38215255737305 140.4802551269531 19.5142765045166 C 140.4802551269531 19.64640045166016 140.4802551269531 19.7725830078125 140.4857025146484 19.91015434265137 C 140.5094604492188 20.8389778137207 140.6208343505859 22.0261173248291 140.9048461914062 23.48492240905762 C 140.9559631347656 23.74719429016113 141.0128326416016 24.01869964599609 141.0755615234375 24.2994384765625 C 141.4526062011719 25.98341369628906 142.0503845214844 27.98803329467773 142.9762573242188 30.32766914367676 Z" fill="#030e13" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_udojr1 =
+    '<svg viewBox="1.8 16.0 17.8 6.1" ><path transform="translate(-40.39, -314.45)" d="M 59.97042846679688 335.9811401367188 C 59.69860076904297 336.1968688964844 59.4173583984375 336.4011535644531 59.12673187255859 336.5936889648438 C 58.37010955810547 336.3991088867188 57.62935638427734 336.1475830078125 56.91079711914062 335.8410339355469 C 54.5355224609375 334.8131713867188 52.942626953125 333.7592468261719 51.66245269775391 332.9120788574219 C 50.36894226074219 332.056396484375 49.45592498779297 331.4521789550781 48.40982818603516 331.3062438964844 C 48.24589538574219 331.2831115722656 48.08054351806641 331.2716674804688 47.91497039794922 331.2716674804688 C 47.80809020996094 331.2716674804688 47.70137023925781 331.2743225097656 47.59480285644531 331.2796020507812 C 46.09442901611328 331.3544006347656 44.61979675292969 331.9559631347656 43.20799255371094 333.0710144042969 C 43.019287109375 333.2200317382812 42.83174133300781 333.3780517578125 42.64534759521484 333.5448303222656 C 42.49030303955078 333.3285217285156 42.34185791015625 333.1069946289062 42.20000457763672 332.8802490234375 C 42.36856842041016 332.7316589355469 42.53830718994141 332.5896911621094 42.70919799804688 332.4547729492188 C 44.21897888183594 331.2617492675781 45.80545043945312 330.6046142578125 47.43548583984375 330.4957275390625 C 47.59514617919922 330.4851989746094 47.75515747070312 330.47998046875 47.91546630859375 330.47998046875 C 48.02565765380859 330.47998046875 48.13419342041016 330.4837646484375 48.24107360839844 330.49169921875 C 49.59003448486328 330.5906982421875 50.66039276123047 331.2983703613281 52.10089111328125 332.2519836425781 C 53.35482025146484 333.081787109375 54.91558074951172 334.1145629882812 57.22698974609375 335.1145935058594 C 58.07466125488281 335.4813232421875 59.00548553466797 335.7644653320312 59.97042846679688 335.9811401367188 Z" fill="#030e13" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_nx4pzg =
+    '<svg viewBox="1.8 2.0 17.7 6.1" ><path transform="translate(-40.59, -44.75)" d="M 60.15767288208008 47.35305023193359 C 59.1946907043457 47.56782531738281 58.26337814331055 47.84791946411133 57.41719436645508 48.21408462524414 C 55.10477828979492 49.21121215820312 53.54254913330078 50.24295806884766 52.28762817382812 51.07035827636719 C 50.84513092041016 52.02193450927734 49.77378845214844 52.72856903076172 48.42485046386719 52.82507705688477 C 48.31796646118164 52.83300018310547 48.20941543579102 52.83695602416992 48.09923934936523 52.83695602416992 C 47.93890380859375 52.83695602416992 47.77890777587891 52.83135986328125 47.61923217773438 52.82014083862305 C 45.99119567871094 52.71028518676758 44.40570449829102 52.05014801025391 42.89792251586914 50.85508728027344 C 42.73294830322266 50.72479248046875 42.57031631469727 50.58868789672852 42.40998077392578 50.44685745239258 C 42.43917465209961 50.39736557006836 42.46887588500977 50.35231781005859 42.49905776977539 50.30531311035156 C 42.61286926269531 50.12818145751953 42.7313232421875 49.95413589477539 42.85436248779297 49.78326416015625 C 43.03349685668945 49.94358062744141 43.21394348144531 50.09566879272461 43.39571762084961 50.23949432373047 C 44.80604553222656 51.35637283325195 46.27968597412109 51.96006774902344 47.78006744384766 52.03679275512695 C 47.88646697998047 52.04223251342773 47.99333953857422 52.04471588134766 48.10023880004883 52.04520034790039 C 48.26575469970703 52.04513549804688 48.43111419677734 52.03372192382812 48.59506988525391 52.01105499267578 C 49.64118957519531 51.86655426025391 50.55514907836914 51.26335144042969 51.84967803955078 50.40972518920898 C 53.13134002685547 49.56404113769531 54.72523880004883 48.51200485229492 57.10198593139648 47.4871711730957 C 57.81928634643555 47.18276214599609 58.55852890014648 46.93299865722656 59.31345748901367 46.73995590209961 C 59.51931381225586 46.87552261352539 59.72038650512695 47.0172233581543 59.91667556762695 47.16501998901367 C 59.99633407592773 47.22637176513672 60.07749557495117 47.28873443603516 60.15767288208008 47.35305023193359 Z" fill="#030e13" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_jiommn =
+    '<svg viewBox="16.7 20.1 1.0 1.0" ><path transform="translate(-325.93, -391.68)" d="M 342.6000061035156 411.7300109863281" fill="none" stroke="#3d332a" stroke-width="16" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
+const String _svg_xqtt15 =
+    '<svg viewBox="16.7 20.0 1.0 1.0" ><path transform="translate(-325.98, -391.44)" d="M 342.6600036621094 411.4800109863281" fill="none" stroke="#3d332a" stroke-width="16" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
+const String _svg_lbtdbu =
+    '<svg viewBox="85.0 398.0 260.0 65.0" ><defs><filter id="shadow"><feDropShadow dx="0" dy="3" stdDeviation="6"/></filter></defs><path transform="translate(85.0, 398.0)" d="M 20 0 L 240 0 C 251.0457000732422 0 260 8.954304695129395 260 20 L 260 45 C 260 56.04569625854492 251.0457000732422 65 240 65 L 20 65 C 8.954304695129395 65 0 56.04569625854492 0 45 L 0 20 C 0 8.954304695129395 8.954304695129395 0 20 0 Z" fill="#f4f4f9" stroke="#707070" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" filter="url(#shadow)"/></svg>';
+const String _svg_2eg7ge =
+    '<svg viewBox="45.0 348.0 10.0 9.0" ><path transform="translate(45.0, 348.0)" d="M 4.999999523162842 0 L 10 9 L 0 9 Z" fill="#009e20" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_dr1d58 =
+    '<svg viewBox="85.0 319.0 260.0 65.0" ><defs><filter id="shadow"><feDropShadow dx="0" dy="3" stdDeviation="6"/></filter></defs><path transform="translate(85.0, 319.0)" d="M 20 0 L 240 0 C 251.0457000732422 0 260 8.954304695129395 260 20 L 260 45 C 260 56.04569625854492 251.0457000732422 65 240 65 L 20 65 C 8.954304695129395 65 0 56.04569625854492 0 45 L 0 20 C 0 8.954304695129395 8.954304695129395 0 20 0 Z" fill="#f4f4f9" stroke="#707070" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" filter="url(#shadow)"/></svg>';
