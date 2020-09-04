@@ -1,295 +1,215 @@
 import 'package:flutter/material.dart';
-import 'package:hoopr/services/authentication.dart';
-import 'package:hoopr/pages/root_page.dart';
-import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import 'package:adobe_xd/page_link.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-//import 'package:hoopr_ui/XDMessageName.dart';
 import './XDSignUp.dart';
+import 'package:adobe_xd/page_link.dart';
 import './XDLogin.dart';
-import 'XDChallenges1.dart';
-import 'XDChallenges2.dart';
-import 'XDChallenges3.dart';
-import 'XDChallenges4.dart';
-import 'XDChallenges41.dart';
-import 'XDChallenges42.dart';
-import 'XDChallengesPopup.dart';
-import 'XDChallengesPopup1.dart';
-import 'XDLeaderboard.dart';
-import 'XDLeaderboardPopup.dart';
-import 'XDUserProfile1.dart';
-import 'XDUserProfile2.dart';
-import 'XDUserProfile3.dart';
-import 'XDUserProfile4.dart';
-import 'XDMainPage.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-// Runs the app, sets up the routes to different pages
-
-void main() => runApp(MyApp());
-
-/// This Widget is the main application widget.
-class MyApp extends StatelessWidget {
-  static const String _title = 'Flutter Code Sample';
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(title: _title, home: MyStatefulWidget(), routes: {
-      'signup': (context) => XDSignUp(),
-      'login': (context) => XDLogin(),
-      'mainpage': (context) => XDMainPage(),
-    });
-  }
-}
-
-class MyStatefulWidget extends StatefulWidget {
-  MyStatefulWidget({Key key}) : super(key: key);
-
-  @override
-  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
-}
-
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  int _selectedIndex = 0;
-  //static const TextStyle optionStyle =
-  //    TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static List<Widget> _widgetOptions = <Widget>[
-    XDMainPage(),
-    XDLogin(),
-    XDSignUp(),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
+class XDMainPage extends StatelessWidget {
+  XDMainPage({
+    Key key,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
-      ),
-      body: Stack(children: <Widget>[
-        Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
-        ),
-        Transform.translate(
-          offset: Offset(23.0, 478.0),
-          child: Text(
-            'Welcome to Hoopr!',
-            style: TextStyle(
-              fontFamily: 'Open Sans',
-              fontSize: 24,
-              color: const Color(0xffffffff),
-              fontWeight: FontWeight.w700,
+      backgroundColor: const Color(0xff001331),
+      body: Stack(
+        children: <Widget>[
+          Transform.translate(
+            offset: Offset(23.0, 478.0),
+            child: Text(
+              'Welcome to Hoopr!',
+              style: TextStyle(
+                fontFamily: 'Open Sans',
+                fontSize: 24,
+                color: const Color(0xffffffff),
+                fontWeight: FontWeight.w700,
+              ),
+              textAlign: TextAlign.left,
             ),
-            textAlign: TextAlign.left,
           ),
-        ),
-        Transform.translate(
-          offset: Offset(23.0, 511.0),
-          child: Text(
-            'Meet your ball community.',
-            style: TextStyle(
-              fontFamily: 'Open Sans',
-              fontSize: 14,
-              color: const Color(0xffadadad),
+          Transform.translate(
+            offset: Offset(23.0, 511.0),
+            child: Text(
+              'Meet your ball community.',
+              style: TextStyle(
+                fontFamily: 'Open Sans',
+                fontSize: 14,
+                color: const Color(0xffadadad),
+              ),
+              textAlign: TextAlign.left,
             ),
-            textAlign: TextAlign.left,
           ),
-        ),
-        /*
-        Transform.translate(
-          offset: Offset(78.0, 152.0),
-          child:
-              // Adobe XD layer: 'hooprlogo1' (group)
-              SizedBox(
-            width: 222.0,
-            height: 222.0,
-            child: Stack(
+          Transform.translate(
+            offset: Offset(78.0, 152.0),
+            child:
+                // Adobe XD layer: 'hooprlogo1' (group)
+                SizedBox(
+              width: 222.0,
+              height: 222.0,
+              child: Stack(
                 children: <Widget>[
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(0.0, 0.0, 222.0, 222.0),
-                  size: Size(222.0, 222.0),
-                  pinLeft: true,
-                  pinRight: true,
-                  pinTop: true,
-                  pinBottom: true,
-                  child: SvgPicture.string(
-                    _svg_zb0lqx,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 0.0, 222.0, 222.0),
+                    size: Size(222.0, 222.0),
+                    pinLeft: true,
+                    pinRight: true,
+                    pinTop: true,
+                    pinBottom: true,
+                    child: SvgPicture.string(
+                      _svg_zb0lqx,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                ),
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(0.0, 107.4, 222.0, 7.3),
-                  size: Size(222.0, 222.0),
-                  pinLeft: true,
-                  pinRight: true,
-                  fixedHeight: true,
-                  child: SvgPicture.string(
-                    _svg_ap996i,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 107.4, 222.0, 7.3),
+                    size: Size(222.0, 222.0),
+                    pinLeft: true,
+                    pinRight: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_ap996i,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                ),
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(61.0, 0.5, 39.9, 220.4),
-                  size: Size(222.0, 222.0),
-                  pinTop: true,
-                  pinBottom: true,
-                  fixedWidth: true,
-                  child: SvgPicture.string(
-                    _svg_fdlk7p,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(61.0, 0.5, 39.9, 220.4),
+                    size: Size(222.0, 222.0),
+                    pinTop: true,
+                    pinBottom: true,
+                    fixedWidth: true,
+                    child: SvgPicture.string(
+                      _svg_fdlk7p,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                ),
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(16.6, 147.4, 163.4, 56.2),
-                  size: Size(222.0, 222.0),
-                  pinLeft: true,
-                  pinBottom: true,
-                  fixedWidth: true,
-                  fixedHeight: true,
-                  child: SvgPicture.string(
-                    _svg_d1gge5,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(16.6, 147.4, 163.4, 56.2),
+                    size: Size(222.0, 222.0),
+                    pinLeft: true,
+                    pinBottom: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_d1gge5,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                ),
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(16.7, 18.3, 163.2, 56.1),
-                  size: Size(222.0, 222.0),
-                  pinLeft: true,
-                  pinTop: true,
-                  fixedWidth: true,
-                  fixedHeight: true,
-                  child: SvgPicture.string(
-                    _svg_prb5aq,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(16.7, 18.3, 163.2, 56.1),
+                    size: Size(222.0, 222.0),
+                    pinLeft: true,
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_prb5aq,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                ),
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(153.3, 184.4, 1.0, 1.0),
-                  size: Size(222.0, 222.0),
-                  pinBottom: true,
-                  fixedWidth: true,
-                  fixedHeight: true,
-                  child: SvgPicture.string(
-                    _svg_rbv5oy,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(153.3, 184.4, 1.0, 1.0),
+                    size: Size(222.0, 222.0),
+                    pinBottom: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_rbv5oy,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                ),
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(153.3, 184.2, 1.0, 1.0),
-                  size: Size(222.0, 222.0),
-                  pinBottom: true,
-                  fixedWidth: true,
-                  fixedHeight: true,
-                  child: SvgPicture.string(
-                    _svg_m29862,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(153.3, 184.2, 1.0, 1.0),
-                  size: Size(222.0, 222.0),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(153.3, 184.2, 1.0, 1.0),
+                    size: Size(222.0, 222.0),
                     pinBottom: true,
                     fixedWidth: true,
                     fixedHeight: true,
                     child: SvgPicture.string(
                       _svg_m29862,
                       allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
+                      fit: BoxFit.fill,
+                    ),
                   ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(153.3, 184.2, 1.0, 1.0),
+                    size: Size(222.0, 222.0),
+                    pinBottom: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child: SvgPicture.string(
+                      _svg_m29862,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(23.0, 571.0),
+            child: PageLink(
+              links: [
+                PageLinkInfo(
+                  transition: LinkTransition.Fade,
+                  ease: Curves.easeOut,
+                  duration: 0.3,
+                  pageBuilder: () => XDSignUp(),
                 ),
               ],
+              child: Container(
+                width: 331.0,
+                height: 61.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30.0),
+                  color: const Color(0xffff8336),
                 ),
-          ),
-        ),
-        Transform.translate(
-          offset: Offset(30.0, 571.0),
-          child: PageLink(
-            links: [
-              PageLinkInfo(
-                transition: LinkTransition.Fade,
-                ease: Curves.easeOut,
-                duration: 0.3,
-                pageBuilder: () => XDSignUp(),
-              ),
-            ],
-            child: Container(
-              width: 331.0,
-              height: 61.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30.0),
-                color: const Color(0xffff8336),
               ),
             ),
           ),
-        ),
-        Transform.translate(
-          offset: Offset(122.0, 588.0),
-          child: Text(
-            'GET STARTED',
-            style: TextStyle(
-              fontFamily: 'Open Sans',
-              fontSize: 20,
-              color: const Color(0xff001331), //0xff001331
-              letterSpacing: 0.4,
-              fontWeight: FontWeight.w700,
-            ),
-            textAlign: TextAlign.left,
-          ),
-        ),
-        Transform.translate(
-          offset: Offset(106.0, 642.0),
-          child: PageLink(
-            links: [
-              PageLinkInfo(
-                transition: LinkTransition.Fade,
-                ease: Curves.easeOut,
-                duration: 0.3,
-                pageBuilder: () => XDLogin(),
-              ),
-            ],
+          Transform.translate(
+            offset: Offset(122.0, 588.0),
             child: Text(
-              'Already have an account?',
+              'GET STARTED',
               style: TextStyle(
                 fontFamily: 'Open Sans',
-                fontSize: 14,
-                color: const Color(0xffff8336),
+                fontSize: 20,
+                color: const Color(0xff001331),
+                letterSpacing: 0.4,
+                fontWeight: FontWeight.w700,
               ),
               textAlign: TextAlign.left,
             ),
           ),
-        ),*/
-      ]),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.blue[900],
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            title: Text('Challenges'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            title: Text('Leaderboard'),
+          Transform.translate(
+            offset: Offset(106.0, 642.0),
+            child: PageLink(
+              links: [
+                PageLinkInfo(
+                  transition: LinkTransition.Fade,
+                  ease: Curves.easeOut,
+                  duration: 0.3,
+                  pageBuilder: () => XDLogin(),
+                ),
+              ],
+              child: Text(
+                'Already have an account?',
+                style: TextStyle(
+                  fontFamily: 'Open Sans',
+                  fontSize: 14,
+                  color: const Color(0xffff8336),
+                ),
+                textAlign: TextAlign.left,
+              ),
+            ),
           ),
         ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
       ),
     );
   }
