@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: _title, home: MyStatefulWidget(), routes: {
+    return MaterialApp(title: _title, home: XDLogin(), routes: {
       'signup': (context) => XDSignUp(),
       'login': (context) => XDLogin(),
       'mainpage': (context) => XDMainPage(),
@@ -42,258 +42,260 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyStatefulWidget extends StatefulWidget {
-  MyStatefulWidget({Key key}) : super(key: key);
+//below is the bottom navbar
 
-  @override
-  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
-}
+// class MyStatefulWidget extends StatefulWidget {
+//   MyStatefulWidget({Key key}) : super(key: key);
 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  int _selectedIndex = 0;
-  //static const TextStyle optionStyle =
-  //    TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static List<Widget> _widgetOptions = <Widget>[
-    XDMainPage(),
-    XDLogin(),
-    XDSignUp(),
-  ];
+//   @override
+//   _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
+// }
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+// class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+//   int _selectedIndex = 0;
+//   //static const TextStyle optionStyle =
+//   //    TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+//   static List<Widget> _widgetOptions = <Widget>[
+//     XDMainPage(),
+//     XDLogin(),
+//     XDSignUp(),
+//   ];
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
-      ),
-      body: Stack(children: <Widget>[
-        Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
-        ),
-        Transform.translate(
-          offset: Offset(23.0, 478.0),
-          child: Text(
-            'Welcome to Hoopr!',
-            style: TextStyle(
-              fontFamily: 'Open Sans',
-              fontSize: 24,
-              color: const Color(0xffffffff),
-              fontWeight: FontWeight.w700,
-            ),
-            textAlign: TextAlign.left,
-          ),
-        ),
-        Transform.translate(
-          offset: Offset(23.0, 511.0),
-          child: Text(
-            'Meet your ball community.',
-            style: TextStyle(
-              fontFamily: 'Open Sans',
-              fontSize: 14,
-              color: const Color(0xffadadad),
-            ),
-            textAlign: TextAlign.left,
-          ),
-        ),
-        /*
-        Transform.translate(
-          offset: Offset(78.0, 152.0),
-          child:
-              // Adobe XD layer: 'hooprlogo1' (group)
-              SizedBox(
-            width: 222.0,
-            height: 222.0,
-            child: Stack(
-                children: <Widget>[
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(0.0, 0.0, 222.0, 222.0),
-                  size: Size(222.0, 222.0),
-                  pinLeft: true,
-                  pinRight: true,
-                  pinTop: true,
-                  pinBottom: true,
-                  child: SvgPicture.string(
-                    _svg_zb0lqx,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(0.0, 107.4, 222.0, 7.3),
-                  size: Size(222.0, 222.0),
-                  pinLeft: true,
-                  pinRight: true,
-                  fixedHeight: true,
-                  child: SvgPicture.string(
-                    _svg_ap996i,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(61.0, 0.5, 39.9, 220.4),
-                  size: Size(222.0, 222.0),
-                  pinTop: true,
-                  pinBottom: true,
-                  fixedWidth: true,
-                  child: SvgPicture.string(
-                    _svg_fdlk7p,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(16.6, 147.4, 163.4, 56.2),
-                  size: Size(222.0, 222.0),
-                  pinLeft: true,
-                  pinBottom: true,
-                  fixedWidth: true,
-                  fixedHeight: true,
-                  child: SvgPicture.string(
-                    _svg_d1gge5,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(16.7, 18.3, 163.2, 56.1),
-                  size: Size(222.0, 222.0),
-                  pinLeft: true,
-                  pinTop: true,
-                  fixedWidth: true,
-                  fixedHeight: true,
-                  child: SvgPicture.string(
-                    _svg_prb5aq,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(153.3, 184.4, 1.0, 1.0),
-                  size: Size(222.0, 222.0),
-                  pinBottom: true,
-                  fixedWidth: true,
-                  fixedHeight: true,
-                  child: SvgPicture.string(
-                    _svg_rbv5oy,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(153.3, 184.2, 1.0, 1.0),
-                  size: Size(222.0, 222.0),
-                  pinBottom: true,
-                  fixedWidth: true,
-                  fixedHeight: true,
-                  child: SvgPicture.string(
-                    _svg_m29862,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                Pinned.fromSize(
-                  bounds: Rect.fromLTWH(153.3, 184.2, 1.0, 1.0),
-                  size: Size(222.0, 222.0),
-                    pinBottom: true,
-                    fixedWidth: true,
-                    fixedHeight: true,
-                    child: SvgPicture.string(
-                      _svg_m29862,
-                      allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ],
-                ),
-          ),
-        ),
-        Transform.translate(
-          offset: Offset(30.0, 571.0),
-          child: PageLink(
-            links: [
-              PageLinkInfo(
-                transition: LinkTransition.Fade,
-                ease: Curves.easeOut,
-                duration: 0.3,
-                pageBuilder: () => XDSignUp(),
-              ),
-            ],
-            child: Container(
-              width: 331.0,
-              height: 61.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30.0),
-                color: const Color(0xffff8336),
-              ),
-            ),
-          ),
-        ),
-        Transform.translate(
-          offset: Offset(122.0, 588.0),
-          child: Text(
-            'GET STARTED',
-            style: TextStyle(
-              fontFamily: 'Open Sans',
-              fontSize: 20,
-              color: const Color(0xff001331), //0xff001331
-              letterSpacing: 0.4,
-              fontWeight: FontWeight.w700,
-            ),
-            textAlign: TextAlign.left,
-          ),
-        ),
-        Transform.translate(
-          offset: Offset(106.0, 642.0),
-          child: PageLink(
-            links: [
-              PageLinkInfo(
-                transition: LinkTransition.Fade,
-                ease: Curves.easeOut,
-                duration: 0.3,
-                pageBuilder: () => XDLogin(),
-              ),
-            ],
-            child: Text(
-              'Already have an account?',
-              style: TextStyle(
-                fontFamily: 'Open Sans',
-                fontSize: 14,
-                color: const Color(0xffff8336),
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-        ),*/
-      ]),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.blue[900],
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            title: Text('Challenges'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            title: Text('Leaderboard'),
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
-      ),
-    );
-  }
-}
+//   void _onItemTapped(int index) {
+//     setState(() {
+//       _selectedIndex = index;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('BottomNavigationBar Sample'),
+//       ),
+//       body: Stack(children: <Widget>[
+//         Center(
+//           child: _widgetOptions.elementAt(_selectedIndex),
+//         ),
+//         Transform.translate(
+//           offset: Offset(23.0, 478.0),
+//           child: Text(
+//             'Welcome to Hoopr!',
+//             style: TextStyle(
+//               fontFamily: 'Open Sans',
+//               fontSize: 24,
+//               color: const Color(0xffffffff),
+//               fontWeight: FontWeight.w700,
+//             ),
+//             textAlign: TextAlign.left,
+//           ),
+//         ),
+//         Transform.translate(
+//           offset: Offset(23.0, 511.0),
+//           child: Text(
+//             'Meet your ball community.',
+//             style: TextStyle(
+//               fontFamily: 'Open Sans',
+//               fontSize: 14,
+//               color: const Color(0xffadadad),
+//             ),
+//             textAlign: TextAlign.left,
+//           ),
+//         ),
+//         /*
+//         Transform.translate(
+//           offset: Offset(78.0, 152.0),
+//           child:
+//               // Adobe XD layer: 'hooprlogo1' (group)
+//               SizedBox(
+//             width: 222.0,
+//             height: 222.0,
+//             child: Stack(
+//                 children: <Widget>[
+//                 Pinned.fromSize(
+//                   bounds: Rect.fromLTWH(0.0, 0.0, 222.0, 222.0),
+//                   size: Size(222.0, 222.0),
+//                   pinLeft: true,
+//                   pinRight: true,
+//                   pinTop: true,
+//                   pinBottom: true,
+//                   child: SvgPicture.string(
+//                     _svg_zb0lqx,
+//                     allowDrawingOutsideViewBox: true,
+//                     fit: BoxFit.fill,
+//                   ),
+//                 ),
+//                 Pinned.fromSize(
+//                   bounds: Rect.fromLTWH(0.0, 107.4, 222.0, 7.3),
+//                   size: Size(222.0, 222.0),
+//                   pinLeft: true,
+//                   pinRight: true,
+//                   fixedHeight: true,
+//                   child: SvgPicture.string(
+//                     _svg_ap996i,
+//                     allowDrawingOutsideViewBox: true,
+//                     fit: BoxFit.fill,
+//                   ),
+//                 ),
+//                 Pinned.fromSize(
+//                   bounds: Rect.fromLTWH(61.0, 0.5, 39.9, 220.4),
+//                   size: Size(222.0, 222.0),
+//                   pinTop: true,
+//                   pinBottom: true,
+//                   fixedWidth: true,
+//                   child: SvgPicture.string(
+//                     _svg_fdlk7p,
+//                     allowDrawingOutsideViewBox: true,
+//                     fit: BoxFit.fill,
+//                   ),
+//                 ),
+//                 Pinned.fromSize(
+//                   bounds: Rect.fromLTWH(16.6, 147.4, 163.4, 56.2),
+//                   size: Size(222.0, 222.0),
+//                   pinLeft: true,
+//                   pinBottom: true,
+//                   fixedWidth: true,
+//                   fixedHeight: true,
+//                   child: SvgPicture.string(
+//                     _svg_d1gge5,
+//                     allowDrawingOutsideViewBox: true,
+//                     fit: BoxFit.fill,
+//                   ),
+//                 ),
+//                 Pinned.fromSize(
+//                   bounds: Rect.fromLTWH(16.7, 18.3, 163.2, 56.1),
+//                   size: Size(222.0, 222.0),
+//                   pinLeft: true,
+//                   pinTop: true,
+//                   fixedWidth: true,
+//                   fixedHeight: true,
+//                   child: SvgPicture.string(
+//                     _svg_prb5aq,
+//                     allowDrawingOutsideViewBox: true,
+//                     fit: BoxFit.fill,
+//                   ),
+//                 ),
+//                 Pinned.fromSize(
+//                   bounds: Rect.fromLTWH(153.3, 184.4, 1.0, 1.0),
+//                   size: Size(222.0, 222.0),
+//                   pinBottom: true,
+//                   fixedWidth: true,
+//                   fixedHeight: true,
+//                   child: SvgPicture.string(
+//                     _svg_rbv5oy,
+//                     allowDrawingOutsideViewBox: true,
+//                     fit: BoxFit.fill,
+//                   ),
+//                 ),
+//                 Pinned.fromSize(
+//                   bounds: Rect.fromLTWH(153.3, 184.2, 1.0, 1.0),
+//                   size: Size(222.0, 222.0),
+//                   pinBottom: true,
+//                   fixedWidth: true,
+//                   fixedHeight: true,
+//                   child: SvgPicture.string(
+//                     _svg_m29862,
+//                     allowDrawingOutsideViewBox: true,
+//                     fit: BoxFit.fill,
+//                   ),
+//                 ),
+//                 Pinned.fromSize(
+//                   bounds: Rect.fromLTWH(153.3, 184.2, 1.0, 1.0),
+//                   size: Size(222.0, 222.0),
+//                     pinBottom: true,
+//                     fixedWidth: true,
+//                     fixedHeight: true,
+//                     child: SvgPicture.string(
+//                       _svg_m29862,
+//                       allowDrawingOutsideViewBox: true,
+//                     fit: BoxFit.fill,
+//                   ),
+//                 ),
+//               ],
+//                 ),
+//           ),
+//         ),
+//         Transform.translate(
+//           offset: Offset(30.0, 571.0),
+//           child: PageLink(
+//             links: [
+//               PageLinkInfo(
+//                 transition: LinkTransition.Fade,
+//                 ease: Curves.easeOut,
+//                 duration: 0.3,
+//                 pageBuilder: () => XDSignUp(),
+//               ),
+//             ],
+//             child: Container(
+//               width: 331.0,
+//               height: 61.0,
+//               decoration: BoxDecoration(
+//                 borderRadius: BorderRadius.circular(30.0),
+//                 color: const Color(0xffff8336),
+//               ),
+//             ),
+//           ),
+//         ),
+//         Transform.translate(
+//           offset: Offset(122.0, 588.0),
+//           child: Text(
+//             'GET STARTED',
+//             style: TextStyle(
+//               fontFamily: 'Open Sans',
+//               fontSize: 20,
+//               color: const Color(0xff001331), //0xff001331
+//               letterSpacing: 0.4,
+//               fontWeight: FontWeight.w700,
+//             ),
+//             textAlign: TextAlign.left,
+//           ),
+//         ),
+//         Transform.translate(
+//           offset: Offset(106.0, 642.0),
+//           child: PageLink(
+//             links: [
+//               PageLinkInfo(
+//                 transition: LinkTransition.Fade,
+//                 ease: Curves.easeOut,
+//                 duration: 0.3,
+//                 pageBuilder: () => XDLogin(),
+//               ),
+//             ],
+//             child: Text(
+//               'Already have an account?',
+//               style: TextStyle(
+//                 fontFamily: 'Open Sans',
+//                 fontSize: 14,
+//                 color: const Color(0xffff8336),
+//               ),
+//               textAlign: TextAlign.left,
+//             ),
+//           ),
+//         ),*/
+//       ]),
+//       bottomNavigationBar: BottomNavigationBar(
+//         backgroundColor: Colors.blue[900],
+//         items: const <BottomNavigationBarItem>[
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.home),
+//             title: Text('Home'),
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.business),
+//             title: Text('Challenges'),
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.school),
+//             title: Text('Leaderboard'),
+//           ),
+//         ],
+//         currentIndex: _selectedIndex,
+//         selectedItemColor: Colors.amber[800],
+//         onTap: _onItemTapped,
+//       ),
+//     );
+//   }
+// }
 
 const String _svg_zb0lqx =
     '<svg viewBox="0.0 0.0 222.0 222.0" ><path transform="translate(-5.66, -6.48)" d="M 227.6600036621094 117.485221862793 C 227.6600036621094 118.7043914794922 227.6600036621094 119.9144744873047 227.6008605957031 121.1245574951172 C 226.5590057373047 153.7202758789062 211.2123413085938 184.2022857666016 185.6483001708984 204.4518890380859 C 183.1493072509766 206.4353485107422 180.5638427734375 208.3126220703125 177.8919677734375 210.0837707519531 C 159.7408599853516 222.1180877685547 138.4381408691406 228.5199737548828 116.6600189208984 228.4852294921875 C 111.4450988769531 228.4852294921875 106.257194519043 228.1240234375 101.1131286621094 227.4042053222656 C 98.25251007080078 227.0067291259766 95.41230773925781 226.4957122802734 92.61304473876953 225.8739929199219 C 65.88308715820312 219.9348602294922 42.28952026367188 204.3300476074219 26.36332511901855 182.0563049316406 C 24.93790817260742 180.0667877197266 23.57315444946289 178.0302734375 22.26905632019043 175.9467468261719 C 12.02447414398193 159.4473876953125 6.315612316131592 140.5365753173828 5.719143390655518 121.1245880126953 C 5.678196430206299 119.9144897460938 5.659999847412109 118.7043991088867 5.659999847412109 117.485221862793 C 5.659999847412109 116.2660446166992 5.659999847412109 115.0559616088867 5.719139575958252 113.8458862304688 C 6.322137832641602 94.37389373779297 12.06992053985596 75.40870666503906 22.37824630737305 58.87812042236328 C 22.64664077758789 58.4232177734375 22.91958999633789 58.00923919677734 23.19709014892578 57.57706451416016 C 24.24340057373047 55.94845581054688 25.33217239379883 54.34865570068359 26.46340179443359 52.77767944335938 C 26.76819610595703 52.34550476074219 27.08209037780762 51.91788482666016 27.40053176879883 51.49025726318359 C 44.36243438720703 28.53607559204102 69.51622772216797 12.99966716766357 97.63533020019531 8.109272003173828 C 100.5559005737305 7.60280179977417 103.5143966674805 7.214605331420898 106.5107803344726 6.944686889648438 C 109.8468475341797 6.64140796661377 113.2299194335938 6.489768505096436 116.6600036621094 6.489768505096436 C 138.3888244628906 6.449149608612061 159.6469879150391 12.81835651397705 177.7737121582031 24.80021476745605 C 179.6661529541016 26.04669761657715 181.5146331787109 27.34927940368652 183.3191375732422 28.70796775817871 C 184.0697479248047 29.27206802368164 184.8158264160156 29.84526443481445 185.5527954101562 30.4366569519043 C 186.9675750732422 31.54665565490723 188.3505401611328 32.71125030517578 189.7061920166016 33.88948059082031 C 212.9067535400391 54.11433410644531 226.6427917480469 83.08296203613281 227.6190643310547 113.8458862304688 C 227.6418151855469 115.0559616088867 227.6600036621094 116.2660446166992 227.6600036621094 117.485221862793 Z" fill="#ff8336" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';

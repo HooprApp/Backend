@@ -27,51 +27,37 @@ class XDLogin extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(22.0, 176.0),
-            child: Text(
-              'email',
+            offset: Offset(22.0, 180.0),
+            child: TextFormField(
+              cursorColor: Color(0XFFFFCC00),
               style: TextStyle(
-                fontFamily: 'Open Sans',
-                fontSize: 14,
-                color: const Color(0xffff8336),
+                color: Colors.white,
               ),
-              textAlign: TextAlign.left,
+              decoration: InputDecoration(
+                labelText: 'Email',
+                labelStyle: TextStyle(
+                  fontFamily: 'Open Sans',
+                  fontSize: 22,
+                  color: Colors.white,
+                ),
+              ),
             ),
           ),
           Transform.translate(
-            offset: Offset(22.0, 268.0),
-            child: Text(
-              'password',
+            offset: Offset(22.0, 272.0),
+            child: TextFormField(
+              cursorColor: Color(0XFFFFCC00),
               style: TextStyle(
-                fontFamily: 'Open Sans',
-                fontSize: 14,
-                color: const Color(0xffff8336),
+                color: Colors.white,
               ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(22.0, 195.0),
-            child: Text(
-              'Email',
-              style: TextStyle(
-                fontFamily: 'Open Sans',
-                fontSize: 22,
-                color: const Color(0xffadadad),
+              decoration: InputDecoration(
+                labelText: 'Password',
+                labelStyle: TextStyle(
+                  fontFamily: 'Open Sans',
+                  fontSize: 22,
+                  color: Colors.white,
+                ),
               ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(22.0, 287.0),
-            child: Text(
-              'Password',
-              style: TextStyle(
-                fontFamily: 'Open Sans',
-                fontSize: 22,
-                color: const Color(0xffadadad),
-              ),
-              textAlign: TextAlign.left,
             ),
           ),
           Transform.translate(
@@ -127,66 +113,25 @@ class XDLogin extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(294.0, 361.0),
-            child: Container(
-              width: 59.0,
-              height: 59.0,
-              decoration: BoxDecoration(
-                borderRadius:
-                    BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
-                color: const Color(0xffff8336),
-              ),
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(308.1, 383.0),
-            child:
-                // Adobe XD layer: 'arrow' (group)
-                BlendMask(
-              blendMode: BlendMode.srcOver,
-              region: Offset(308.1, 383.0) & Size(30.2, 15.3),
-              child: SizedBox(
-                width: 30.0,
-                height: 15.0,
-                child: Stack(
-                  children: <Widget>[
-                    Pinned.fromSize(
-                      bounds: Rect.fromLTWH(0.0, 6.6, 29.4, 2.1),
-                      size: Size(30.2, 15.3),
-                      pinLeft: true,
-                      pinRight: true,
-                      fixedHeight: true,
-                      child: SvgPicture.string(
-                        _svg_gtsg41,
-                        allowDrawingOutsideViewBox: true,
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                    Pinned.fromSize(
-                      bounds: Rect.fromLTWH(17.8, 0.0, 12.4, 15.3),
-                      size: Size(30.2, 15.3),
-                      pinRight: true,
-                      pinTop: true,
-                      pinBottom: true,
-                      fixedWidth: true,
-                      child: SvgPicture.string(
-                        _svg_4lddtd,
-                        allowDrawingOutsideViewBox: true,
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Transform.translate(
             offset: Offset(22.5, 322.5),
             child: SvgPicture.string(
               _svg_lvq8nl,
               allowDrawingOutsideViewBox: true,
             ),
           ),
+          Align(
+              alignment: Alignment.centerRight,
+              child: FlatButton(
+                  onPressed: () {
+                    print('hello');
+                  },
+                  child: ClipOval(
+                      child: Container(
+                    color: Colors.orange,
+                    height: 60.0,
+                    width: 60.0,
+                    child: Icon(Icons.arrow_forward),
+                  )))),
         ],
       ),
     );

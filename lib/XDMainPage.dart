@@ -170,23 +170,50 @@ class XDMainPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30.0),
                   color: const Color(0xffff8336),
                 ),
+                //Positioned(
+                //left: 130,
+                //bottom: 0,
+                child: RaisedButton.icon(
+                  onPressed: () {
+                    //Navigator.of(context).pushNamed('signup');
+                    print("pressed");
+                  },
+                  icon: Icon(Icons.edit_location),
+                  textColor: const Color(0xffffffff),
+                  label: Text('Get Started'),
+                ),
               ),
             ),
           ),
-          Transform.translate(
-            offset: Offset(122.0, 588.0),
-            child: Text(
-              'GET STARTED',
-              style: TextStyle(
-                fontFamily: 'Open Sans',
-                fontSize: 20,
-                color: const Color(0xff001331),
-                letterSpacing: 0.4,
-                fontWeight: FontWeight.w700,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
+          /*Transform.translate(
+              offset: Offset(122.0, 588.0),
+              child: RaisedButton(
+                onPressed: () {
+                  print('hello');
+                },
+                child: Text("GET STARTED!"),
+                color: Colors.red,
+                textColor: Colors.white,
+                highlightColor: Colors.black,
+              )
+            ),*/
+
+          //   offset: Offset(122.0, 588.0),
+          //   child: RaisedButton(
+          //     Text(
+          //     'GET STARTED',
+          //     style: TextStyle(
+          //       fontFamily: 'Open Sans',
+          //       fontSize: 20,
+          //       color: const Color(0xff001331),
+          //       letterSpacing: 0.4,
+          //       fontWeight: FontWeight.w700,
+          //     ),
+          //     textAlign: TextAlign.left,
+          //   ),
+          //   onPressed: () {},
+          // ),
+
           Transform.translate(
             offset: Offset(106.0, 642.0),
             child: PageLink(
@@ -229,3 +256,7 @@ const String _svg_rbv5oy =
     '<svg viewBox="153.3 184.4 1.0 1.0" ><path transform="translate(-189.32, -227.37)" d="M 342.6000061035156 411.7300109863281" fill="none" stroke="#3d332a" stroke-width="16" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
 const String _svg_m29862 =
     '<svg viewBox="153.3 184.2 1.0 1.0" ><path transform="translate(-189.35, -227.23)" d="M 342.6600036621094 411.4800109863281" fill="none" stroke="#3d332a" stroke-width="16" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
+
+void buttonPressed() {
+  print("pressed");
+}
