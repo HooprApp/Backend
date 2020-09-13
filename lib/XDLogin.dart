@@ -1,142 +1,527 @@
 import 'package:flutter/material.dart';
+import 'package:hoopr/services/authentication.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:adobe_xd/blend_mask.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class XDLogin extends StatelessWidget {
-  XDLogin({
-    Key key,
-  }) : super(key: key);
+class XDLogin extends StatefulWidget {
+  XDLogin({this.auth, this.loginCallback});
+
+  final BaseAuth auth;
+  final VoidCallback loginCallback;
+
+  @override
+  State<StatefulWidget> createState() => _XDLogin();
+}
+
+enum FormMode { LOGIN, SIGNUP, FORGOTPASSWORD }
+
+class _XDLogin extends State<XDLogin> {
+  final _formKey = GlobalKey<FormState>();
+
+  String _email;
+  String _password;
+  String _errorMessage;
+
+  FormMode _formMode = FormMode.LOGIN;
+  bool _isLoading;
+
+  // Check if form is valid before perform login or signup
+  bool validateAndSave() {
+    final form = _formKey.currentState;
+    if (form.validate()) {
+      form.save();
+      return true;
+    }
+    return false;
+  }
+
+  // Perform login or signup
+  void validateAndSubmit() async {
+    setState(() {
+      _errorMessage = "";
+      _isLoading = true;
+    });
+    if (validateAndSave()) {
+      String userId = "";
+      try {
+        if (_formMode == FormMode.LOGIN) {
+          userId = await widget.auth.signIn(_email, _password);
+          if (userId == null) {
+            setState(() {
+              _isLoading = false;
+              _errorMessage =
+                  'Account not verified. Please verify account using the link sent to your email account and then try again.';
+              _formKey.currentState.reset();
+            });
+            return;
+          }
+        } else if (_formMode == FormMode.SIGNUP) {
+          print("hello");
+          userId = await widget.auth.signUp(_email, _password);
+          print(userId);
+          widget.auth.sendEmailVerification();
+          _showVerifyEmailSentDialog();
+        } else {
+          widget.auth.sendPasswordReset(_email);
+          _showPasswordEmailSentDialog();
+        }
+        setState(() {
+          _isLoading = false;
+        });
+
+        if (userId.length > 0 &&
+            userId != null &&
+            _formMode == FormMode.LOGIN) {
+          widget.loginCallback();
+        }
+      } catch (e) {
+        print('Error: $e');
+        setState(() {
+          _isLoading = false;
+          _errorMessage = e.message;
+          _formKey.currentState.reset();
+        });
+      }
+    } else {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    _errorMessage = "";
+    _isLoading = false;
+    super.initState();
+  }
+
+  void resetForm() {
+    _formKey.currentState.reset();
+    _errorMessage = "";
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff001331),
-      body: Stack(
-        children: <Widget>[
-          Transform.translate(
-            offset: Offset(24.0, 105.0),
-            child: Text(
-              'Log in',
-              style: TextStyle(
-                fontFamily: 'Open Sans',
-                fontSize: 24,
-                color: const Color(0xffffffff),
-                fontWeight: FontWeight.w700,
-              ),
-              textAlign: TextAlign.left,
+        backgroundColor: const Color(0xff001331),
+        appBar: AppBar(
+          title: Text('Hoopr'),
+        ),
+        body: Stack(
+          children: <Widget>[
+            _showForm(),
+            _showCircularProgress(),
+          ],
+        ));
+  }
+
+  void _changeFormToSignUp() {
+    _formKey.currentState.reset();
+    _errorMessage = "";
+    setState(() {
+      _formMode = FormMode.SIGNUP;
+    });
+  }
+
+  void _changeFormToLogin() {
+    _formKey.currentState.reset();
+    _errorMessage = "";
+    setState(() {
+      _formMode = FormMode.LOGIN;
+    });
+  }
+
+  void _changeFormToPasswordReset() {
+    _formKey.currentState.reset();
+    _errorMessage = "";
+    setState(() {
+      _formMode = FormMode.FORGOTPASSWORD;
+    });
+  }
+
+  Widget _showCircularProgress() {
+    if (_isLoading) {
+      return Center(child: CircularProgressIndicator());
+    }
+    return Container(
+      height: 0.0,
+      width: 0.0,
+    );
+  }
+
+  void _showVerifyEmailSentDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          title: Text("Verify your account"),
+          content: Text("Link to verify account has been sent to your email"),
+          actions: <Widget>[
+            FlatButton(
+              child: Text("Dismiss"),
+              onPressed: () {
+                _changeFormToLogin();
+                Navigator.of(context).pop();
+              },
             ),
-          ),
-          Transform.translate(
-            offset: Offset(22.0, 180.0),
-            child: TextFormField(
-              cursorColor: Color(0XFFFFCC00),
-              style: TextStyle(
-                color: Colors.white,
-              ),
-              decoration: InputDecoration(
-                labelText: 'Email',
-                labelStyle: TextStyle(
-                  fontFamily: 'Open Sans',
-                  fontSize: 22,
-                  color: Colors.white,
-                ),
-              ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showPasswordEmailSentDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          title: new Text("Forgot your password"),
+          content: new Text("An email has been sent to reset your password"),
+          actions: <Widget>[
+            new FlatButton(
+              child: new Text("Dismiss"),
+              onPressed: () {
+                _changeFormToLogin();
+                Navigator.of(context).pop();
+              },
             ),
-          ),
-          Transform.translate(
-            offset: Offset(22.0, 272.0),
-            child: TextFormField(
-              cursorColor: Color(0XFFFFCC00),
-              style: TextStyle(
-                color: Colors.white,
-              ),
-              decoration: InputDecoration(
-                labelText: 'Password',
-                labelStyle: TextStyle(
-                  fontFamily: 'Open Sans',
-                  fontSize: 22,
-                  color: Colors.white,
-                ),
-              ),
+          ],
+        );
+      },
+    );
+  }
+
+// Todo: Add widgets for name, date of birth, etc.
+  Widget _showForm() {
+    if (_formMode == FormMode.LOGIN) {
+      return Container(
+          padding: EdgeInsets.all(16.0),
+          child: Form(
+            key: _formKey,
+            child: ListView(
+              shrinkWrap: true,
+              children: <Widget>[
+                _showEmailInput(),
+                _showPasswordInput(),
+                _showPrimaryButton(),
+                _showSecondaryButton(),
+                _showForgotPasswordButton(),
+                _showErrorMessage(),
+              ],
             ),
-          ),
-          Transform.translate(
-            offset: Offset(22.3, 37.0),
-            child: Transform.rotate(
-              angle: 3.1416,
-              child:
-                  // Adobe XD layer: 'arrow' (group)
-                  BlendMask(
-                blendMode: BlendMode.srcOver,
-                region: Offset(22.3, 37.0) & Size(35.4, 18.0),
-                child: SizedBox(
-                  width: 35.0,
-                  height: 18.0,
-                  child: Stack(
-                    children: <Widget>[
-                      Pinned.fromSize(
-                        bounds: Rect.fromLTWH(0.0, 7.8, 34.5, 2.4),
-                        size: Size(35.4, 18.0),
-                        pinLeft: true,
-                        pinRight: true,
-                        fixedHeight: true,
-                        child: SvgPicture.string(
-                          _svg_9773mp,
-                          allowDrawingOutsideViewBox: true,
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      Pinned.fromSize(
-                        bounds: Rect.fromLTWH(20.9, 0.0, 14.5, 18.0),
-                        size: Size(35.4, 18.0),
-                        pinRight: true,
-                        pinTop: true,
-                        pinBottom: true,
-                        fixedWidth: true,
-                        child: SvgPicture.string(
-                          _svg_7v4sci,
-                          allowDrawingOutsideViewBox: true,
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+          ));
+    } else if (_formMode == FormMode.LOGIN) {
+      return Container(
+          padding: EdgeInsets.all(16.0),
+          child: Form(
+            key: _formKey,
+            child: ListView(
+              shrinkWrap: true,
+              children: <Widget>[
+                _showEmailInput(),
+                _showPasswordInput(),
+                _showPrimaryButton(),
+                _showSecondaryButton(),
+                _showForgotPasswordButton(),
+                _showErrorMessage(),
+              ],
             ),
-          ),
-          Transform.translate(
-            offset: Offset(22.5, 229.5),
-            child: SvgPicture.string(
-              _svg_4z914q,
-              allowDrawingOutsideViewBox: true,
+          ));
+    } else {
+      return Container(
+          padding: EdgeInsets.all(16.0),
+          child: Form(
+            key: _formKey,
+            child: ListView(
+              shrinkWrap: true,
+              children: <Widget>[
+                _showEmailInput(),
+                _showPasswordInput(),
+                _showPrimaryButton(),
+                _showSecondaryButton(),
+                _showForgotPasswordButton(),
+                _showErrorMessage(),
+              ],
             ),
+          ));
+    }
+  }
+
+  Widget _showErrorMessage() {
+    if (_errorMessage != null && _errorMessage.length > 0) {
+      return Text(
+        _errorMessage,
+        style: TextStyle(
+            fontSize: 13.0,
+            color: Colors.red,
+            height: 1.0,
+            fontWeight: FontWeight.w300),
+      );
+    } else {
+      return Container(
+        height: 0.0,
+      );
+    }
+  }
+
+  Widget _showEmailInput() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0.0, 100.0, 0.0, 0.0),
+      child: TextFormField(
+        style: TextStyle(
+          color: Colors.white,
+          fontFamily: 'Open Sans',
+          fontSize: 24,
+          fontWeight: FontWeight.w700,
+        ),
+        maxLines: 1,
+        keyboardType: TextInputType.emailAddress,
+        autofocus: false,
+        decoration: InputDecoration(
+          hintText: 'Email',
+          hintStyle: TextStyle(
+            color: Colors.grey,
           ),
-          Transform.translate(
-            offset: Offset(22.5, 322.5),
-            child: SvgPicture.string(
-              _svg_lvq8nl,
-              allowDrawingOutsideViewBox: true,
-            ),
-          ),
-          Align(
-              alignment: Alignment.centerRight,
-              child: FlatButton(
-                  onPressed: () {
-                    print('hello');
-                  },
-                  child: ClipOval(
-                      child: Container(
-                    color: Colors.orange,
-                    height: 60.0,
-                    width: 60.0,
-                    child: Icon(Icons.arrow_forward),
-                  )))),
-        ],
+        ),
+        validator: (value) => value.isEmpty ? 'Email can\'t be empty' : null,
+        onSaved: (value) => _email = value.trim(),
       ),
     );
   }
+
+  Widget _showPasswordInput() {
+    if (_formMode != FormMode.FORGOTPASSWORD) {
+      return Padding(
+        padding: const EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 0.0),
+        child: TextFormField(
+          style: TextStyle(
+            color: Colors.white,
+            fontFamily: 'Open Sans',
+            fontSize: 24,
+            fontWeight: FontWeight.w700,
+          ),
+          maxLines: 1,
+          obscureText: true,
+          autofocus: false,
+          decoration: InputDecoration(
+              hintText: 'Password',
+              hintStyle: TextStyle(color: Colors.grey, fontSize: 24)),
+          validator: (value) =>
+              value.isEmpty ? 'Password can\'t be empty' : null,
+          onSaved: (value) => _password = value.trim(),
+        ),
+      );
+    } else {
+      return Text('An email will be sent allowing you to reset your password',
+          style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w300));
+    }
+  }
+
+  Widget _showPrimaryButton() {
+    return Align(
+        alignment: Alignment.centerRight,
+        child: ClipOval(
+            child: Container(
+                color: Colors.orange,
+                height: 60.0, // height of the button
+                width: 60.0, // width of the button
+                child: RaisedButton(
+                    elevation: 5.0,
+                    color: Colors.orange,
+                    child: _textPrimaryButton(),
+                    onPressed: validateAndSubmit))));
+  }
+
+  Widget _showSecondaryButton() {
+    return FlatButton(
+      child: _textSecondaryButton(),
+      onPressed: _formMode == FormMode.LOGIN
+          ? _changeFormToSignUp
+          : _changeFormToLogin,
+    );
+  }
+
+  Widget _showForgotPasswordButton() {
+    return FlatButton(
+      child: _formMode == FormMode.LOGIN
+          ? Text('Forgot password?',
+              style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w300))
+          : Text('',
+              style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w300)),
+      onPressed: _changeFormToPasswordReset,
+    );
+  }
+
+  Widget _textPrimaryButton() {
+    switch (_formMode) {
+      case FormMode.LOGIN:
+        return Text('Login',
+            style: TextStyle(fontSize: 20.0, color: Colors.white));
+        break;
+      case FormMode.SIGNUP:
+        return Text('Create account',
+            style: TextStyle(fontSize: 20.0, color: Colors.white));
+        break;
+      case FormMode.FORGOTPASSWORD:
+        return Text('Reset password',
+            style: TextStyle(fontSize: 20.0, color: Colors.white));
+        break;
+    }
+    return Spacer();
+  }
+
+  Widget _textSecondaryButton() {
+    switch (_formMode) {
+      case FormMode.LOGIN:
+        return Text('Create an account',
+            style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300));
+        break;
+      case FormMode.SIGNUP:
+        return Text('Have an account? Sign in',
+            style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300));
+        break;
+      case FormMode.FORGOTPASSWORD:
+        return Text('Cancel',
+            style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300));
+        break;
+    }
+    return Spacer();
+  }
 }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: const Color(0xff001331),
+//       body: Stack(
+//         children: <Widget>[
+//           Transform.translate(
+//             offset: Offset(24.0, 105.0),
+//             child: Text(
+//               'Log in',
+//               style: TextStyle(
+//                 fontFamily: 'Open Sans',
+//                 fontSize: 24,
+//                 color: const Color(0xffffffff),
+//                 fontWeight: FontWeight.w700,
+//               ),
+//               textAlign: TextAlign.left,
+//             ),
+//           ),
+//           Transform.translate(
+//             offset: Offset(22.0, 180.0),
+//             child: TextFormField(
+//               cursorColor: Color(0XFFFFCC00),
+//               style: TextStyle(
+//                 color: Colors.white,
+//               ),
+//               decoration: InputDecoration(
+//                 labelText: 'Email',
+//                 labelStyle: TextStyle(
+//                   fontFamily: 'Open Sans',
+//                   fontSize: 22,
+//                   color: Colors.white,
+//                 ),
+//               ),
+//             ),
+//           ),
+//           Transform.translate(
+//             offset: Offset(22.0, 272.0),
+//             child: TextFormField(
+//               cursorColor: Color(0XFFFFCC00),
+//               style: TextStyle(
+//                 color: Colors.white,
+//               ),
+//               decoration: InputDecoration(
+//                 labelText: 'Password',
+//                 labelStyle: TextStyle(
+//                   fontFamily: 'Open Sans',
+//                   fontSize: 22,
+//                   color: Colors.white,
+//                 ),
+//               ),
+//             ),
+//           ),
+//           Transform.translate(
+//             offset: Offset(22.3, 37.0),
+//             child: Transform.rotate(
+//               angle: 3.1416,
+//               child:
+//                   // Adobe XD layer: 'arrow' (group)
+//                   BlendMask(
+//                 blendMode: BlendMode.srcOver,
+//                 region: Offset(22.3, 37.0) & Size(35.4, 18.0),
+//                 child: SizedBox(
+//                   width: 35.0,
+//                   height: 18.0,
+//                   child: Stack(
+//                     children: <Widget>[
+//                       Pinned.fromSize(
+//                         bounds: Rect.fromLTWH(0.0, 7.8, 34.5, 2.4),
+//                         size: Size(35.4, 18.0),
+//                         pinLeft: true,
+//                         pinRight: true,
+//                         fixedHeight: true,
+//                         child: SvgPicture.string(
+//                           _svg_9773mp,
+//                           allowDrawingOutsideViewBox: true,
+//                           fit: BoxFit.fill,
+//                         ),
+//                       ),
+//                       Pinned.fromSize(
+//                         bounds: Rect.fromLTWH(20.9, 0.0, 14.5, 18.0),
+//                         size: Size(35.4, 18.0),
+//                         pinRight: true,
+//                         pinTop: true,
+//                         pinBottom: true,
+//                         fixedWidth: true,
+//                         child: SvgPicture.string(
+//                           _svg_7v4sci,
+//                           allowDrawingOutsideViewBox: true,
+//                           fit: BoxFit.fill,
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ),
+//           Transform.translate(
+//             offset: Offset(22.5, 229.5),
+//             child: SvgPicture.string(
+//               _svg_4z914q,
+//               allowDrawingOutsideViewBox: true,
+//             ),
+//           ),
+//           Transform.translate(
+//             offset: Offset(22.5, 322.5),
+//             child: SvgPicture.string(
+//               _svg_lvq8nl,
+//               allowDrawingOutsideViewBox: true,
+//             ),
+//           ),
+//           Align(
+//               alignment: Alignment.centerRight,
+//               child: FlatButton(
+//                   onPressed: () {
+//                     print('hello');
+//                   },
+//                   child: ClipOval(
+//                       child: Container(
+//                     color: Colors.orange,
+//                     height: 60.0,
+//                     width: 60.0,
+//                     child: Icon(Icons.arrow_forward),
+//                   )))),
+//         ],
+//       ),
+//     );
+//   }
 
 const String _svg_9773mp =
     '<svg viewBox="0.0 7.6 34.5 2.4" ><path transform="translate(-13.55, -232.38)" d="M 47.2796745300293 242.4311828613281 L 14.29705238342285 242.4311828613281 C 13.88998985290527 242.4311828613281 13.56000137329102 241.8914184570312 13.56000137329102 241.2255859375 C 13.56000137329102 240.5597686767578 13.88998985290527 240.0200042724609 14.29705238342285 240.0200042724609 L 47.2796745300293 240.0200042724609 C 47.68674468994141 240.0200042724609 48.01673126220703 240.5597686767578 48.01673126220703 241.2255859375 C 48.01673126220703 241.8914184570312 47.68674468994141 242.4311828613281 47.2796745300293 242.4311828613281 Z" fill="#adadad" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';

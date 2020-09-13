@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import './XDSignUp.dart';
 import 'package:adobe_xd/page_link.dart';
-import './XDLogin.dart';
+import 'XDLogin.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class XDMainPage extends StatelessWidget {

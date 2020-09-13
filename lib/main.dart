@@ -7,7 +7,7 @@ import 'package:adobe_xd/page_link.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 //import 'package:hoopr_ui/XDMessageName.dart';
 import './XDSignUp.dart';
-import './XDLogin.dart';
+import 'XDLogin.dart';
 import 'XDChallenges1.dart';
 import 'XDChallenges2.dart';
 import 'XDChallenges3.dart';
