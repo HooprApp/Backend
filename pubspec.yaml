@@ -29,6 +29,7 @@ dependencies:
   flutter_launcher_icons: "^0.7.3"
   http: ^0.12.0
   flutter_svg: ^0.18.0 # fixed the build error
+  toggle_switch: "^0.1.8"
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -49,11 +50,16 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  fonts:
+    - family:  MyFlutterApp
+      fonts:
+       - asset: fonts/MyFlutterApp.ttf
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/ray.png
+    - assets/raysmall.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

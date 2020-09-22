@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hoopr/pages/home_page.dart';
+import 'package:hoopr/pages/login_signup_page.dart';
 import 'package:hoopr/services/authentication.dart';
 import 'package:hoopr/pages/root_page.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +25,14 @@ import 'XDUserProfile2.dart';
 import 'XDUserProfile3.dart';
 import 'XDUserProfile4.dart';
 import 'XDMainPage.dart';
+import 'XDMessageName.dart';
+
+import 'challengesdemo.dart';
+import 'leaderboarddemo.dart';
+import 'profiledemo.dart';
+import 'bottombardemo.dart';
+
+//import 'pages/home_page.dart';
 
 // Runs the app, sets up the routes to different pages
 
@@ -34,8 +44,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: _title, home: XDLogin(), routes: {
-      'signup': (context) => XDSignUp(),
+    return MaterialApp(title: _title, home: HomePage(), routes: {
+      //'signup': (context) => XDSignUp(),
       'login': (context) => XDLogin(),
       'mainpage': (context) => XDMainPage(),
     });

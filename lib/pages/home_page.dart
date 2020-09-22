@@ -3,6 +3,7 @@ import 'package:hoopr/services/authentication.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:hoopr/models/todo.dart';
 import 'dart:async';
+import '../bottombardemo.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.auth, this.userId, this.logoutCallback})
@@ -246,7 +247,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  @override
+  /*@override
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
@@ -266,5 +267,9 @@ class _HomePageState extends State<HomePage> {
           tooltip: 'Increment',
           child: Icon(Icons.add),
         ));
+  }*/
+  @override
+  Widget build(BuildContext context) {
+    return BottomBar();
   }
 }
