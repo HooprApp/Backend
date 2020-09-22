@@ -3,288 +3,288 @@ import 'package:adobe_xd/pinned.dart';
 import 'package:adobe_xd/blend_mask.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-// class XDSignUp extends StatelessWidget {
-//   XDSignUp({
-//     Key key,
-//   }) : super(key: key);
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: const Color(0xff001331),
-//       body: Stack(
-//         children: <Widget>[
-//           Transform.translate(
-//             offset: Offset(24.0, 105.0),
-//             child: Text(
-//               'Sign up with email',
-//               style: TextStyle(
-//                 fontFamily: 'Open Sans',
-//                 fontSize: 24,
-//                 color: const Color(0xffffffff),
-//                 fontWeight: FontWeight.w700,
-//               ),
-//               textAlign: TextAlign.left,
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(22.0, 442.0),
-//             child: Text(
-//               'Email',
-//               style: TextStyle(
-//                 fontFamily: 'Open Sans',
-//                 fontSize: 14,
-//                 color: const Color(0xffff8336),
-//               ),
-//               textAlign: TextAlign.left,
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(22.0, 529.0),
-//             child: Text(
-//               'Password',
-//               style: TextStyle(
-//                 fontFamily: 'Open Sans',
-//                 fontSize: 14,
-//                 color: const Color(0xffff8336),
-//               ),
-//               textAlign: TextAlign.left,
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(22.0, 461.0),
-//             child: Text(
-//               'Email',
-//               style: TextStyle(
-//                 fontFamily: 'Open Sans',
-//                 fontSize: 22,
-//                 color: const Color(0xffadadad),
-//               ),
-//               textAlign: TextAlign.left,
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(22.0, 548.0),
-//             child: Text(
-//               'Password',
-//               style: TextStyle(
-//                 fontFamily: 'Open Sans',
-//                 fontSize: 22,
-//                 color: const Color(0xffadadad),
-//               ),
-//               textAlign: TextAlign.left,
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(22.3, 37.0),
-//             child: Transform.rotate(
-//               angle: 3.1416,
-//               child:
-//                   // Adobe XD layer: 'arrow' (group)
-//                   BlendMask(
-//                 blendMode: BlendMode.srcOver,
-//                 region: Offset(22.3, 37.0) & Size(35.4, 18.0),
-//                 child: SizedBox(
-//                   width: 35.0,
-//                   height: 18.0,
-//                   child: Stack(
-//                     children: <Widget>[
-//                       Pinned.fromSize(
-//                         bounds: Rect.fromLTWH(0.0, 7.8, 34.5, 2.4),
-//                         size: Size(35.4, 18.0),
-//                         pinLeft: true,
-//                         pinRight: true,
-//                         fixedHeight: true,
-//                         child: SvgPicture.string(
-//                           _svg_9773mp,
-//                           allowDrawingOutsideViewBox: true,
-//                           fit: BoxFit.fill,
-//                         ),
-//                       ),
-//                       Pinned.fromSize(
-//                         bounds: Rect.fromLTWH(20.9, 0.0, 14.5, 18.0),
-//                         size: Size(35.4, 18.0),
-//                         pinRight: true,
-//                         pinTop: true,
-//                         pinBottom: true,
-//                         fixedWidth: true,
-//                         child: SvgPicture.string(
-//                           _svg_7v4sci,
-//                           allowDrawingOutsideViewBox: true,
-//                           fit: BoxFit.fill,
-//                         ),
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//               ),
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(22.5, 495.5),
-//             child: SvgPicture.string(
-//               _svg_hax8i2,
-//               allowDrawingOutsideViewBox: true,
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(294.0, 622.0),
-//             child: Container(
-//               width: 59.0,
-//               height: 59.0,
-//               decoration: BoxDecoration(
-//                 borderRadius:
-//                     BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
-//                 color: const Color(0xffff8336),
-//               ),
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(308.1, 641.0),
-//             child:
-//                 // Adobe XD layer: 'arrow' (group)
-//                 BlendMask(
-//               blendMode: BlendMode.srcOver,
-//               region: Offset(308.1, 641.0) & Size(30.2, 15.3),
-//               child: SizedBox(
-//                 width: 30.0,
-//                 height: 15.0,
-//                 child: Stack(
-//                   children: <Widget>[
-//                     Pinned.fromSize(
-//                       bounds: Rect.fromLTWH(0.0, 6.6, 29.4, 2.1),
-//                       size: Size(30.2, 15.3),
-//                       pinLeft: true,
-//                       pinRight: true,
-//                       fixedHeight: true,
-//                       child: SvgPicture.string(
-//                         _svg_gtsg41,
-//                         allowDrawingOutsideViewBox: true,
-//                         fit: BoxFit.fill,
-//                       ),
-//                     ),
-//                     Pinned.fromSize(
-//                       bounds: Rect.fromLTWH(17.8, 0.0, 12.4, 15.3),
-//                       size: Size(30.2, 15.3),
-//                       pinRight: true,
-//                       pinTop: true,
-//                       pinBottom: true,
-//                       fixedWidth: true,
-//                       child: SvgPicture.string(
-//                         _svg_4lddtd,
-//                         allowDrawingOutsideViewBox: true,
-//                         fit: BoxFit.fill,
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(22.5, 583.5),
-//             child: SvgPicture.string(
-//               _svg_6mppg1,
-//               allowDrawingOutsideViewBox: true,
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(22.0, 268.0),
-//             child: Text(
-//               'Last Name',
-//               style: TextStyle(
-//                 fontFamily: 'Open Sans',
-//                 fontSize: 14,
-//                 color: const Color(0xffff8336),
-//               ),
-//               textAlign: TextAlign.left,
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(22.0, 287.0),
-//             child: Text(
-//               'Last Name',
-//               style: TextStyle(
-//                 fontFamily: 'Open Sans',
-//                 fontSize: 22,
-//                 color: const Color(0xffadadad),
-//               ),
-//               textAlign: TextAlign.left,
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(22.5, 321.5),
-//             child: SvgPicture.string(
-//               _svg_xic227,
-//               allowDrawingOutsideViewBox: true,
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(22.0, 181.0),
-//             child: Text(
-//               'First Name',
-//               style: TextStyle(
-//                 fontFamily: 'Open Sans',
-//                 fontSize: 14,
-//                 color: const Color(0xffff8336),
-//               ),
-//               textAlign: TextAlign.left,
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(22.0, 200.0),
-//             child: Text(
-//               'First Name',
-//               style: TextStyle(
-//                 fontFamily: 'Open Sans',
-//                 fontSize: 22,
-//                 color: const Color(0xffadadad),
-//               ),
-//               textAlign: TextAlign.left,
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(22.5, 234.5),
-//             child: SvgPicture.string(
-//               _svg_u32e27,
-//               allowDrawingOutsideViewBox: true,
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(22.0, 355.0),
-//             child: Text(
-//               'Username',
-//               style: TextStyle(
-//                 fontFamily: 'Open Sans',
-//                 fontSize: 14,
-//                 color: const Color(0xffff8336),
-//               ),
-//               textAlign: TextAlign.left,
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(22.0, 374.0),
-//             child: Text(
-//               'Username',
-//               style: TextStyle(
-//                 fontFamily: 'Open Sans',
-//                 fontSize: 22,
-//                 color: const Color(0xffadadad),
-//               ),
-//               textAlign: TextAlign.left,
-//             ),
-//           ),
-//           Transform.translate(
-//             offset: Offset(22.5, 408.5),
-//             child: SvgPicture.string(
-//               _svg_xrb029,
-//               allowDrawingOutsideViewBox: true,
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
+class XDSignUp extends StatelessWidget {
+  XDSignUp({
+    Key key,
+  }) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xff001331),
+      body: Stack(
+        children: <Widget>[
+          Transform.translate(
+            offset: Offset(24.0, 105.0),
+            child: Text(
+              'Sign up with email',
+              style: TextStyle(
+                fontFamily: 'Open Sans',
+                fontSize: 24,
+                color: const Color(0xffffffff),
+                fontWeight: FontWeight.w700,
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(22.0, 442.0),
+            child: Text(
+              'Email',
+              style: TextStyle(
+                fontFamily: 'Open Sans',
+                fontSize: 14,
+                color: const Color(0xffff8336),
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(22.0, 529.0),
+            child: Text(
+              'Password',
+              style: TextStyle(
+                fontFamily: 'Open Sans',
+                fontSize: 14,
+                color: const Color(0xffff8336),
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(22.0, 461.0),
+            child: Text(
+              'Email',
+              style: TextStyle(
+                fontFamily: 'Open Sans',
+                fontSize: 22,
+                color: const Color(0xffadadad),
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(22.0, 548.0),
+            child: Text(
+              'Password',
+              style: TextStyle(
+                fontFamily: 'Open Sans',
+                fontSize: 22,
+                color: const Color(0xffadadad),
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(22.3, 37.0),
+            child: Transform.rotate(
+              angle: 3.1416,
+              child:
+                  // Adobe XD layer: 'arrow' (group)
+                  BlendMask(
+                blendMode: BlendMode.srcOver,
+                region: Offset(22.3, 37.0) & Size(35.4, 18.0),
+                child: SizedBox(
+                  width: 35.0,
+                  height: 18.0,
+                  child: Stack(
+                    children: <Widget>[
+                      Pinned.fromSize(
+                        bounds: Rect.fromLTWH(0.0, 7.8, 34.5, 2.4),
+                        size: Size(35.4, 18.0),
+                        pinLeft: true,
+                        pinRight: true,
+                        fixedHeight: true,
+                        child: SvgPicture.string(
+                          _svg_9773mp,
+                          allowDrawingOutsideViewBox: true,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      Pinned.fromSize(
+                        bounds: Rect.fromLTWH(20.9, 0.0, 14.5, 18.0),
+                        size: Size(35.4, 18.0),
+                        pinRight: true,
+                        pinTop: true,
+                        pinBottom: true,
+                        fixedWidth: true,
+                        child: SvgPicture.string(
+                          _svg_7v4sci,
+                          allowDrawingOutsideViewBox: true,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(22.5, 495.5),
+            child: SvgPicture.string(
+              _svg_hax8i2,
+              allowDrawingOutsideViewBox: true,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(294.0, 622.0),
+            child: Container(
+              width: 59.0,
+              height: 59.0,
+              decoration: BoxDecoration(
+                borderRadius:
+                    BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+                color: const Color(0xffff8336),
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(308.1, 641.0),
+            child:
+                // Adobe XD layer: 'arrow' (group)
+                BlendMask(
+              blendMode: BlendMode.srcOver,
+              region: Offset(308.1, 641.0) & Size(30.2, 15.3),
+              child: SizedBox(
+                width: 30.0,
+                height: 15.0,
+                child: Stack(
+                  children: <Widget>[
+                    Pinned.fromSize(
+                      bounds: Rect.fromLTWH(0.0, 6.6, 29.4, 2.1),
+                      size: Size(30.2, 15.3),
+                      pinLeft: true,
+                      pinRight: true,
+                      fixedHeight: true,
+                      child: SvgPicture.string(
+                        _svg_gtsg41,
+                        allowDrawingOutsideViewBox: true,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    Pinned.fromSize(
+                      bounds: Rect.fromLTWH(17.8, 0.0, 12.4, 15.3),
+                      size: Size(30.2, 15.3),
+                      pinRight: true,
+                      pinTop: true,
+                      pinBottom: true,
+                      fixedWidth: true,
+                      child: SvgPicture.string(
+                        _svg_4lddtd,
+                        allowDrawingOutsideViewBox: true,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(22.5, 583.5),
+            child: SvgPicture.string(
+              _svg_6mppg1,
+              allowDrawingOutsideViewBox: true,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(22.0, 268.0),
+            child: Text(
+              'Last Name',
+              style: TextStyle(
+                fontFamily: 'Open Sans',
+                fontSize: 14,
+                color: const Color(0xffff8336),
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(22.0, 287.0),
+            child: Text(
+              'Last Name',
+              style: TextStyle(
+                fontFamily: 'Open Sans',
+                fontSize: 22,
+                color: const Color(0xffadadad),
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(22.5, 321.5),
+            child: SvgPicture.string(
+              _svg_xic227,
+              allowDrawingOutsideViewBox: true,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(22.0, 181.0),
+            child: Text(
+              'First Name',
+              style: TextStyle(
+                fontFamily: 'Open Sans',
+                fontSize: 14,
+                color: const Color(0xffff8336),
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(22.0, 200.0),
+            child: Text(
+              'First Name',
+              style: TextStyle(
+                fontFamily: 'Open Sans',
+                fontSize: 22,
+                color: const Color(0xffadadad),
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(22.5, 234.5),
+            child: SvgPicture.string(
+              _svg_u32e27,
+              allowDrawingOutsideViewBox: true,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(22.0, 355.0),
+            child: Text(
+              'Username',
+              style: TextStyle(
+                fontFamily: 'Open Sans',
+                fontSize: 14,
+                color: const Color(0xffff8336),
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(22.0, 374.0),
+            child: Text(
+              'Username',
+              style: TextStyle(
+                fontFamily: 'Open Sans',
+                fontSize: 22,
+                color: const Color(0xffadadad),
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(22.5, 408.5),
+            child: SvgPicture.string(
+              _svg_xrb029,
+              allowDrawingOutsideViewBox: true,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
 const String _svg_9773mp =
     '<svg viewBox="0.0 7.6 34.5 2.4" ><path transform="translate(-13.55, -232.38)" d="M 47.2796745300293 242.4311828613281 L 14.29705238342285 242.4311828613281 C 13.88998985290527 242.4311828613281 13.56000137329102 241.8914184570312 13.56000137329102 241.2255859375 C 13.56000137329102 240.5597686767578 13.88998985290527 240.0200042724609 14.29705238342285 240.0200042724609 L 47.2796745300293 240.0200042724609 C 47.68674468994141 240.0200042724609 48.01673126220703 240.5597686767578 48.01673126220703 241.2255859375 C 48.01673126220703 241.8914184570312 47.68674468994141 242.4311828613281 47.2796745300293 242.4311828613281 Z" fill="#adadad" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';

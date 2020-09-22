@@ -3,12 +3,12 @@ import 'package:toggle_switch/toggle_switch.dart';
 
 bool badgeView = true;
 
-class XDprofiledemo extends StatefulWidget {
+class ProfileDemo extends StatefulWidget {
   @override
-  _XDprofiledemoState createState() => _XDprofiledemoState();
+  _ProfileDemoState createState() => _ProfileDemoState();
 }
 
-class _XDprofiledemoState extends State<XDprofiledemo> {
+class _ProfileDemoState extends State<ProfileDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

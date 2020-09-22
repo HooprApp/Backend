@@ -44,11 +44,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: _title, home: HomePage(), routes: {
-      //'signup': (context) => XDSignUp(),
-      'login': (context) => XDLogin(),
-      'mainpage': (context) => XDMainPage(),
-    });
+    return MaterialApp(
+      title: _title, 
+      home: HomePage(), 
+      routes: {
+        //'signup': (context) => XDSignUp(),
+        'login': (context) => XDLogin(),
+        'mainpage': (context) => XDMainPage(),
+      }
+    );
   }
 }
 

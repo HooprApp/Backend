@@ -41,9 +41,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   //static const TextStyle optionStyle =
   //   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
-    XDchallengesdemo(),
-    XDleaderboarddemo(),
-    XDprofiledemo(),
+    ChallengesDemo(),
+    LeaderboardDemo(),
+    ProfileDemo(),
   ];
 
   void _onItemTapped(int index) {
@@ -58,7 +58,16 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black,
+            ),
+          ],
+        ),
+      child: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(MyFlutterApp.basketball_ball),
@@ -76,7 +85,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
         onTap: _onItemTapped,
+        backgroundColor: Color.fromRGBO(0, 19, 49, 1),
+        elevation: 5,
       ),
-    );
+    ));
   }
 }
