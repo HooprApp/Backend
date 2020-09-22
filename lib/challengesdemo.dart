@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hoopr/ballerCard.dart';
+import 'ballerCard.dart';
 //import 'package:permission_handler/permission_handler.dart';
 
 class ChallengesDemo extends StatelessWidget {
@@ -86,17 +88,69 @@ class ChallengesDemo extends StatelessWidget {
                   fillColor: Colors.white),
             )),
             Expanded(
-                child: ListView.builder(
+                child: ListView(
               shrinkWrap: true,
-              itemCount: challengerList
-                  .length, //isSearching == true ? contactsFiltered.length : contacts.length, <-- used for searching
-              itemBuilder: (context, index) {
-                //put items in here
-                return new ListTile(
-                  title: Text(index.toString()),
-                  subtitle: Text(challengerList[index]),
-                );
-              },
+              // itemCount: leaderboard.length,//isSearching == true ? contactsFiltered.length : contacts.length, <-- used for searching
+              // itemBuilder: (context, index) {
+              //   //put items in here
+              //   return new ListTile(
+              //     title: Text((index+1).toString()),
+              //     subtitle: Text(leaderboard[index]),
+
+              //   );
+              //},
+              children: <BallerCard>[
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+              ],
             ))
           ],
         ),

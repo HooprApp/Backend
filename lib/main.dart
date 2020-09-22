@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: _title, 
-      home: HomePage(), 
+      home: LoginSignupPage(), 
       routes: {
         //'signup': (context) => XDSignUp(),
         'login': (context) => XDLogin(),

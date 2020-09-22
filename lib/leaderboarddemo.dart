@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'ballerCard.dart';
 
 class LeaderboardDemo extends StatelessWidget {
   List<String> leaderboard = [
@@ -38,48 +39,61 @@ class LeaderboardDemo extends StatelessWidget {
 
               //   );
               //},
-              children: <LeaderboardCard>[
-                LeaderboardCard(bp: 10, name: "Austin", pic: "PROFILEPIC")
+              children: <BallerCard>[
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                BallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
               ],
             ))
           ],
         ),
-      ),
-    );
-  }
-}
-
-class LeaderboardCard extends StatelessWidget {
-  const LeaderboardCard({
-    this.name,
-    this.bp,
-    this.pic,
-  });
-
-  final String name;
-  final int bp;
-  final String pic;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Expanded(
-            flex: 2,
-            child: Text(pic),
-          ),
-          Expanded(
-            flex: 3,
-            child: Text("Testing cards"),
-          ),
-          const Icon(
-            Icons.more_vert,
-            size: 16.0,
-          ),
-        ],
       ),
     );
   }
