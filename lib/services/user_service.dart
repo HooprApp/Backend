@@ -7,6 +7,9 @@ abstract class AbstractUserService {
   // Create user in database, returns userId
   Future<DocumentReference> createUser(String fullName, String email);
 
+  // Get an existing user
+  Future<User> getUser(String userId);
+
   // Update an existing user
   Future<DocumentReference> updateUser(User user);
 
@@ -31,6 +34,17 @@ class UserService extends AbstractUserService {
       'points': 0,
       'isBanned': false
     }).catchError((error) => print("Failed to add user: $error"));
+  }
+
+  @override
+  Future<User> getUser(String userId) {
+    return users.doc(userId).get().then((DocumentSnapshot snapshot) {
+      if (snapshot.exists) {
+        return User.fromSnapshot(snapshot);
+      } else {
+        print('Document does not exist on the database');
+      }
+    }).catchError((error) => print("Failed to get user: $error"));
   }
 
   @override
