@@ -11,7 +11,7 @@ abstract class AbstractUserService {
   Future<User> getUser(String userId);
 
   // Update an existing user
-  Future<DocumentReference> updateUser(User user);
+  Future<void> updateUser(User user);
 
   // Remove an existing user
   Future<void> removeUser(String userId);
@@ -27,7 +27,7 @@ class UserService extends AbstractUserService {
   CollectionReference users = FirebaseFirestore.instance.collection('users');
 
   @override
-  Future<DocumentReference> createUser(String fullName, String email) {
+  Future<DocumentReference> createUser(String fullName, String email) async {
     return users.add({
       'fullName': fullName,
       'email': email,
@@ -38,7 +38,7 @@ class UserService extends AbstractUserService {
 
   @override
   Future<User> getUser(String userId) {
-    return users.doc(userId).get().then((DocumentSnapshot snapshot) {
+    return users.doc(userId).get().then((DocumentSnapshot snapshot) async {
       if (snapshot.exists) {
         return User.fromSnapshot(snapshot);
       } else {
@@ -48,7 +48,7 @@ class UserService extends AbstractUserService {
   }
 
   @override
-  Future<DocumentReference> updateUser(User user) {
+  Future<void> updateUser(User user) async {
     return users
         .doc(user.userId)
         .update(user.toPayload())
@@ -56,7 +56,7 @@ class UserService extends AbstractUserService {
   }
 
   @override
-  Future<void> removeUser(String userId) {
+  Future<void> removeUser(String userId) async {
     return users
         .doc(userId)
         .delete()
@@ -64,13 +64,13 @@ class UserService extends AbstractUserService {
   }
 
   @override
-  Future<void> banUser(String userId) {
+  Future<void> banUser(String userId) async {
     return users.doc(userId).update({'isBanned': true}).catchError(
         (error) => print("Failed to ban user: $error"));
   }
 
   @override
-  Future<void> unbanUser(String userId) {
+  Future<void> unbanUser(String userId) async {
     return users.doc(userId).update({'isBanned': false}).catchError(
         (error) => print("Failed to ban user: $error"));
   }
