@@ -2,17 +2,57 @@ import 'package:flutter/material.dart';
 import 'ballerCard.dart';
 
 class LeaderboardDemo extends StatelessWidget {
-  List<String> leaderboard = [
-    "First Place",
-    "Second Place",
-    "Third Place",
-    "Fourth Place",
-    "Fifth Place",
-    "Sixth Place",
-    "Seventh Place",
-    "Eigth Place",
-    "Nineth Place",
-    "Tenth Place"
+  List<Widget> leaderboard = [
+                LeaderBallerCard(
+                  bp: 10,
+                  name: "Edmund",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                LeaderBallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                LeaderBallerCard(
+                  bp: 10,
+                  name: "Kevin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                LeaderBallerCard(
+                  bp: 10,
+                  name: "Jose",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                LeaderBallerCard(
+                  bp: 10,
+                  name: "Raymond",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                LeaderBallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                LeaderBallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                LeaderBallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                LeaderBallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                LeaderBallerCard(
+                  bp: 10,
+                  name: "Austin",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
   ];
 
   LeaderboardDemo({
@@ -28,69 +68,80 @@ class LeaderboardDemo extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Expanded(
-                child: ListView(
-              shrinkWrap: true,
-              // itemCount: leaderboard.length,//isSearching == true ? contactsFiltered.length : contacts.length, <-- used for searching
-              // itemBuilder: (context, index) {
-              //   //put items in here
-              //   return new ListTile(
-              //     title: Text((index+1).toString()),
-              //     subtitle: Text(leaderboard[index]),
+              child: Row(
+                children: <Widget>[
+                    Stack(
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.fromLTRB(25.0, 25.0, 5.0, 5.0),
+                          child: Image(image: AssetImage('assets/raysmall.png'))
+                        ),
+                        // Container(
+                        //   padding: EdgeInsets.fromLTRB(25.0, 100.0, 5.0, 5.0),
+                        //   child: Text("2",
+                        //   style: TextStyle(
+                        //     color: Colors.white,
+                        //     fontFamily: 'Open Sans',
+                        //     fontWeight: FontWeight.bold,
+                        //     fontSize: 30.0
+                        //   ),textAlign: TextAlign.center,)
+                        // )
+                      ]  
+                    ),
+                  Stack(
+                    children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.fromLTRB(25.0, 25.0, 5.0, 5.0),
+                          child: Image(image: AssetImage('assets/raysmall.png'))
+                        ),
+                        // Container(
+                        //   padding: EdgeInsets.fromLTRB(25.0, 100.0, 5.0, 5.0),
+                        //   child: Text("2",
+                        //   style: TextStyle(
+                        //     color: Colors.white,
+                        //     fontFamily: 'Open Sans',
+                        //     fontWeight: FontWeight.bold,
+                        //     fontSize: 30.0
+                        //   ),textAlign: TextAlign.center,)
+                        // )
+                      ]  
+                  ),
+                  Stack(
+                    children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.fromLTRB(25.0, 25.0, 5.0, 5.0),
+                          child: Image(image: AssetImage('assets/raysmall.png'))
+                        ),
+                        // Container(
+                        //   padding: EdgeInsets.fromLTRB(25.0, 100.0, 5.0, 5.0),
+                        //   child: Text("2",
+                        //   style: TextStyle(
+                        //     color: Colors.white,
+                        //     fontFamily: 'Open Sans',
+                        //     fontWeight: FontWeight.bold,
+                        //     fontSize: 30.0
+                        //   ),textAlign: TextAlign.center,)
+                        // )
+                      ]  
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+                child: ListView.builder(
+                  itemCount: leaderboard.length,//isSearching == true ? contactsFiltered.length : contacts.length, <-- used for searching
+                  itemBuilder: (context, index) {
+                    //put items in here
+                    return new ListTile(
+                    //   title: Text((index+1).toString(),
+                    //   style: TextStyle(
 
-              //   );
-              //},
-              children: <BallerCard>[
-                BallerCard(
-                  bp: 10,
-                  name: "Austin",
-                  pic: AssetImage('assets/raysmall.png'),
-                ),
-                BallerCard(
-                  bp: 10,
-                  name: "Austin",
-                  pic: AssetImage('assets/raysmall.png'),
-                ),
-                BallerCard(
-                  bp: 10,
-                  name: "Austin",
-                  pic: AssetImage('assets/raysmall.png'),
-                ),
-                BallerCard(
-                  bp: 10,
-                  name: "Austin",
-                  pic: AssetImage('assets/raysmall.png'),
-                ),
-                BallerCard(
-                  bp: 10,
-                  name: "Austin",
-                  pic: AssetImage('assets/raysmall.png'),
-                ),
-                BallerCard(
-                  bp: 10,
-                  name: "Austin",
-                  pic: AssetImage('assets/raysmall.png'),
-                ),
-                BallerCard(
-                  bp: 10,
-                  name: "Austin",
-                  pic: AssetImage('assets/raysmall.png'),
-                ),
-                BallerCard(
-                  bp: 10,
-                  name: "Austin",
-                  pic: AssetImage('assets/raysmall.png'),
-                ),
-                BallerCard(
-                  bp: 10,
-                  name: "Austin",
-                  pic: AssetImage('assets/raysmall.png'),
-                ),
-                BallerCard(
-                  bp: 10,
-                  name: "Austin",
-                  pic: AssetImage('assets/raysmall.png'),
-                ),
-              ],
+                    //   ),
+                    // ),
+                    //   subtitle: leaderboard[index],
+                    title: leaderboard[index],
+                    );
+                  },
             ))
           ],
         ),

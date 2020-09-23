@@ -99,53 +99,53 @@ class ChallengesDemo extends StatelessWidget {
 
               //   );
               //},
-              children: <BallerCard>[
-                BallerCard(
+              children: <ChallengeBallerCard>[
+                ChallengeBallerCard(
                   bp: 10,
                   name: "Austin",
                   pic: AssetImage('assets/raysmall.png'),
                 ),
-                BallerCard(
+                ChallengeBallerCard(
+                  bp: 8,
+                  name: "Raymond",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                ChallengeBallerCard(
+                  bp: 9,
+                  name: "Hok",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                ChallengeBallerCard(
+                  bp: 4,
+                  name: "Tony",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                ChallengeBallerCard(
+                  bp: 10,
+                  name: "Edmund",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                ChallengeBallerCard(
+                  bp: 10,
+                  name: "Alisa",
+                  pic: AssetImage('assets/raysmall.png'),
+                ),
+                ChallengeBallerCard(
                   bp: 10,
                   name: "Austin",
                   pic: AssetImage('assets/raysmall.png'),
                 ),
-                BallerCard(
+                ChallengeBallerCard(
                   bp: 10,
                   name: "Austin",
                   pic: AssetImage('assets/raysmall.png'),
                 ),
-                BallerCard(
+                ChallengeBallerCard(
                   bp: 10,
                   name: "Austin",
                   pic: AssetImage('assets/raysmall.png'),
                 ),
-                BallerCard(
-                  bp: 10,
-                  name: "Austin",
-                  pic: AssetImage('assets/raysmall.png'),
-                ),
-                BallerCard(
-                  bp: 10,
-                  name: "Austin",
-                  pic: AssetImage('assets/raysmall.png'),
-                ),
-                BallerCard(
-                  bp: 10,
-                  name: "Austin",
-                  pic: AssetImage('assets/raysmall.png'),
-                ),
-                BallerCard(
-                  bp: 10,
-                  name: "Austin",
-                  pic: AssetImage('assets/raysmall.png'),
-                ),
-                BallerCard(
-                  bp: 10,
-                  name: "Austin",
-                  pic: AssetImage('assets/raysmall.png'),
-                ),
-                BallerCard(
+                ChallengeBallerCard(
                   bp: 10,
                   name: "Austin",
                   pic: AssetImage('assets/raysmall.png'),

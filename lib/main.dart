@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hoopr/pages/home_page.dart';
 import 'package:hoopr/pages/login_signup_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hoopr/services/authentication.dart';
 import 'package:hoopr/pages/root_page.dart';
 import 'package:flutter/material.dart';
@@ -46,12 +47,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: _title, 
-      home: LoginSignupPage(), 
-      routes: {
-        //'signup': (context) => XDSignUp(),
-        'login': (context) => XDLogin(),
-        'mainpage': (context) => XDMainPage(),
-      }
+      home: BottomBar(), //new XDLogin(auth: new Auth(firebaseAuth: FirebaseAuth.instance)), 
     );
   }
 }

@@ -19,7 +19,7 @@ class _ProfileDemoState extends State<ProfileDemo> {
           Container(
             height: 150,
             decoration: new BoxDecoration(
-              border: Border.all(width: 2.0, color: const Color(0xFFFFFFFF)),
+              border: Border.all(width: 2.0, color: const Color(0xff001331)),
               borderRadius: new BorderRadius.circular(20.0),
             ),
             margin: EdgeInsets.all(8.0),
@@ -34,7 +34,7 @@ class _ProfileDemoState extends State<ProfileDemo> {
                       height: 120,
                       decoration: new BoxDecoration(
                         border: Border.all(
-                            width: 2.0, color: const Color(0xFFFFFFFF)),
+                            width: 2.0, color: const Color(0xff001331)),
                         borderRadius: new BorderRadius.circular(20.0),
                       ),
                       child: Column(
@@ -49,7 +49,8 @@ class _ProfileDemoState extends State<ProfileDemo> {
                           Text("@RayTran",
                               style: TextStyle(
                                 color: Colors.white,
-                              )),
+                              )
+                          ),
                         ],
                       ),
                     )
@@ -61,14 +62,14 @@ class _ProfileDemoState extends State<ProfileDemo> {
           Container(
             height: 350,
             decoration: new BoxDecoration(
-              border: Border.all(width: 2.0, color: const Color(0xFFFFFFFF)),
+              border: Border.all(width: 2.0, color: const Color(0xff001331)),
               borderRadius: new BorderRadius.circular(20.0),
             ),
             margin: EdgeInsets.all(8.0),
             padding: EdgeInsets.all(10.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
-              children: [
+              children: [ 
                 ToggleSwitch(
                   initialLabelIndex: 0,
                   minWidth: 90.0,
@@ -95,7 +96,7 @@ Widget _badgeHistoryView() {
         height: 255,
         width: 350,
         decoration: new BoxDecoration(
-          border: Border.all(width: 2.0, color: const Color(0xFFFFFFFF)),
+          border: Border.all(width: 2.0, color: const Color(0xff001331)),
           borderRadius: new BorderRadius.circular(20.0),
         ),
         child: Center(
@@ -106,7 +107,7 @@ Widget _badgeHistoryView() {
         height: 255,
         width: 350,
         decoration: new BoxDecoration(
-          border: Border.all(width: 2.0, color: const Color(0xFFFFFFFF)),
+          border: Border.all(width: 2.0, color: const Color(0xff001331)),
           borderRadius: new BorderRadius.circular(20.0),
         ),
         child: Center(

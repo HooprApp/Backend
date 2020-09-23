@@ -256,7 +256,3 @@ const String _svg_rbv5oy =
     '<svg viewBox="153.3 184.4 1.0 1.0" ><path transform="translate(-189.32, -227.37)" d="M 342.6000061035156 411.7300109863281" fill="none" stroke="#3d332a" stroke-width="16" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
 const String _svg_m29862 =
     '<svg viewBox="153.3 184.2 1.0 1.0" ><path transform="translate(-189.35, -227.23)" d="M 342.6600036621094 411.4800109863281" fill="none" stroke="#3d332a" stroke-width="16" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-
-void buttonPressed() {
-  print("pressed");
-}

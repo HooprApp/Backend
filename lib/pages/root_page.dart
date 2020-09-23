@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hoopr/bottombardemo.dart';
 import 'package:hoopr/pages/login_signup_page.dart';
 import 'package:hoopr/services/authentication.dart';
 import 'package:hoopr/pages/home_page.dart';
@@ -77,11 +78,7 @@ class _RootPageState extends State<RootPage> {
         break;
       case AuthStatus.LOGGED_IN:
         if (_userId.length > 0 && _userId != null) {
-          return new HomePage(
-            userId: _userId,
-            auth: widget.auth,
-            logoutCallback: logoutCallback,
-          );
+          return new BottomBar();
         } else
           return buildWaitingScreen();
         break;
