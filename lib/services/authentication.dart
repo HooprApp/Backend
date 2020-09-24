@@ -18,9 +18,7 @@ abstract class BaseAuth {
 }
 
 class Auth implements BaseAuth {
-  Auth({this.firebaseAuth});
-
-  final FirebaseAuth firebaseAuth;
+  final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
   @override
   Future<String> signIn(String email, String password) async {

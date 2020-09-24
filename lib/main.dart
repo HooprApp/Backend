@@ -46,8 +46,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: _title, 
-      home: BottomBar(), //new XDLogin(auth: new Auth(firebaseAuth: FirebaseAuth.instance)), 
+      title: _title,
+      home: new XDLogin(auth: new Auth()),
     );
   }
 }

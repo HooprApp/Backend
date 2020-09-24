@@ -61,19 +61,34 @@ class LeaderboardDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Leaderboard 1')),
       backgroundColor: const Color(0xff001331),
       body: Container(
         padding: EdgeInsets.all(20),
         child: Column(
-          children: <Widget>[
+          children: <Widget> [
             Expanded(
+              flex: 1,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("LEADERBOARD",
+                  style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'Open Sans',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40.0
+                  ), textAlign: TextAlign.center,)
+                ]
+              )
+            ),
+            Expanded(
+              flex: 1,
               child: Row(
                 children: <Widget>[
                     Stack(
                       children: <Widget>[
                         Container(
-                          padding: EdgeInsets.fromLTRB(25.0, 25.0, 5.0, 5.0),
+                          padding: EdgeInsets.all(5),
                           child: Image(image: AssetImage('assets/raysmall.png'))
                         ),
                         // Container(
@@ -91,7 +106,7 @@ class LeaderboardDemo extends StatelessWidget {
                   Stack(
                     children: <Widget>[
                         Container(
-                          padding: EdgeInsets.fromLTRB(25.0, 25.0, 5.0, 5.0),
+                          padding: EdgeInsets.all(5),
                           child: Image(image: AssetImage('assets/raysmall.png'))
                         ),
                         // Container(
@@ -109,7 +124,7 @@ class LeaderboardDemo extends StatelessWidget {
                   Stack(
                     children: <Widget>[
                         Container(
-                          padding: EdgeInsets.fromLTRB(25.0, 25.0, 5.0, 5.0),
+                          padding: EdgeInsets.all(5),
                           child: Image(image: AssetImage('assets/raysmall.png'))
                         ),
                         // Container(
@@ -128,6 +143,7 @@ class LeaderboardDemo extends StatelessWidget {
               ),
             ),
             Expanded(
+              flex: 4,
                 child: ListView.builder(
                   itemCount: leaderboard.length,//isSearching == true ? contactsFiltered.length : contacts.length, <-- used for searching
                   itemBuilder: (context, index) {

@@ -66,7 +66,6 @@ class ChallengesDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Challenges')),
       backgroundColor: const Color(0xff001331),
       body: Container(
         padding: EdgeInsets.all(20),
