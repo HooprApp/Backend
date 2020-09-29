@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hoopr/bottombardemo.dart';
 import 'package:hoopr/pages/login_signup_page.dart';
 import 'package:hoopr/services/authentication.dart';
 import 'package:hoopr/pages/home_page.dart';
+import 'package:hoopr/XDLogin.dart';
 
 enum AuthStatus {
   NOT_DETERMINED,
@@ -70,14 +72,14 @@ class _RootPageState extends State<RootPage> {
         return buildWaitingScreen();
         break;
       case AuthStatus.NOT_LOGGED_IN:
-        return LoginSignupPage(
+        return XDLogin(
           auth: widget.auth,
           loginCallback: loginCallback,
         );
         break;
       case AuthStatus.LOGGED_IN:
         if (_userId.length > 0 && _userId != null) {
-          return new HomePage(
+          return new BottomBar(
             userId: _userId,
             auth: widget.auth,
             logoutCallback: logoutCallback,

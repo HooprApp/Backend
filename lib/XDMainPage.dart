@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import './XDSignUp.dart';
 import 'package:adobe_xd/page_link.dart';
-import './XDLogin.dart';
+import 'XDLogin.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class XDMainPage extends StatelessWidget {
@@ -160,7 +160,7 @@ class XDMainPage extends StatelessWidget {
                   transition: LinkTransition.Fade,
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => XDSignUp(),
+                  //pageBuilder: () => XDSignUp(),
                 ),
               ],
               child: Container(
@@ -170,23 +170,50 @@ class XDMainPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30.0),
                   color: const Color(0xffff8336),
                 ),
+                //Positioned(
+                //left: 130,
+                //bottom: 0,
+                child: RaisedButton.icon(
+                  onPressed: () {
+                    //Navigator.of(context).pushNamed('signup');
+                    print("pressed");
+                  },
+                  icon: Icon(Icons.edit_location),
+                  textColor: const Color(0xffffffff),
+                  label: Text('Get Started'),
+                ),
               ),
             ),
           ),
-          Transform.translate(
-            offset: Offset(122.0, 588.0),
-            child: Text(
-              'GET STARTED',
-              style: TextStyle(
-                fontFamily: 'Open Sans',
-                fontSize: 20,
-                color: const Color(0xff001331),
-                letterSpacing: 0.4,
-                fontWeight: FontWeight.w700,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
+          /*Transform.translate(
+              offset: Offset(122.0, 588.0),
+              child: RaisedButton(
+                onPressed: () {
+                  print('hello');
+                },
+                child: Text("GET STARTED!"),
+                color: Colors.red,
+                textColor: Colors.white,
+                highlightColor: Colors.black,
+              )
+            ),*/
+
+          //   offset: Offset(122.0, 588.0),
+          //   child: RaisedButton(
+          //     Text(
+          //     'GET STARTED',
+          //     style: TextStyle(
+          //       fontFamily: 'Open Sans',
+          //       fontSize: 20,
+          //       color: const Color(0xff001331),
+          //       letterSpacing: 0.4,
+          //       fontWeight: FontWeight.w700,
+          //     ),
+          //     textAlign: TextAlign.left,
+          //   ),
+          //   onPressed: () {},
+          // ),
+
           Transform.translate(
             offset: Offset(106.0, 642.0),
             child: PageLink(
