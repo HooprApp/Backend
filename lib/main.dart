@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: _title,
-      home: new XDLogin(auth: new Auth()),
+      home: new RootPage(auth: new Auth()),
     );
   }
 }
