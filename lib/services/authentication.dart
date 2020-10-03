@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:hoopr/services/database.dart';
-
+import 'package:hoopr/services/user.dart';
 
 abstract class BaseAuth {
   Future<String> signIn(String email, String password);
@@ -33,12 +32,15 @@ class Auth implements BaseAuth {
 
   @override
   Future<String> signUp(String email, String password) async {
+    print(email);
+    print(password);
     AuthResult result = await firebaseAuth.createUserWithEmailAndPassword(
         email: email, password: password);
     FirebaseUser user = result.user;
 
     //create new document for the user with uid
-    await DatabaseService(uid: user.uid).updateUserData('New member', 0);
+    await DatabaseService(uid: user.uid)
+        .updateUserData('First Name', "Last Name", "Username", 0);
 
     return user.uid;
   }
