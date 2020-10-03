@@ -19,6 +19,9 @@ class _XDLogin extends State<XDLogin> {
   String _email;
   String _password;
   String _errorMessage;
+  String _firstname;
+  String _lastname;
+  String _username;
 
   FormMode _formMode = FormMode.LOGIN;
   bool _isLoading;
@@ -104,7 +107,7 @@ class _XDLogin extends State<XDLogin> {
     return Scaffold(
         backgroundColor: const Color(0xff001331),
         appBar: AppBar(
-          title: Text('Hoopr'),
+          backgroundColor: const Color(0xff001331),
         ),
         body: Stack(
           children: <Widget>[
@@ -202,7 +205,10 @@ class _XDLogin extends State<XDLogin> {
             child: ListView(
               shrinkWrap: true,
               children: <Widget>[
+                _showtitle(),
+                _showemailtitle(),
                 _showEmailInput(),
+                _showpasswordtitle(),
                 _showPasswordInput(),
                 _showPrimaryButton(),
                 _showSecondaryButton(),
@@ -211,7 +217,7 @@ class _XDLogin extends State<XDLogin> {
               ],
             ),
           ));
-    } else if (_formMode == FormMode.LOGIN) {
+    } else if (_formMode == FormMode.SIGNUP) {
       return Container(
           padding: EdgeInsets.all(16.0),
           child: Form(
@@ -219,7 +225,16 @@ class _XDLogin extends State<XDLogin> {
             child: ListView(
               shrinkWrap: true,
               children: <Widget>[
+                _showtitle(),
+                _showemailtitle(),
                 _showEmailInput(),
+                _showfirstnametitle(),
+                _showfirstnameinput(),
+                _showlastnametitle(),
+                _showlastnameinput(),
+                _showusernametitle(),
+                _showusernameinput(),
+                _showpasswordtitle(),
                 _showPasswordInput(),
                 _showPrimaryButton(),
                 _showSecondaryButton(),
@@ -236,6 +251,8 @@ class _XDLogin extends State<XDLogin> {
             child: ListView(
               shrinkWrap: true,
               children: <Widget>[
+                _showtitle(),
+                _showemailtitle(),
                 _showEmailInput(),
                 _showPasswordInput(),
                 _showPrimaryButton(),
@@ -265,9 +282,20 @@ class _XDLogin extends State<XDLogin> {
     }
   }
 
+  Widget _showemailtitle() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+      child: Text(
+        'Email',
+        style: TextStyle(
+            fontSize: 14.0, fontWeight: FontWeight.w300, color: Colors.orange),
+      ),
+    );
+  }
+
   Widget _showEmailInput() {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(0.0, 100.0, 0.0, 0.0),
+      padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
       child: TextFormField(
         style: TextStyle(
           color: Colors.white,
@@ -290,10 +318,131 @@ class _XDLogin extends State<XDLogin> {
     );
   }
 
+  Widget _showfirstnametitle() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+      child: Text(
+        'First Name',
+        style: TextStyle(
+            fontSize: 14.0, fontWeight: FontWeight.w300, color: Colors.orange),
+      ),
+    );
+  }
+
+  Widget _showfirstnameinput() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 15.0),
+      child: TextFormField(
+        style: TextStyle(
+          color: Colors.white,
+          fontFamily: 'Open Sans',
+          fontSize: 24,
+          fontWeight: FontWeight.w700,
+        ),
+        maxLines: 1,
+        keyboardType: TextInputType.name,
+        autofocus: false,
+        decoration: InputDecoration(
+          hintText: 'First name',
+          hintStyle: TextStyle(
+            color: Colors.grey,
+          ),
+        ),
+        validator: (value) =>
+            value.isEmpty ? 'First name can\'t be empty' : null,
+        onSaved: (value) => _email = value.trim(),
+      ),
+    );
+  }
+
+  Widget _showlastnametitle() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+      child: Text(
+        'Last Name',
+        style: TextStyle(
+            fontSize: 14.0, fontWeight: FontWeight.w300, color: Colors.orange),
+      ),
+    );
+  }
+
+  Widget _showlastnameinput() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 15.0),
+      child: TextFormField(
+        style: TextStyle(
+          color: Colors.white,
+          fontFamily: 'Open Sans',
+          fontSize: 24,
+          fontWeight: FontWeight.w700,
+        ),
+        maxLines: 1,
+        keyboardType: TextInputType.name,
+        autofocus: false,
+        decoration: InputDecoration(
+          hintText: 'Last name',
+          hintStyle: TextStyle(
+            color: Colors.grey,
+          ),
+        ),
+        validator: (value) =>
+            value.isEmpty ? 'Last name can\'t be empty' : null,
+        onSaved: (value) => _email = value.trim(),
+      ),
+    );
+  }
+
+  Widget _showusernametitle() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+      child: Text(
+        'Username',
+        style: TextStyle(
+            fontSize: 14.0, fontWeight: FontWeight.w300, color: Colors.orange),
+      ),
+    );
+  }
+
+  Widget _showusernameinput() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 15.0),
+      child: TextFormField(
+        style: TextStyle(
+          color: Colors.white,
+          fontFamily: 'Open Sans',
+          fontSize: 24,
+          fontWeight: FontWeight.w700,
+        ),
+        maxLines: 1,
+        keyboardType: TextInputType.text,
+        autofocus: false,
+        decoration: InputDecoration(
+          hintText: 'Username',
+          hintStyle: TextStyle(
+            color: Colors.grey,
+          ),
+        ),
+        validator: (value) => value.isEmpty ? 'Username can\'t be empty' : null,
+        onSaved: (value) => _email = value.trim(),
+      ),
+    );
+  }
+
+  Widget _showpasswordtitle() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+      child: Text(
+        'Password',
+        style: TextStyle(
+            fontSize: 14.0, fontWeight: FontWeight.w300, color: Colors.orange),
+      ),
+    );
+  }
+
   Widget _showPasswordInput() {
     if (_formMode != FormMode.FORGOTPASSWORD) {
       return Padding(
-        padding: const EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 0.0),
+        padding: const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 15.0),
         child: TextFormField(
           style: TextStyle(
             color: Colors.white,
@@ -314,8 +463,43 @@ class _XDLogin extends State<XDLogin> {
       );
     } else {
       return Text('An email will be sent allowing you to reset your password',
-          style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w300));
+          style: TextStyle(
+              fontSize: 14.0,
+              fontWeight: FontWeight.w300,
+              color: Colors.white));
     }
+  }
+
+  Widget _showtitle() {
+    if (_formMode == FormMode.LOGIN) {
+      return Padding(
+        padding: const EdgeInsets.fromLTRB(0.0, .0, 0.0, 40.0),
+        child: Text(
+          'Log in',
+          style: TextStyle(
+              fontSize: 30.0, fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+      );
+    } else if (_formMode == FormMode.SIGNUP) {
+      return Padding(
+        padding: const EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 40.0),
+        child: Text(
+          'Sign up',
+          style: TextStyle(
+              fontSize: 30.0, fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+      );
+    } else {
+      return Padding(
+        padding: const EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 40.0),
+        child: Text(
+          'Forgot password',
+          style: TextStyle(
+              fontSize: 30.0, fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+      );
+    }
+    ;
   }
 
   Widget _showPrimaryButton() {
@@ -346,9 +530,15 @@ class _XDLogin extends State<XDLogin> {
     return FlatButton(
       child: _formMode == FormMode.LOGIN
           ? Text('Forgot password?',
-              style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w300))
+              style: TextStyle(
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.w300,
+                  color: Colors.white))
           : Text('',
-              style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w300)),
+              style: TextStyle(
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.w300,
+                  color: Colors.white)),
       onPressed: _changeFormToPasswordReset,
     );
   }
@@ -375,15 +565,24 @@ class _XDLogin extends State<XDLogin> {
     switch (_formMode) {
       case FormMode.LOGIN:
         return Text('Create an account',
-            style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300));
+            style: TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.w300,
+                color: Colors.white));
         break;
       case FormMode.SIGNUP:
         return Text('Have an account? Sign in',
-            style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300));
+            style: TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.w300,
+                color: Colors.white));
         break;
       case FormMode.FORGOTPASSWORD:
         return Text('Cancel',
-            style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300));
+            style: TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.w300,
+                color: Colors.white));
         break;
     }
     return Spacer();
