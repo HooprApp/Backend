@@ -5,7 +5,8 @@ import 'package:hoopr/services/user.dart';
 abstract class BaseAuth {
   Future<String> signIn(String email, String password);
 
-  Future<String> signUp(String email, String password);
+  Future<String> signUp(String email, String password, String firstName,
+      String lastName, String username, int bp);
 
   Future<FirebaseUser> getCurrentUser();
 
@@ -31,16 +32,15 @@ class Auth implements BaseAuth {
   }
 
   @override
-  Future<String> signUp(String email, String password) async {
-    print(email);
-    print(password);
+  Future<String> signUp(String email, String password, String firstName,
+      String lastName, String username, int bp) async {
     AuthResult result = await firebaseAuth.createUserWithEmailAndPassword(
         email: email, password: password);
     FirebaseUser user = result.user;
 
     //create new document for the user with uid
     await DatabaseService(uid: user.uid)
-        .updateUserData('First Name', "Last Name", "Username", 0);
+        .updateUserData(firstName, lastName, username, bp);
 
     return user.uid;
   }

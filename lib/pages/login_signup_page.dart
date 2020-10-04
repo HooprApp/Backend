@@ -54,7 +54,8 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
             return;
           }
         } else if (_formMode == FormMode.SIGNUP) {
-          userId = await widget.auth.signUp(_email, _password);
+          userId = await widget.auth.signUp(
+              _email, _password, "firstname", "lastname", "username", 0);
           widget.auth.sendEmailVerification();
           _showVerifyEmailSentDialog();
         } else {

@@ -57,7 +57,8 @@ class _XDLogin extends State<XDLogin> {
             return;
           }
         } else if (_formMode == FormMode.SIGNUP) {
-          userId = await widget.auth.signUp(_email, _password);
+          userId = await widget.auth
+              .signUp(_email, _password, _firstname, _lastname, _username, 0);
           print(userId);
           widget.auth.sendEmailVerification();
           _showVerifyEmailSentDialog();
