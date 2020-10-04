@@ -57,7 +57,6 @@ class _XDLogin extends State<XDLogin> {
             return;
           }
         } else if (_formMode == FormMode.SIGNUP) {
-          print("hello");
           userId = await widget.auth.signUp(_email, _password);
           print(userId);
           widget.auth.sendEmailVerification();
@@ -350,7 +349,7 @@ class _XDLogin extends State<XDLogin> {
         ),
         validator: (value) =>
             value.isEmpty ? 'First name can\'t be empty' : null,
-        onSaved: (value) => _email = value.trim(),
+        onSaved: (value) => _firstname = value.trim(),
       ),
     );
   }
@@ -387,7 +386,7 @@ class _XDLogin extends State<XDLogin> {
         ),
         validator: (value) =>
             value.isEmpty ? 'Last name can\'t be empty' : null,
-        onSaved: (value) => _email = value.trim(),
+        onSaved: (value) => _lastname = value.trim(),
       ),
     );
   }
@@ -423,7 +422,7 @@ class _XDLogin extends State<XDLogin> {
           ),
         ),
         validator: (value) => value.isEmpty ? 'Username can\'t be empty' : null,
-        onSaved: (value) => _email = value.trim(),
+        onSaved: (value) => _username = value.trim(),
       ),
     );
   }
