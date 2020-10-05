@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
+import 'ballerCard.dart';
 
 bool badgeView = true;
 
@@ -49,8 +50,7 @@ class _ProfileDemoState extends State<ProfileDemo> {
                           Text("@RayTran",
                               style: TextStyle(
                                 color: Colors.white,
-                              )
-                          ),
+                              )),
                         ],
                       ),
                     )
@@ -69,14 +69,30 @@ class _ProfileDemoState extends State<ProfileDemo> {
             padding: EdgeInsets.all(10.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
-              children: [ 
+              children: [
                 ToggleSwitch(
                   initialLabelIndex: 0,
-                  minWidth: 90.0,
-                  activeFgColor: Colors.white,
+                  minWidth: 185.0,
+                  fontSize: 20.0,
+                  cornerRadius: 20.0,
+                  activeFgColor: Colors.orange,
                   inactiveFgColor: Colors.white,
+                  activeBgColor: Color(0xff001361),
+                  inactiveBgColor: Color(0xff001361),
                   labels: ['Badges', 'Matches'],
-                  onToggle: (index) {},
+                  onToggle: (index) {
+                    if (index == 0) {
+                      print('Hello');
+                      setState(() {
+                        badgeView = true;
+                      });
+                    } else if (index == 1) {
+                      print('Bye');
+                      setState(() {
+                        badgeView = false;
+                      });
+                    }
+                  },
                 ),
                 Center(
                   child: _badgeHistoryView(),
@@ -93,7 +109,7 @@ class _ProfileDemoState extends State<ProfileDemo> {
 Widget _badgeHistoryView() {
   if (badgeView) {
     return Container(
-        height: 255,
+        height: 275,
         width: 350,
         decoration: new BoxDecoration(
           border: Border.all(width: 2.0, color: const Color(0xff001331)),
@@ -104,14 +120,25 @@ Widget _badgeHistoryView() {
                 style: TextStyle(color: Colors.white))));
   } else {
     return Container(
-        height: 255,
+        height: 275,
         width: 350,
         decoration: new BoxDecoration(
           border: Border.all(width: 2.0, color: const Color(0xff001331)),
           borderRadius: new BorderRadius.circular(20.0),
         ),
-        child: Center(
-            child: Text('No matches to show.',
-                style: TextStyle(color: Colors.white))));
+        child: ListView(
+          children: <MatchHistoryCard>[
+            MatchHistoryCard(
+                opponentName: 'Austin',
+                opponentPic: AssetImage('assets/raysmall.png'),
+                bpChange: 10,
+                matchDate: DateTime.utc(2020, 9, 23)),
+            MatchHistoryCard(
+                opponentName: 'Austin',
+                opponentPic: AssetImage('assets/raysmall.png'),
+                bpChange: 10,
+                matchDate: DateTime.utc(2020, 9, 23))
+          ],
+        ));
   }
 }
