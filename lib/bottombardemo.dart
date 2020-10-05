@@ -13,38 +13,27 @@ import 'package:flutter/material.dart';
 import 'leaderboarddemo.dart';
 import 'challengesdemo.dart';
 import 'profiledemo.dart';
+import 'package:hoopr/services/authentication.dart';
 
 import 'my_flutter_app_icons.dart';
 
-/// This Widget is the main application widget.
-class BottomBar extends StatelessWidget {
-  static const String _title = 'Flutter Code Sample';
+class BottomBar extends StatefulWidget {
+  BottomBar({Key key, this.auth, this.userId, this.logoutCallback})
+      : super(key: key);
+
+  final BaseAuth auth;
+  final VoidCallback logoutCallback;
+  final String userId;
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: _title,
-      home: MyStatefulWidget(),
-    );
-  }
+  State<StatefulWidget> createState() => _BottomBarState();
 }
 
-class MyStatefulWidget extends StatefulWidget {
-  MyStatefulWidget({Key key}) : super(key: key);
-
-  @override
-  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
-}
-
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+class _BottomBarState extends State<BottomBar> {
   int _selectedIndex = 0;
+
   //static const TextStyle optionStyle =
   //   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static List<Widget> _widgetOptions = <Widget>[
-    ChallengesDemo(),
-    LeaderboardDemo(),
-    ProfileDemo(),
-  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -54,40 +43,49 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> _widgetOptions = <Widget>[
+      ChallengesDemo(),
+      LeaderboardDemo(),
+      ProfileDemo(
+          auth: widget.auth,
+          logoutCallback: widget.logoutCallback,
+          userId: widget.userId),
+    ];
+
     return Scaffold(
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black,
-            ),
-          ],
+        body: Center(
+          child: _widgetOptions.elementAt(_selectedIndex),
         ),
-      child: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(MyFlutterApp.basketball_ball),
-            title: Text('Challenges'),
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black,
+              ),
+            ],
           ),
-          BottomNavigationBarItem(
-            icon: Icon(MyFlutterApp.medal),
-            title: Text('Leaderboard'),
+          child: BottomNavigationBar(
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(MyFlutterApp.basketball_ball),
+                title: Text('Challenges'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(MyFlutterApp.medal),
+                title: Text('Leaderboard'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(MyFlutterApp.user),
+                title: Text('Profile'),
+              ),
+            ],
+            currentIndex: _selectedIndex,
+            selectedItemColor: Colors.amber[800],
+            onTap: _onItemTapped,
+            backgroundColor: Color.fromRGBO(0, 19, 49, 1),
+            elevation: 5,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(MyFlutterApp.user),
-            title: Text('Profile'),
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
-        backgroundColor: Color.fromRGBO(0, 19, 49, 1),
-        elevation: 5,
-      ),
-    ));
+        ));
   }
 }

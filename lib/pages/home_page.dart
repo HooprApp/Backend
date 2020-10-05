@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
     _todoList = new List();
     _todoQuery = _database
         .reference()
-        .child("todo")
+        .child("users")
         .orderByChild("userId")
         .equalTo(widget.userId);
     _onTodoAddedSubscription = _todoQuery.onChildAdded.listen(onEntryAdded);

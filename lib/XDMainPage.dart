@@ -152,6 +152,18 @@ class XDMainPage extends StatelessWidget {
               ),
             ),
           ),
+                    Transform.translate(
+              offset: Offset(122.0, 300.0),
+              child: RaisedButton(
+                onPressed: () {
+                  print('hello');
+                },
+                child: Text("GET STARTED!"),
+                color: Colors.red,
+                textColor: Colors.white,
+                highlightColor: Colors.black,
+              )
+            ),
           Transform.translate(
             offset: Offset(23.0, 571.0),
             child: PageLink(
