@@ -21,12 +21,7 @@ class ChallengeBallerCard extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(),
         borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 2.0,
-            color: Colors.grey
-          )
-        ],
+        boxShadow: [BoxShadow(blurRadius: 2.0, color: Colors.grey)],
         color: Colors.white,
       ),
       child: Row(
@@ -35,34 +30,36 @@ class ChallengeBallerCard extends StatelessWidget {
           Expanded(
             child: Image(image: AssetImage('assets/raysmall.png')),
           ),
-          Stack(
-            children: <Widget>[
-              Container(
+          Stack(children: <Widget>[
+            Container(
                 padding: EdgeInsets.fromLTRB(25.0, 15.0, 5.0, 5.0),
-                child: Text(name,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontFamily: 'Open Sans',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.0
-                ), textAlign: TextAlign.center,)
-              ),
-              Container(
+                child: Text(
+                  name,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'Open Sans',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20.0),
+                  textAlign: TextAlign.center,
+                )),
+            Container(
                 padding: EdgeInsets.fromLTRB(25.0, 40.0, 5.0, 5.0),
-                child: Text("Challenge Recieved",
-                style: TextStyle(
-                  color: Colors.orange,
-                  fontFamily: 'Open Sans',
-                  fontSize: 14.0
-                ), textAlign: TextAlign.center,)
-              ),
-            ]  
-          ),
+                child: Text(
+                  "Challenge Recieved",
+                  style: TextStyle(
+                      color: Colors.orange,
+                      fontFamily: 'Open Sans',
+                      fontSize: 14.0),
+                  textAlign: TextAlign.center,
+                )),
+          ]),
           Expanded(
-            child: Text(bp.toString() + " BP",textAlign: TextAlign.right,),
+            child: Text(
+              bp.toString() + " BP",
+              textAlign: TextAlign.right,
+            ),
           ),
-          Expanded(
-            child: Icon(MyFlutterApp.basketball_ball))
+          Expanded(child: Icon(MyFlutterApp.basketball_ball))
         ],
       ),
     );
@@ -88,12 +85,7 @@ class LeaderBallerCard extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(),
         borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 2.0,
-            color: Colors.grey
-          )
-        ],
+        boxShadow: [BoxShadow(blurRadius: 2.0, color: Colors.grey)],
         color: Colors.white,
       ),
       child: Row(
@@ -103,22 +95,40 @@ class LeaderBallerCard extends StatelessWidget {
             child: Image(image: AssetImage('assets/raysmall.png')),
           ),
           Expanded(
-            child: Text(name, 
-            style: TextStyle(
-              color: Colors.black,
-              fontFamily: 'Open Sans',
-              fontWeight: FontWeight.bold,
-              fontSize: 14.0,
-              
-            ), textAlign: TextAlign.center,),
+            child: Text(
+              name,
+              style: TextStyle(
+                color: Colors.black,
+                fontFamily: 'Open Sans',
+                fontWeight: FontWeight.bold,
+                fontSize: 14.0,
+              ),
+              textAlign: TextAlign.center,
+            ),
           ),
           Expanded(
-            child: Text(bp.toString() + " BP",textAlign: TextAlign.right,),
+            child: Text(
+              bp.toString() + " BP",
+              textAlign: TextAlign.right,
+            ),
           ),
-          Expanded(
-            child: Icon(MyFlutterApp.basketball_ball))
+          Expanded(child: Icon(MyFlutterApp.basketball_ball))
         ],
       ),
     );
   }
+}
+
+class User {
+  const User({
+    this.firstName,
+    this.lastName,
+    this.username,
+    this.bp,
+  });
+
+  final String firstName;
+  final String lastName;
+  final String username;
+  final int bp;
 }
