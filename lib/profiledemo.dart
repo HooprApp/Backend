@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hoopr/services/authentication.dart';
+import 'user_list.dart';
 
 int screen = 0;
 bool _viewBadge = true;
@@ -20,7 +21,6 @@ class _ProfileDemoState extends State<ProfileDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile 1'),
         backgroundColor: Color(0xff000010),
         actions: <Widget>[
           new FlatButton(
@@ -58,22 +58,7 @@ class _ProfileDemoState extends State<ProfileDemo> {
                             width: 2.0, color: const Color(0xff001331)),
                         borderRadius: new BorderRadius.circular(20.0),
                       ),
-                      child: Column(
-                        children: [
-                          CircleAvatar(
-                            radius: 40,
-                            backgroundImage: AssetImage('assets/raysmall.png'),
-                          ),
-                          Text("Raymond Tran",
-                              style: TextStyle(
-                                color: Colors.white,
-                              )),
-                          Text("@RayTran",
-                              style: TextStyle(
-                                color: Colors.white,
-                              )),
-                        ],
-                      ),
+                      child: CurrentUser(),
                     ),
                     Center(
                         child: ButtonBar(
