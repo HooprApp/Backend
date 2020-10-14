@@ -33,4 +33,19 @@ class DatabaseService {
   Stream<List<User>> get users {
     return userCollection.snapshots().map(_userListFromSnapshot);
   }
+
+  /*User _userFromSnapshot(QuerySnapshot snapshot) {
+    final uid = snapshot.
+    
+    return User(
+      firstName: doc.data["firstName"],
+        lastName: doc.data["lastName"],
+        username: doc.data["username"],
+        bp: doc.data["bp"],
+    );
+  }*/
+
+  /*Stream<User> get currentUser {
+    return
+  }*/
 }

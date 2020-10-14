@@ -108,6 +108,7 @@ class _XDLogin extends State<XDLogin> {
     return Scaffold(
         backgroundColor: const Color(0xff001331),
         appBar: AppBar(
+          title: Text('Hoopr'),
           backgroundColor: const Color(0xff001331),
         ),
         body: Stack(
