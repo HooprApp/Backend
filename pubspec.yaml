@@ -31,6 +31,7 @@ dependencies:
   flutter_svg: ^0.18.0 # fixed the build error
   cloud_firestore: ^0.12.9+4
   toggle_switch: "^0.1.8"
+  provider: ^4.3.2+2
 
 
   # The following adds the Cupertino Icons font to your application.

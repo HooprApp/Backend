@@ -119,3 +119,17 @@ class LeaderBallerCard extends StatelessWidget {
     );
   }
 }
+
+class User {
+  const User({
+    this.firstName,
+    this.lastName,
+    this.username,
+    this.bp,
+  });
+
+  final String firstName;
+  final String lastName;
+  final String username;
+  final int bp;
+}
