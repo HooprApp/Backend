@@ -92,7 +92,8 @@ class LeaderBallerCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Expanded(
-            child: Image(image: AssetImage('assets/raysmall.png')),
+            child: CircleAvatar(
+                backgroundImage: AssetImage('assets/raysmall.png'), radius: 35),
           ),
           Expanded(
             child: Text(

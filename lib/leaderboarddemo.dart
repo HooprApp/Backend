@@ -81,14 +81,25 @@ class LeaderboardDemo extends StatelessWidget {
                         textAlign: TextAlign.center,
                       )
                     ])),
-            Row(crossAxisAlignment: CrossAxisAlignment.end, children: <Widget>[
-              Image(image: AssetImage('assets/raysmall.png')),
-              Image(
-                  height: 150,
-                  width: 200,
-                  image: AssetImage('assets/raysmall.png')),
-              Image(image: AssetImage('assets/raysmall.png')),
-            ]),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  CircleAvatar(
+                      backgroundImage: AssetImage(
+                        'assets/raysmall.png',
+                      ),
+                      radius: 30),
+                  CircleAvatar(
+                      backgroundImage: AssetImage(
+                        'assets/raysmall.png',
+                      ),
+                      radius: 40),
+                  CircleAvatar(
+                    backgroundImage: AssetImage('assets/raysmall.png'),
+                    radius: 30,
+                  ),
+                ]),
             Expanded(
                 flex: 4,
                 child: ListView.builder(
