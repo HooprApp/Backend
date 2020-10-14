@@ -142,7 +142,7 @@ class LeaderboardDemo extends StatelessWidget {
                     ],
                   ),
                 ),
-                Expanded(flex: 4, child: UserList())
+                Expanded(flex: 4, child: LeaderboardUserList())
               ],
             ),
           ),
