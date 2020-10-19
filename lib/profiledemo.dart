@@ -1,5 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hoopr/ballerCard.dart';
 import 'package:hoopr/services/authentication.dart';
+import 'package:provider/provider.dart';
 import 'user_list.dart';
 
 int screen = 0;
@@ -38,8 +42,8 @@ class _ProfileDemoState extends State<ProfileDemo> {
             height: 240,
             decoration: new BoxDecoration(
               gradient: LinearGradient(
-                  colors: [Color(0xff000010), Color(0xff001331)],
                   begin: Alignment.topCenter,
+                  colors: [Color(0xff000010), Color(0xff001331)],
                   end: Alignment.bottomCenter),
               //border: Border.all(width: 2.0, color: const Color(0xff001331)),
               //borderRadius: new BorderRadius.circular(20.0),
@@ -51,15 +55,32 @@ class _ProfileDemoState extends State<ProfileDemo> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      width: 150,
-                      height: 120,
-                      decoration: new BoxDecoration(
-                        border: Border.all(
-                            width: 2.0, color: const Color(0xff001331)),
-                        borderRadius: new BorderRadius.circular(20.0),
-                      ),
-                      child: CurrentUser(),
-                    ),
+                        width: 150,
+                        height: 170,
+                        decoration: new BoxDecoration(
+                          border: Border.all(
+                              width: 2.0, color: const Color(0xff001331)),
+                          borderRadius: new BorderRadius.circular(20.0),
+                        ),
+                        child: Column(
+                          children: [
+                            CircleAvatar(
+                              radius: 40,
+                              backgroundImage:
+                                  AssetImage('assets/raysmall.png'),
+                            ),
+                            Text("Raymond Tran",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                )),
+                            Text("RayTran",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                )),
+                          ],
+                        )),
                     Center(
                         child: ButtonBar(
                       alignment: MainAxisAlignment.center,
@@ -170,8 +191,27 @@ class _ProfileDemoState extends State<ProfileDemo> {
       print(e);
     }
   }
+  // return Column(
+  //   children: [
+  //     CircleAvatar(
+  //       radius: 40,
+  //       backgroundImage: AssetImage('assets/raysmall.png'),R
+  //     ),
+  //     Text("Raymond Tran",
+  //         style: TextStyle(
+  //           color: Colors.white,
+  //           fontWeight: FontWeight.bold,
+  //           fontSize: 15,
+  //         )),
+  //     Text("RayTran",
+  //         style: TextStyle(
+  //           color: Colors.white,
+  //         )),
+  //   ],
+  // );
+}
 
-  /*Widget _badgeHistoryView() {
+/*Widget _badgeHistoryView() {
     if (badgeView) {
       return Container(
           height: 255,
@@ -196,4 +236,3 @@ class _ProfileDemoState extends State<ProfileDemo> {
                   style: TextStyle(color: Colors.white))));
     }
   }*/
-}

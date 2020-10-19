@@ -1,37 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hoopr/pages/home_page.dart';
-import 'package:hoopr/pages/login_signup_page.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hoopr/services/authentication.dart';
 import 'package:hoopr/pages/root_page.dart';
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
-import 'package:adobe_xd/page_link.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-//import 'package:hoopr_ui/XDMessageName.dart';
-import './XDSignUp.dart';
-import 'XDLogin.dart';
-import 'XDChallenges1.dart';
-import 'XDChallenges2.dart';
-import 'XDChallenges3.dart';
-import 'XDChallenges4.dart';
-import 'XDChallenges41.dart';
-import 'XDChallenges42.dart';
-import 'XDChallengesPopup.dart';
-import 'XDChallengesPopup1.dart';
-import 'XDLeaderboard.dart';
-import 'XDLeaderboardPopup.dart';
-import 'XDUserProfile1.dart';
-import 'XDUserProfile2.dart';
-import 'XDUserProfile3.dart';
-import 'XDUserProfile4.dart';
-import 'XDMainPage.dart';
-import 'XDMessageName.dart';
 
-import 'challengesdemo.dart';
-import 'leaderboarddemo.dart';
-import 'profiledemo.dart';
-import 'bottombardemo.dart';
+import 'IntroPage.dart';
+//import 'package:hoopr_ui/XDMessageName.dart';
 
 //import 'pages/home_page.dart';
 
@@ -47,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: _title,
-      home: new RootPage(auth: new Auth()),
+      home: IntroPage(), //new RootPage(auth: new Auth()),
     );
   }
 }

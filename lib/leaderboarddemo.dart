@@ -5,59 +5,6 @@ import 'package:provider/provider.dart';
 import 'user_list.dart';
 
 class LeaderboardDemo extends StatelessWidget {
-  List<Widget> leaderboard = [
-    LeaderBallerCard(
-      bp: 10,
-      name: "Edmund",
-      pic: AssetImage('assets/raysmall.png'),
-    ),
-    LeaderBallerCard(
-      bp: 10,
-      name: "Austin",
-      pic: AssetImage('assets/raysmall.png'),
-    ),
-    LeaderBallerCard(
-      bp: 10,
-      name: "Kevin",
-      pic: AssetImage('assets/raysmall.png'),
-    ),
-    LeaderBallerCard(
-      bp: 10,
-      name: "Jose",
-      pic: AssetImage('assets/raysmall.png'),
-    ),
-    LeaderBallerCard(
-      bp: 10,
-      name: "Raymond",
-      pic: AssetImage('assets/raysmall.png'),
-    ),
-    LeaderBallerCard(
-      bp: 10,
-      name: "Austin",
-      pic: AssetImage('assets/raysmall.png'),
-    ),
-    LeaderBallerCard(
-      bp: 10,
-      name: "Austin",
-      pic: AssetImage('assets/raysmall.png'),
-    ),
-    LeaderBallerCard(
-      bp: 10,
-      name: "Austin",
-      pic: AssetImage('assets/raysmall.png'),
-    ),
-    LeaderBallerCard(
-      bp: 10,
-      name: "Austin",
-      pic: AssetImage('assets/raysmall.png'),
-    ),
-    LeaderBallerCard(
-      bp: 10,
-      name: "Austin",
-      pic: AssetImage('assets/raysmall.png'),
-    ),
-  ];
-
   LeaderboardDemo({
     Key key,
   }) : super(key: key);
@@ -96,21 +43,31 @@ class LeaderboardDemo extends StatelessWidget {
                       Stack(
                           alignment: Alignment.bottomCenter,
                           children: <Widget>[
-                            Image(image: AssetImage('assets/raysmall.png')),
+                            CircleAvatar(
+                              radius: 40,
+                              backgroundImage:
+                                  AssetImage('assets/raysmall.png'),
+                            ),
                             Icon(Icons.looks_two)
                           ]),
                       Stack(
                           alignment: Alignment.bottomCenter,
                           children: <Widget>[
-                            Image(
-                              image: AssetImage('assets/raysmall.png'),
+                            CircleAvatar(
+                              radius: 40,
+                              backgroundImage:
+                                  AssetImage('assets/raysmall.png'),
                             ),
                             Icon(Icons.looks_one),
                           ]),
                       Stack(
                           alignment: Alignment.bottomCenter,
                           children: <Widget>[
-                            Image(image: AssetImage('assets/raysmall.png')),
+                            CircleAvatar(
+                              radius: 40,
+                              backgroundImage:
+                                  AssetImage('assets/raysmall.png'),
+                            ),
                             Icon(Icons.looks_3)
                           ]),
                     ],

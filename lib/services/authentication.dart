@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:hoopr/services/db.dart';
 
 abstract class BaseAuth {
@@ -49,6 +50,11 @@ class Auth implements BaseAuth {
   Future<FirebaseUser> getCurrentUser() async {
     FirebaseUser user = await firebaseAuth.currentUser();
     return user;
+  }
+
+  @override
+  Future<String> getCurrentUID() async {
+    return (await firebaseAuth.currentUser()).uid;
   }
 
   @override

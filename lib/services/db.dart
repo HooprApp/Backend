@@ -1,5 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:hoopr/ballerCard.dart';
+import 'package:hoopr/services/authentication.dart';
+import 'package:provider/provider.dart';
 
 class DatabaseService {
   final String uid;
@@ -34,18 +37,19 @@ class DatabaseService {
     return userCollection.snapshots().map(_userListFromSnapshot);
   }
 
-  /*User _userFromSnapshot(QuerySnapshot snapshot) {
-    final uid = snapshot.
-    
-    return User(
-      firstName: doc.data["firstName"],
-        lastName: doc.data["lastName"],
-        username: doc.data["username"],
-        bp: doc.data["bp"],
-    );
-  }*/
+  // User _userFromSnapshot(QuerySnapshot snapshot) {
+  //   final user =
+  //       Firestore.instance.collection("users").document(uid).snapshots();
 
-  /*Stream<User> get currentUser {
-    return
-  }*/
+  //   // return User(
+  //   //   firstName: user.data["firstName"],
+  //   //   lastName: user.data["lastName"],
+  //   //   username: user.data["username"],
+  //   //   bp: user.data["bp"],
+  //   // );
+  // }
+
+  // // Stream<User> get currentUser {
+  // //   return _userFromSnapshot;
+  // // }
 }
