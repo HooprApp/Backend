@@ -16,8 +16,8 @@ class ChallengeBallerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20),
-      margin: EdgeInsets.all(20),
+      padding: EdgeInsets.all(10),
+      margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
         border: Border.all(),
         borderRadius: BorderRadius.circular(20),
@@ -28,7 +28,10 @@ class ChallengeBallerCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Expanded(
-            child: Image(image: AssetImage('assets/raysmall.png')),
+            child: CircleAvatar(
+              radius: 30,
+              backgroundImage: AssetImage('assets/raysmall.png'),
+            ),
           ),
           Stack(children: <Widget>[
             Container(
@@ -80,8 +83,8 @@ class LeaderBallerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20),
-      margin: EdgeInsets.all(20),
+      padding: EdgeInsets.all(10),
+      margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
         border: Border.all(),
         borderRadius: BorderRadius.circular(20),
@@ -93,7 +96,9 @@ class LeaderBallerCard extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: CircleAvatar(
-                backgroundImage: AssetImage('assets/raysmall.png'), radius: 35),
+              radius: 40,
+              backgroundImage: AssetImage('assets/raysmall.png'),
+            ),
           ),
           Expanded(
             child: Text(

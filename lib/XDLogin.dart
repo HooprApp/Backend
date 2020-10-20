@@ -107,10 +107,6 @@ class _XDLogin extends State<XDLogin> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: const Color(0xff001331),
-        appBar: AppBar(
-          title: Text('Hoopr'),
-          backgroundColor: const Color(0xff001331),
-        ),
         body: Stack(
           children: <Widget>[
             _showForm(),
@@ -475,7 +471,7 @@ class _XDLogin extends State<XDLogin> {
   Widget _showtitle() {
     if (_formMode == FormMode.LOGIN) {
       return Padding(
-        padding: const EdgeInsets.fromLTRB(0.0, .0, 0.0, 40.0),
+        padding: const EdgeInsets.fromLTRB(0.0, 50.0, 0.0, 40.0),
         child: Text(
           'Log in',
           style: TextStyle(
@@ -548,7 +544,7 @@ class _XDLogin extends State<XDLogin> {
   Widget _textPrimaryButton() {
     switch (_formMode) {
       case FormMode.LOGIN:
-        return Text('Login',
+        return Text('->',
             style: TextStyle(fontSize: 20.0, color: Colors.white));
         break;
       case FormMode.SIGNUP:
