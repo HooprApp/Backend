@@ -1,21 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:hoopr/ballerCard.dart';
-import 'package:hoopr/services/authentication.dart';
-import 'package:provider/provider.dart';
 
 class DatabaseService {
-  static DatabaseService _instance;
-
   final CollectionReference usersCollection =
       Firestore.instance.collection('users');
-
-  static Future<DatabaseService> getInstance() async {
-    if (_instance == null) {
-      _instance = DatabaseService();
-    }
-    return _instance;
-  }
 
   Future createUser(String userId, String firstName, String lastName,
       String username, int bp) async {

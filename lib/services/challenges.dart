@@ -10,8 +10,6 @@ import 'package:hoopr/services/db.dart';
 import 'package:hoopr/serviceLocator.dart';
 
 class ChallengesService {
-  static ChallengesService _instance;
-
   final DatabaseService databaseService = locator<DatabaseService>();
 
   final CollectionReference challengesCollection =
@@ -19,13 +17,6 @@ class ChallengesService {
 
   final CollectionReference usersCollection =
       Firestore.instance.collection('challenges');
-
-  static Future<ChallengesService> getInstance() async {
-    if (_instance == null) {
-      _instance = ChallengesService();
-    }
-    return _instance;
-  }
 
   // Create an active challenge
   Future createActiveChallenge(String challengerId, String receiverId) async {
