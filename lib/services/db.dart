@@ -5,21 +5,36 @@ import 'package:hoopr/services/authentication.dart';
 import 'package:provider/provider.dart';
 
 class DatabaseService {
-  final String uid;
-  DatabaseService({this.uid});
+  static DatabaseService _instance;
 
-  //collection reference
-  final CollectionReference userCollection =
+  final CollectionReference usersCollection =
       Firestore.instance.collection('users');
 
-  Future updateUserData(
-      String firstName, String lastName, String username, int bp) async {
-    return await userCollection.document(uid).setData({
+  static Future<DatabaseService> getInstance() async {
+    if (_instance == null) {
+      _instance = DatabaseService();
+    }
+    return _instance;
+  }
+
+  Future createUser(String userId, String firstName, String lastName,
+      String username, int bp) async {
+    return await usersCollection.document(userId).setData({
       'firstName': firstName,
       'lastName': lastName,
       'username': username,
       'bp': bp
     });
+  }
+
+  Future updateUser(userId, updates) async {
+    return await usersCollection.document(userId).updateData(updates);
+  }
+
+  Future addChallenge(userId, challengeId) async {
+    usersCollection
+        .document(userId)
+        .updateData({'challenges': FieldValue.arrayUnion(challengeId)});
   }
 
   List<User> _userListFromSnapshot(QuerySnapshot snapshot) {
@@ -34,6 +49,6 @@ class DatabaseService {
   }
 
   Stream<List<User>> get users {
-    return userCollection.snapshots().map(_userListFromSnapshot);
+    return usersCollection.snapshots().map(_userListFromSnapshot);
   }
 }

@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:hoopr/services/db.dart';
+import 'package:hoopr/serviceLocator.dart';
 
 abstract class BaseAuth {
   Future<String> signIn(String email, String password);
@@ -23,6 +23,8 @@ abstract class BaseAuth {
 class Auth implements BaseAuth {
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
+  final DatabaseService databaseService = locator<DatabaseService>();
+
   @override
   Future<String> signIn(String email, String password) async {
     AuthResult result = await firebaseAuth.signInWithEmailAndPassword(
@@ -40,8 +42,7 @@ class Auth implements BaseAuth {
     FirebaseUser user = result.user;
 
     //create new document for the user with uid
-    await DatabaseService(uid: user.uid)
-        .updateUserData(firstName, lastName, username, 0);
+    databaseService.createUser(user.uid, firstName, lastName, username, 0);
 
     return user.uid;
   }
@@ -50,11 +51,6 @@ class Auth implements BaseAuth {
   Future<FirebaseUser> getCurrentUser() async {
     FirebaseUser user = await firebaseAuth.currentUser();
     return user;
-  }
-
-  @override
-  Future<String> getCurrentUID() async {
-    return (await firebaseAuth.currentUser()).uid;
   }
 
   @override
