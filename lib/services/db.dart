@@ -36,20 +36,4 @@ class DatabaseService {
   Stream<List<User>> get users {
     return userCollection.snapshots().map(_userListFromSnapshot);
   }
-
-  // User _userFromSnapshot(QuerySnapshot snapshot) {
-  //   final user =
-  //       Firestore.instance.collection("users").document(uid).snapshots();
-
-  //   // return User(
-  //   //   firstName: user.data["firstName"],
-  //   //   lastName: user.data["lastName"],
-  //   //   username: user.data["username"],
-  //   //   bp: user.data["bp"],
-  //   // );
-  // }
-
-  // // Stream<User> get currentUser {
-  // //   return _userFromSnapshot;
-  // // }
 }

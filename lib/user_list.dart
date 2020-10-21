@@ -13,16 +13,18 @@ class _LeaderboardUserListState extends State<LeaderboardUserList> {
     List<User> users = Provider.of<List<User>>(context);
     List<User> sortedUsers = [];
 
-    while (users.length > 0) {
-      User high = users[0];
+    if (users != null) {
+      while (users.length > 0) {
+        User high = users[0];
 
-      for (var i = 0; i < users.length; i++) {
-        if (users[i].bp > high.bp) {
-          high = users[i];
+        for (var i = 0; i < users.length; i++) {
+          if (users[i].bp > high.bp) {
+            high = users[i];
+          }
         }
+        sortedUsers.add(high);
+        users.remove(high);
       }
-      sortedUsers.add(high);
-      users.remove(high);
     }
 
     return ListView.builder(
@@ -52,15 +54,18 @@ class _ChallengesUserListState extends State<ChallengesUserList> {
     //   sortedUsers.add(__);
     //   users.remove(__);
     // }
-
-    return ListView.builder(
-        itemCount: users.length,
-        itemBuilder: (context, index) {
-          return ChallengeBallerCard(
-              bp: users[index].bp,
-              name: users[index].username,
-              pic: AssetImage('assets/raysmall.png'));
-        });
+    if (users != null) {
+      return ListView.builder(
+          itemCount: users.length,
+          itemBuilder: (context, index) {
+            return ChallengeBallerCard(
+                bp: users[index].bp,
+                name: users[index].username,
+                pic: AssetImage('assets/raysmall.png'));
+          });
+    } else {
+      return Container();
+    }
   }
 }
 
