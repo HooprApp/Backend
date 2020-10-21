@@ -212,6 +212,8 @@ class _ProfileDemoState extends State<ProfileDemo> {
             } else {
               return Container();
             }
+          } else {
+            return Container();
           }
         },
       );
