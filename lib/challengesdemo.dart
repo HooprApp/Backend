@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hoopr/ballerCard.dart';
+import 'package:hoopr/models/user.dart';
 import 'package:hoopr/services/db.dart';
 import 'package:hoopr/user_list.dart';
 import 'package:provider/provider.dart';
-import 'ballerCard.dart';
 //import 'package:permission_handler/permission_handler.dart';
 
 class ChallengesDemo extends StatelessWidget {

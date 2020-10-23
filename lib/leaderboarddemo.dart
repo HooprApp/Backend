@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hoopr/services/db.dart';
-import 'ballerCard.dart';
+import 'package:hoopr/models/user.dart';
 import 'package:provider/provider.dart';
 import 'user_list.dart';
 

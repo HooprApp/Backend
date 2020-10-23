@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:hoopr/models/user.dart';
 import 'my_flutter_app_icons.dart';
 
 class ChallengeBallerCard extends StatelessWidget {
@@ -70,15 +70,9 @@ class ChallengeBallerCard extends StatelessWidget {
 }
 
 class LeaderBallerCard extends StatelessWidget {
-  const LeaderBallerCard({
-    this.name,
-    this.bp,
-    this.pic,
-  });
+  const LeaderBallerCard({this.user});
 
-  final String name;
-  final int bp;
-  final AssetImage pic;
+  final User user;
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +96,7 @@ class LeaderBallerCard extends StatelessWidget {
           ),
           Expanded(
             child: Text(
-              name,
+              user.username,
               style: TextStyle(
                 color: Colors.black,
                 fontFamily: 'Open Sans',
@@ -114,7 +108,7 @@ class LeaderBallerCard extends StatelessWidget {
           ),
           Expanded(
             child: Text(
-              bp.toString() + " BP",
+              user.bp.toString() + " BP",
               textAlign: TextAlign.right,
             ),
           ),
@@ -123,18 +117,4 @@ class LeaderBallerCard extends StatelessWidget {
       ),
     );
   }
-}
-
-class User {
-  const User({
-    this.firstName,
-    this.lastName,
-    this.username,
-    this.bp,
-  });
-
-  final String firstName;
-  final String lastName;
-  final String username;
-  final int bp;
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hoopr/ballerCard.dart';
+import 'package:hoopr/models/user.dart';
 import 'package:provider/provider.dart';
 
 class LeaderboardUserList extends StatefulWidget {
@@ -30,10 +31,7 @@ class _LeaderboardUserListState extends State<LeaderboardUserList> {
     return ListView.builder(
         itemCount: sortedUsers.length,
         itemBuilder: (context, index) {
-          return LeaderBallerCard(
-              bp: sortedUsers[index].bp,
-              name: sortedUsers[index].username,
-              pic: AssetImage('assets/raysmall.png'));
+          return LeaderBallerCard(user: sortedUsers[index]);
         });
   }
 }
