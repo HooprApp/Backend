@@ -20,9 +20,9 @@ class DatabaseService {
   }
 
   Future addChallenge(userId, challengeId) async {
-    usersCollection
-        .document(userId)
-        .updateData({'challenges': FieldValue.arrayUnion(challengeId)});
+    usersCollection.document(userId).updateData({
+      'challenges': FieldValue.arrayUnion([challengeId])
+    });
   }
 
   List<User> _userListFromSnapshot(QuerySnapshot snapshot) {
