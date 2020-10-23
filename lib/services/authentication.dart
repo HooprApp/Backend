@@ -21,7 +21,7 @@ abstract class BaseAuth {
 }
 
 class Auth implements BaseAuth {
-  final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+  static final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
   final DatabaseService databaseService = locator<DatabaseService>();
 
@@ -51,6 +51,11 @@ class Auth implements BaseAuth {
   Future<FirebaseUser> getCurrentUser() async {
     FirebaseUser user = await firebaseAuth.currentUser();
     return user;
+  }
+
+  static Future<String> getCurrentUserId() async {
+    FirebaseUser user = await firebaseAuth.currentUser();
+    return (await user.getIdToken()).token;
   }
 
   @override

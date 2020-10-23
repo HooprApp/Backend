@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:hoopr/models/user.dart';
-import '../../my_flutter_app_icons.dart';
+import 'package:hoopr/my_flutter_app_icons.dart';
+import 'leaderboardChallengeModal.dart';
 
 class LeaderboardCard extends StatelessWidget {
   const LeaderboardCard({this.user});
 
   final User user;
 
-  void openChallengeModal() {
-    print('open modal');
+  void openChallengeModal(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return LeaderboardChallengeModal(user.id);
+        });
   }
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
         child: Container(
           padding: EdgeInsets.all(10),
           margin: EdgeInsets.all(10),
@@ -54,8 +59,6 @@ class LeaderboardCard extends StatelessWidget {
             ],
           ),
         ),
-        onTap: () {
-          print("tap");
-        });
+        onTap: () => openChallengeModal(context));
   }
 }
