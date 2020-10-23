@@ -57,21 +57,3 @@ class LeaderboardPage extends StatelessWidget {
         ));
   }
 }
-
-/*
-Stack(children: <Widget>[
-                    Container(
-                        padding: EdgeInsets.all(5),
-                        child: Image(image: AssetImage('assets/raysmall.png'))),
-                  ]),
-                  Stack(children: <Widget>[
-                    Container(
-                        padding: EdgeInsets.all(5),
-                        child: Image(image: AssetImage('assets/raysmall.png'))),
-                  ]),
-                  Stack(children: <Widget>[
-                    Container(
-                        padding: EdgeInsets.all(5),
-                        child: Image(image: AssetImage('assets/raysmall.png'))),
-                  ]),
-*/
