@@ -2,17 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:hoopr/services/db.dart';
 import 'package:hoopr/models/user.dart';
 import 'package:provider/provider.dart';
-import 'user_list.dart';
+import 'leaderboardList.dart';
+import 'package:hoopr/serviceLocator.dart';
 
-class Leaderboard extends StatelessWidget {
-  Leaderboard({
+class LeaderboardPage extends StatelessWidget {
+  LeaderboardPage({
     Key key,
   }) : super(key: key);
+
+  final DatabaseService databaseService = locator<DatabaseService>();
 
   @override
   Widget build(BuildContext context) {
     return StreamProvider<List<User>>.value(
-        value: DatabaseService().users,
+        value: databaseService.users,
         child: Scaffold(
           backgroundColor: const Color(0xff001331),
           body: Container(

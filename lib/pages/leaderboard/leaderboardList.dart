@@ -35,34 +35,3 @@ class _LeaderboardListState extends State<LeaderboardList> {
         });
   }
 }
-
-// class CurrentUser extends StatefulWidget {
-//   @override
-//   _CurrentUserState createState() => _CurrentUserState();
-// }
-
-// class _CurrentUserState extends State<CurrentUser> {
-//   @override
-//   Widget build(BuildContext context) {
-//     final user = Provider.of<User>(context);
-
-//     return Column(
-//       children: [
-//         CircleAvatar(
-//           radius: 40,
-//           backgroundImage: AssetImage('assets/raysmall.png'),
-//         ),
-//         Text(user.firstName + user.lastName,
-//             style: TextStyle(
-//               color: Colors.white,
-//               fontWeight: FontWeight.bold,
-//               fontSize: 15,
-//             )),
-//         Text(user.username,
-//             style: TextStyle(
-//               color: Colors.white,
-//             )),
-//       ],
-//     );
-//   }
-// }
