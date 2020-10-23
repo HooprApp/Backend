@@ -55,7 +55,7 @@ class Auth implements BaseAuth {
 
   static Future<String> getCurrentUserId() async {
     FirebaseUser user = await firebaseAuth.currentUser();
-    return (await user.getIdToken()).token;
+    return user.uid;
   }
 
   @override
