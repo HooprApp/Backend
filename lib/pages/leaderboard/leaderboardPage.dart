@@ -3,6 +3,7 @@ import 'package:hoopr/services/db.dart';
 import 'package:hoopr/models/user.dart';
 import 'package:provider/provider.dart';
 import 'leaderboardList.dart';
+import 'podiumSlot.dart';
 import 'package:hoopr/serviceLocator.dart';
 
 class LeaderboardPage extends StatelessWidget {
@@ -43,36 +44,9 @@ class LeaderboardPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
-                      Stack(
-                          alignment: Alignment.bottomCenter,
-                          children: <Widget>[
-                            CircleAvatar(
-                              radius: 40,
-                              backgroundImage:
-                                  AssetImage('assets/raysmall.png'),
-                            ),
-                            Icon(Icons.looks_two)
-                          ]),
-                      Stack(
-                          alignment: Alignment.bottomCenter,
-                          children: <Widget>[
-                            CircleAvatar(
-                              radius: 40,
-                              backgroundImage:
-                                  AssetImage('assets/raysmall.png'),
-                            ),
-                            Icon(Icons.looks_one),
-                          ]),
-                      Stack(
-                          alignment: Alignment.bottomCenter,
-                          children: <Widget>[
-                            CircleAvatar(
-                              radius: 40,
-                              backgroundImage:
-                                  AssetImage('assets/raysmall.png'),
-                            ),
-                            Icon(Icons.looks_3)
-                          ]),
+                      PodiumSlot(),
+                      PodiumSlot(),
+                      PodiumSlot()
                     ],
                   ),
                 ),
