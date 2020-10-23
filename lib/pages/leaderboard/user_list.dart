@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:hoopr/ballerCard.dart';
+import 'package:hoopr/pages/leaderboard/leaderboardCard.dart';
 import 'package:hoopr/models/user.dart';
 import 'package:provider/provider.dart';
 
-class LeaderboardUserList extends StatefulWidget {
+class LeaderboardList extends StatefulWidget {
   @override
-  _LeaderboardUserListState createState() => _LeaderboardUserListState();
+  _LeaderboardListState createState() => _LeaderboardListState();
 }
 
-class _LeaderboardUserListState extends State<LeaderboardUserList> {
+class _LeaderboardListState extends State<LeaderboardList> {
   @override
   Widget build(BuildContext context) {
     List<User> users = Provider.of<List<User>>(context);
@@ -31,39 +31,8 @@ class _LeaderboardUserListState extends State<LeaderboardUserList> {
     return ListView.builder(
         itemCount: sortedUsers.length,
         itemBuilder: (context, index) {
-          return LeaderBallerCard(user: sortedUsers[index]);
+          return LeaderboardCard(user: sortedUsers[index]);
         });
-  }
-}
-
-class ChallengesUserList extends StatefulWidget {
-  @override
-  _ChallengesUserListState createState() => _ChallengesUserListState();
-}
-
-class _ChallengesUserListState extends State<ChallengesUserList> {
-  @override
-  Widget build(BuildContext context) {
-    List<User> users = Provider.of<List<User>>(context);
-    //List<User> sortedUsers = [];
-
-    // while (users.length > 0) {
-
-    //   sortedUsers.add(__);
-    //   users.remove(__);
-    // }
-    if (users != null) {
-      return ListView.builder(
-          itemCount: users.length,
-          itemBuilder: (context, index) {
-            return ChallengeBallerCard(
-                bp: users[index].bp,
-                name: users[index].username,
-                pic: AssetImage('assets/raysmall.png'));
-          });
-    } else {
-      return Container();
-    }
   }
 }
 

@@ -4,8 +4,8 @@ import 'package:hoopr/models/user.dart';
 import 'package:provider/provider.dart';
 import 'user_list.dart';
 
-class LeaderboardDemo extends StatelessWidget {
-  LeaderboardDemo({
+class Leaderboard extends StatelessWidget {
+  Leaderboard({
     Key key,
   }) : super(key: key);
 
@@ -73,7 +73,7 @@ class LeaderboardDemo extends StatelessWidget {
                     ],
                   ),
                 ),
-                Expanded(flex: 4, child: LeaderboardUserList())
+                Expanded(flex: 4, child: LeaderboardList())
               ],
             ),
           ),

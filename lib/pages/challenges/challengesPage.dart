@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hoopr/models/user.dart';
 import 'package:hoopr/services/db.dart';
-import 'package:hoopr/user_list.dart';
 import 'package:provider/provider.dart';
-//import 'package:permission_handler/permission_handler.dart';
+import 'challengesList.dart';
 
-class ChallengesDemo extends StatelessWidget {
+class ChallengesPage extends StatelessWidget {
   List<String> challengerList = [
     "it",
     "is",
@@ -19,7 +18,7 @@ class ChallengesDemo extends StatelessWidget {
     "working",
     "aiyahh"
   ];
-  TextEditingController searchController = new TextEditingController();
+  final TextEditingController searchController = new TextEditingController();
 
   //below is sample code for searching
 
@@ -61,7 +60,7 @@ class ChallengesDemo extends StatelessWidget {
   //   });
   // }
 
-  ChallengesDemo({
+  ChallengesPage({
     Key key,
   }) : super(key: key);
 
@@ -90,52 +89,10 @@ class ChallengesDemo extends StatelessWidget {
                       hintText: "Search",
                       fillColor: Colors.white),
                 )),
-                Expanded(child: ChallengesUserList())
+                Expanded(child: ChallengesList())
               ],
             ),
           ),
         ));
-
-    //     children: <Widget>[
-    //     Align(
-    //       alignment: Alignment.topCenter,
-    //       child: Container(
-    //         padding: EdgeInsets.all(10.0),
-    //         height: 75,
-    //         width: 400,
-    //         child: TextField(
-    //           decoration: InputDecoration(
-    //               border: OutlineInputBorder(
-    //                 borderRadius: const BorderRadius.all(
-    //                   const Radius.circular(50.0),
-    //                 ),
-    //               ),
-    //               filled: true,
-    //               hintStyle: TextStyle(color: Colors.grey[800]),
-    //               suffixIcon: Icon(Icons.search),
-    //               hintText: "Search",
-    //               fillColor: Colors.white),
-    //         ),
-    //       ),
-    //     )
-    //   ]),
-    // );
   }
-
-//   Widget challengers() {
-//     print(challengerList.length);
-//     if (challengerList.length > 0) {
-//       return ListView.builder(
-//         itemCount: 5
-//       );
-//     } else {
-//       return Center(
-//           child: Text(
-//         "There are currently no challengers",
-//         textAlign: TextAlign.center,
-//         style: TextStyle(fontSize: 30.0),
-//       ));
-//     };
-
-//   }
 }
