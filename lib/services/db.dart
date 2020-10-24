@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:hoopr/ballerCard.dart';
+import 'package:hoopr/models/user.dart';
 
 class DatabaseService {
   final CollectionReference usersCollection =
@@ -20,14 +20,15 @@ class DatabaseService {
   }
 
   Future addChallenge(userId, challengeId) async {
-    usersCollection
-        .document(userId)
-        .updateData({'challenges': FieldValue.arrayUnion(challengeId)});
+    usersCollection.document(userId).updateData({
+      'challenges': FieldValue.arrayUnion([challengeId])
+    });
   }
 
   List<User> _userListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc) {
       return User(
+        id: doc.documentID,
         firstName: doc.data["firstName"],
         lastName: doc.data["lastName"],
         username: doc.data["username"],

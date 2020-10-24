@@ -1,10 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:hoopr/ballerCard.dart';
 import 'package:hoopr/services/authentication.dart';
-import 'package:provider/provider.dart';
-import 'user_list.dart';
 
 class ProfileDemo extends StatefulWidget {
   ProfileDemo({this.auth, this.userId, this.logoutCallback});

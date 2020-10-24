@@ -7,5 +7,4 @@ GetIt locator = GetIt.instance;
 void setupLocator() {
   locator.registerSingleton<DatabaseService>(DatabaseService());
   locator.registerSingleton<ChallengesService>(ChallengesService());
-  print('setup');
 }
