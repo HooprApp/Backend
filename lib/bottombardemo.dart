@@ -12,7 +12,7 @@
 import 'package:flutter/material.dart';
 import 'pages/leaderboard/leaderboardPage.dart';
 import 'pages/challenges/challengesPage.dart';
-import 'profiledemo.dart';
+import 'pages/profile/profiledemo.dart';
 import 'package:hoopr/services/authentication.dart';
 
 import 'my_flutter_app_icons.dart';

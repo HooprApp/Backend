@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:hoopr/pages/profile/profileChallengeCard.dart';
 import 'package:hoopr/services/authentication.dart';
 
 class ProfileDemo extends StatefulWidget {
@@ -168,10 +169,14 @@ class _ProfileDemoState extends State<ProfileDemo> {
                                       borderRadius:
                                           new BorderRadius.circular(20.0),
                                     ),
-                                    child: Center(
-                                        child: Text('No badges to show.',
-                                            style: TextStyle(
-                                                color: Colors.white)))),
+                                    child: ProfileChallengesCard(
+                                        data['challenges'])),
+                                // Center(
+                                //     child: Text(
+                                //         data["challenges"][0].toString(),
+                                //         style: TextStyle(
+                                //             color: Colors.white)))
+                                // ),
                                 Container(
                                     height: 150,
                                     width: 350,
@@ -182,22 +187,32 @@ class _ProfileDemoState extends State<ProfileDemo> {
                                       borderRadius:
                                           new BorderRadius.circular(20.0),
                                     ),
-                                    child: Center(
-                                        child: Text('No matches to show.',
-                                            style: TextStyle(
-                                                color: Colors.white))))
+                                    child: ListView.builder(
+                                        itemCount: data["challenges"].length,
+                                        itemBuilder: (context, index) {
+                                          return Text(
+                                              data["challenges"][1].toString(),
+                                              style: TextStyle(
+                                                  color: Colors.white));
+                                        }))
+
+                                // Center(
+                                //     child: Text(
+                                //         data["challenges"][1].toString(),
+                                //         style: TextStyle(
+                                //             color: Colors.white))))
                               ],
                             ),
                             /*ToggleSwitch(
-                      initialLabelIndex: 0,
-                      minWidth: 90.0,
-                      activeFgColor: Colors.white,
-                      inactiveFgColor: Colors.white,
-                      labels: ['Badges', 'Matches'],
-                      onToggle: (index) {
-                        print('switched to: $index');
-                      },
-                    ),*/
+                            initialLabelIndex: 0,
+                            minWidth: 90.0,
+                            activeFgColor: Colors.white,
+                            inactiveFgColor: Colors.white,
+                            labels: ['Badges', 'Matches'],
+                            onToggle: (index) {
+                              print('switched to: $index');
+                            },
+                          ),*/
                           ],
                         ),
                       ),
