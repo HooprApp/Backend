@@ -11,8 +11,9 @@ class LeaderboardCard extends StatelessWidget {
   void openChallengeModal(BuildContext context) {
     showModalBottomSheet(
         context: context,
+        isScrollControlled: true,
         builder: (BuildContext context) {
-          return LeaderboardChallengeModal(user.id);
+          return LeaderboardChallengeModal(user.id, user.username, user.bp);
         });
   }
 
