@@ -12,7 +12,11 @@
 import 'package:flutter/material.dart';
 import 'pages/leaderboard/leaderboardPage.dart';
 import 'pages/challenges/challengesPage.dart';
+<<<<<<< HEAD
 import 'profiledemo.dart';
+=======
+import 'pages/profile/profiledemo.dart';
+>>>>>>> 92d72ae2e183568ace4c623bbbdfd7525ac25b99
 import 'package:hoopr/services/authentication.dart';
 
 import 'my_flutter_app_icons.dart';

@@ -59,11 +59,14 @@ class Auth implements BaseAuth {
     return user.uid;
   }
 
+<<<<<<< HEAD
   @override
   Future<String> getCurrentUID() async {
     return (await firebaseAuth.currentUser()).uid;
   }
 
+=======
+>>>>>>> 92d72ae2e183568ace4c623bbbdfd7525ac25b99
   @override
   Future<void> signOut() async {
     return firebaseAuth.signOut();
