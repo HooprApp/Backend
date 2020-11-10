@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hoopr/pages/profile/profileChallengeCard.dart';
 import 'package:hoopr/services/authentication.dart';
+import 'scoreCard.dart';
 
 class ProfileDemo extends StatefulWidget {
   ProfileDemo({this.auth, this.userId, this.logoutCallback});
@@ -159,6 +160,7 @@ class _ProfileDemoState extends State<ProfileDemo> {
                             IndexedStack(
                               index: screen,
                               children: [
+                                ScoreCard(),
                                 Container(
                                     height: 150,
                                     width: 350,
@@ -194,7 +196,7 @@ class _ProfileDemoState extends State<ProfileDemo> {
                                               data["challenges"][1].toString(),
                                               style: TextStyle(
                                                   color: Colors.white));
-                                        }))
+                                        })),
 
                                 // Center(
                                 //     child: Text(

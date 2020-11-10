@@ -170,7 +170,7 @@ class _ProfileDemoState extends State<ProfileDemo> {
                                           new BorderRadius.circular(20.0),
                                     ),
                                     child: Center(
-                                        child: Text('No badges to show.',
+                                        child: Text('No badges to .',
                                             style: TextStyle(
                                                 color: Colors.white)))),
                                 Container(
