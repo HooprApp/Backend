@@ -10,8 +10,8 @@
 // bar items. The first one is selected.](https://flutter.github.io/assets-for-api-docs/assets/material/bottom_navigation_bar.png)
 
 import 'package:flutter/material.dart';
-import 'leaderboarddemo.dart';
-import 'challengesdemo.dart';
+import 'pages/leaderboard/leaderboardPage.dart';
+import 'pages/challenges/challengesPage.dart';
 import 'profiledemo.dart';
 import 'package:hoopr/services/authentication.dart';
 
@@ -44,8 +44,8 @@ class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     List<Widget> _widgetOptions = <Widget>[
-      ChallengesDemo(),
-      LeaderboardDemo(),
+      ChallengesPage(),
+      LeaderboardPage(),
       ProfileDemo(
           auth: widget.auth,
           logoutCallback: widget.logoutCallback,

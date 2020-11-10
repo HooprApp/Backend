@@ -3,6 +3,7 @@ import 'package:hoopr/services/db.dart';
 import 'ballerCard.dart';
 import 'package:provider/provider.dart';
 import 'user_list.dart';
+import 'models/user.dart';
 
 class LeaderboardDemo extends StatelessWidget {
   LeaderboardDemo({

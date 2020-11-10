@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hoopr/bottombardemo.dart';
-import 'package:hoopr/pages/login_signup_page.dart';
 import 'package:hoopr/services/authentication.dart';
-import 'package:hoopr/pages/home_page.dart';
 import 'package:hoopr/XDLogin.dart';
 
 enum AuthStatus {
@@ -79,11 +77,13 @@ class _RootPageState extends State<RootPage> {
         break;
       case AuthStatus.LOGGED_IN:
         if (_userId.length > 0 && _userId != null) {
-          return new BottomBar(
-            userId: _userId,
-            auth: widget.auth,
-            logoutCallback: logoutCallback,
-          );
+          return DefaultTextStyle(
+              style: new TextStyle(inherit: true, fontFamily: 'Open Sans'),
+              child: BottomBar(
+                userId: _userId,
+                auth: widget.auth,
+                logoutCallback: logoutCallback,
+              ));
         } else
           return buildWaitingScreen();
         break;

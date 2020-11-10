@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hoopr/ballerCard.dart';
 import 'package:provider/provider.dart';
+import 'models/user.dart';
 
 class LeaderboardUserList extends StatefulWidget {
   @override
