@@ -26,7 +26,9 @@ class ChallengesService {
       'receiverId': receiverId,
       'winnerId': null,
       'createdAt': DateTime.now(),
-      'completedAt': null
+      'completedAt': null,
+      'challengerScore': null,
+      'receiverScore': null,
     }).then((doc) {
       // Add this challenge id to both challenger's and receiver's list of challenges
       databaseService.addChallenge(challengerId, doc.documentID);
@@ -35,10 +37,14 @@ class ChallengesService {
   }
 
   // Convert an active challenge to a completed challenge, setting the winnerId and completedAt fields
-  Future setChallengeCompleted(challengeId, winnerId) async {
-    return await challengesCollection
-        .document(challengeId)
-        .updateData({'winnerid': winnerId, 'completedAt': DateTime.now()});
+  Future setChallengeCompleted(
+      challengeId, winnerId, challengerScore, receiverScore) async {
+    return await challengesCollection.document(challengeId).updateData({
+      'winnerid': winnerId,
+      'completedAt': DateTime.now(),
+      'challengerScore': challengerScore,
+      'receiverScore': receiverScore
+    });
   }
 
   Future<Challenge> getChallenge(challengeId) async {

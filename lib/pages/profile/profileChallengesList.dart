@@ -1,26 +1,27 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:hoopr/pages/profile/scoreCard.dart';
 
-class ProfileChallengesCard extends StatefulWidget {
-  const ProfileChallengesCard(this.challengeIds);
+class ProfileChallengesList extends StatefulWidget {
+  const ProfileChallengesList(this.challengeId);
 
-  final List<dynamic> challengeIds;
+  final List<dynamic> challengeId;
 
   @override
-  _ProfileChallengesCardState createState() => _ProfileChallengesCardState();
+  _ProfileChallengesListState createState() => _ProfileChallengesListState();
 }
 
-class _ProfileChallengesCardState extends State<ProfileChallengesCard> {
+class _ProfileChallengesListState extends State<ProfileChallengesList> {
   @override
   Widget build(BuildContext context) {
     CollectionReference challenges =
         Firestore.instance.collection('challenges');
 
     return ListView.builder(
-        itemCount: widget.challengeIds.length,
+        itemCount: widget.challengeId.length,
         itemBuilder: (context, index) {
           return FutureBuilder<DocumentSnapshot>(
-              future: challenges.document(widget.challengeIds[index]).get(),
+              future: challenges.document(widget.challengeId[index]).get(),
               builder: (BuildContext context,
                   AsyncSnapshot<DocumentSnapshot> snapshot) {
                 if (snapshot.hasError) {
@@ -29,7 +30,10 @@ class _ProfileChallengesCardState extends State<ProfileChallengesCard> {
 
                 if (snapshot.connectionState == ConnectionState.done) {
                   Map<String, dynamic> data = snapshot.data.data;
-                  return Container(child: Text(data['receiverId']));
+                  print(widget.challengeId);
+                  print(data.toString());
+                  return ScoreCard(data['challengerId'], data['receiverId'],
+                      data['winnerId'], data['score']);
                 } else {
                   return Container();
                 }
