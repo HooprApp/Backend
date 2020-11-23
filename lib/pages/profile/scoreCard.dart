@@ -2,9 +2,13 @@
 import 'package:flutter/material.dart';
 
 class ScoreCard extends StatefulWidget {
-  const ScoreCard(/*this.challengeIds*/);
+  const ScoreCard(
+      this.challengerId, this.recieverId, this.winnerId, this.score);
 
-  //final List<dynamic> challengeIds;
+  final String challengerId;
+  final String recieverId;
+  final String winnerId;
+  final String score;
 
   @override
   _ScoreCardState createState() => _ScoreCardState();
@@ -37,8 +41,8 @@ class _ScoreCardState extends State<ScoreCard> {
                 ),
               ),
               Text(
-                '@Ran',
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                "EdmundLui",
+                style: TextStyle(color: Colors.white, fontSize: 15),
               )
             ],
           ),
@@ -50,7 +54,7 @@ class _ScoreCardState extends State<ScoreCard> {
                 style: TextStyle(color: Colors.green, fontSize: 30),
               ),
               Text(
-                '7 - 2',
+                widget.score,
                 style: TextStyle(color: Colors.white, fontSize: 20),
               )
             ],
@@ -65,8 +69,8 @@ class _ScoreCardState extends State<ScoreCard> {
                 ),
               ),
               Text(
-                '@Ran',
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                "Raymonddddd",
+                style: TextStyle(color: Colors.white, fontSize: 15),
               )
             ],
           ),

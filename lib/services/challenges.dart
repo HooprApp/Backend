@@ -26,7 +26,8 @@ class ChallengesService {
       'receiverId': receiverId,
       'winnerId': null,
       'createdAt': DateTime.now(),
-      'completedAt': null
+      'completedAt': null,
+      'score': '-'
     }).then((doc) {
       // Add this challenge id to both challenger's and receiver's list of challenges
       databaseService.addChallenge(challengerId, doc.documentID);

@@ -1,10 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:hoopr/pages/profile/scoreCard.dart';
 
 class ProfileChallengesCard extends StatefulWidget {
-  const ProfileChallengesCard(this.challengeIds);
+  const ProfileChallengesCard(this.challengeId);
 
-  final List<dynamic> challengeIds;
+  final List<dynamic> challengeId;
 
   @override
   _ProfileChallengesCardState createState() => _ProfileChallengesCardState();
@@ -17,10 +18,10 @@ class _ProfileChallengesCardState extends State<ProfileChallengesCard> {
         Firestore.instance.collection('challenges');
 
     return ListView.builder(
-        itemCount: widget.challengeIds.length,
+        itemCount: widget.challengeId.length,
         itemBuilder: (context, index) {
           return FutureBuilder<DocumentSnapshot>(
-              future: challenges.document(widget.challengeIds[index]).get(),
+              future: challenges.document(widget.challengeId[index]).get(),
               builder: (BuildContext context,
                   AsyncSnapshot<DocumentSnapshot> snapshot) {
                 if (snapshot.hasError) {
@@ -29,7 +30,11 @@ class _ProfileChallengesCardState extends State<ProfileChallengesCard> {
 
                 if (snapshot.connectionState == ConnectionState.done) {
                   Map<String, dynamic> data = snapshot.data.data;
-                  return Container(child: Text(data['receiverId']));
+                  print(widget.challengeId);
+                  print(data.toString());
+                  //return Container(child: Text(data['challengerId']));
+                  return ScoreCard(data['challengerId'], data['receiverId'],
+                      data['winnerId'], data['score']);
                 } else {
                   return Container();
                 }

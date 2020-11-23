@@ -160,9 +160,8 @@ class _ProfileDemoState extends State<ProfileDemo> {
                             IndexedStack(
                               index: screen,
                               children: [
-                                ScoreCard(),
                                 Container(
-                                    height: 150,
+                                    height: 419,
                                     width: 350,
                                     decoration: new BoxDecoration(
                                       border: Border.all(
@@ -173,6 +172,7 @@ class _ProfileDemoState extends State<ProfileDemo> {
                                     ),
                                     child: ProfileChallengesCard(
                                         data['challenges'])),
+
                                 // Center(
                                 //     child: Text(
                                 //         data["challenges"][0].toString(),
