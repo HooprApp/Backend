@@ -32,7 +32,6 @@ class _ProfileChallengesListState extends State<ProfileChallengesList> {
                   Map<String, dynamic> data = snapshot.data.data;
                   print(widget.challengeId);
                   print(data.toString());
-                  //return Container(child: Text(data['challengerId']));
                   return ScoreCard(data['challengerId'], data['receiverId'],
                       data['winnerId'], data['score']);
                 } else {
