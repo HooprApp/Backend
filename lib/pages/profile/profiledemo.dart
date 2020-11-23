@@ -160,7 +160,7 @@ class _ProfileDemoState extends State<ProfileDemo> {
                               index: screen,
                               children: [
                                 Container(
-                                    height: 150,
+                                    height: 419,
                                     width: 350,
                                     decoration: new BoxDecoration(
                                       border: Border.all(
@@ -171,12 +171,6 @@ class _ProfileDemoState extends State<ProfileDemo> {
                                     ),
                                     child: ProfileChallengesCard(
                                         data['challenges'])),
-                                // Center(
-                                //     child: Text(
-                                //         data["challenges"][0].toString(),
-                                //         style: TextStyle(
-                                //             color: Colors.white)))
-                                // ),
                                 Container(
                                     height: 150,
                                     width: 350,
@@ -194,25 +188,9 @@ class _ProfileDemoState extends State<ProfileDemo> {
                                               data["challenges"][1].toString(),
                                               style: TextStyle(
                                                   color: Colors.white));
-                                        }))
-
-                                // Center(
-                                //     child: Text(
-                                //         data["challenges"][1].toString(),
-                                //         style: TextStyle(
-                                //             color: Colors.white))))
+                                        })),
                               ],
                             ),
-                            /*ToggleSwitch(
-                            initialLabelIndex: 0,
-                            minWidth: 90.0,
-                            activeFgColor: Colors.white,
-                            inactiveFgColor: Colors.white,
-                            labels: ['Badges', 'Matches'],
-                            onToggle: (index) {
-                              print('switched to: $index');
-                            },
-                          ),*/
                           ],
                         ),
                       ),
@@ -239,48 +217,4 @@ class _ProfileDemoState extends State<ProfileDemo> {
       print(e);
     }
   }
-  // return Column(
-  //   children: [
-  //     CircleAvatar(
-  //       radius: 40,
-  //       backgroundImage: AssetImage('assets/raysmall.png'),R
-  //     ),
-  //     Text("Raymond Tran",
-  //         style: TextStyle(
-  //           color: Colors.white,
-  //           fontWeight: FontWeight.bold,
-  //           fontSize: 15,
-  //         )),
-  //     Text("RayTran",
-  //         style: TextStyle(
-  //           color: Colors.white,
-  //         )),
-  //   ],
-  // );
 }
-
-/*Widget _badgeHistoryView() {
-    if (badgeView) {
-      return Container(
-          height: 255,
-          width: 350,
-          decoration: new BoxDecoration(
-            border: Border.all(width: 2.0, color: const Color(0xff001331)),
-            borderRadius: new BorderRadius.circular(20.0),
-          ),
-          child: Center(
-              child: Text('No badges to show.',
-                  style: TextStyle(color: Colors.white))));
-    } else {
-      return Container(
-          height: 255,
-          width: 350,
-          decoration: new BoxDecoration(
-            border: Border.all(width: 2.0, color: const Color(0xff001331)),
-            borderRadius: new BorderRadius.circular(20.0),
-          ),
-          child: Center(
-              child: Text('No matches to show.',
-                  style: TextStyle(color: Colors.white))));
-    }
-  }*/
