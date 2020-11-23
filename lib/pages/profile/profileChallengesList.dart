@@ -2,16 +2,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hoopr/pages/profile/scoreCard.dart';
 
-class ProfileChallengesCard extends StatefulWidget {
-  const ProfileChallengesCard(this.challengeId);
+class ProfileChallengesList extends StatefulWidget {
+  const ProfileChallengesList(this.challengeId);
 
   final List<dynamic> challengeId;
 
   @override
-  _ProfileChallengesCardState createState() => _ProfileChallengesCardState();
+  _ProfileChallengesListState createState() => _ProfileChallengesListState();
 }
 
-class _ProfileChallengesCardState extends State<ProfileChallengesCard> {
+class _ProfileChallengesListState extends State<ProfileChallengesList> {
   @override
   Widget build(BuildContext context) {
     CollectionReference challenges =
