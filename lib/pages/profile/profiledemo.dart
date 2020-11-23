@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:hoopr/pages/profile/profileChallengeCard.dart';
+import 'package:hoopr/pages/profile/profileChallengesList.dart';
 import 'package:hoopr/services/authentication.dart';
 
 class ProfileDemo extends StatefulWidget {
@@ -169,7 +169,7 @@ class _ProfileDemoState extends State<ProfileDemo> {
                                       borderRadius:
                                           new BorderRadius.circular(20.0),
                                     ),
-                                    child: ProfileChallengesCard(
+                                    child: ProfileChallengesList(
                                         data['challenges'])),
                                 Container(
                                     height: 150,
