@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:hoopr/pages/profile/profileChallengeCard.dart';
+import 'package:hoopr/pages/profile/profileChallengesList.dart';
 import 'package:hoopr/services/authentication.dart';
 
 class ProfileDemo extends StatefulWidget {
@@ -169,26 +169,10 @@ class _ProfileDemoState extends State<ProfileDemo> {
                                       borderRadius:
                                           new BorderRadius.circular(20.0),
                                     ),
-                                    child: ProfileChallengesCard(
-                                        data['challenges'])),
-                                Container(
-                                    height: 150,
-                                    width: 350,
-                                    decoration: new BoxDecoration(
-                                      border: Border.all(
-                                          width: 2.0,
-                                          color: const Color(0xff001331)),
-                                      borderRadius:
-                                          new BorderRadius.circular(20.0),
-                                    ),
-                                    child: ListView.builder(
-                                        itemCount: data["challenges"].length,
-                                        itemBuilder: (context, index) {
-                                          return Text(
-                                              data["challenges"][1].toString(),
-                                              style: TextStyle(
-                                                  color: Colors.white));
-                                        })),
+                                    child: data['challenges'] != null
+                                        ? ProfileChallengesList(
+                                            data['challenges'])
+                                        : Text("No challenges")),
                               ],
                             ),
                           ],
@@ -206,6 +190,8 @@ class _ProfileDemoState extends State<ProfileDemo> {
           }
         },
       );
+    } else {
+      return Container();
     }
   }
 
