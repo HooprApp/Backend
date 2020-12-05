@@ -75,21 +75,19 @@ class ChallengesPage extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Container(
-                    child: TextField(
-                  controller: searchController,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(
-                          const Radius.circular(50.0),
-                        ),
-                      ),
-                      filled: true,
-                      hintStyle: TextStyle(color: Colors.grey[800]),
-                      suffixIcon: Icon(Icons.search),
-                      hintText: "Search",
-                      fillColor: Colors.white),
-                )),
-                Expanded(child: ChallengesList())
+                  child: Text('NOTIFICATIONS',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30.0,
+                          fontFamily: 'Open Sans')),
+                ),
+                Expanded(child: ChallengesList()),
+                Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Text(
+                      'BETA v1.0',
+                      style: TextStyle(color: Colors.white),
+                    )),
               ],
             ),
           ),

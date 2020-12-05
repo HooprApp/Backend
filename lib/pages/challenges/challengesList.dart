@@ -26,7 +26,7 @@ class _ChallengesListState extends State<ChallengesList> {
             return ChallengeCard(
                 bp: users[index].bp,
                 name: users[index].username,
-                pic: AssetImage('assets/raysmall.png'));
+                pic: AssetImage('assets/bball.jpeg'));
           });
     } else {
       return Container();

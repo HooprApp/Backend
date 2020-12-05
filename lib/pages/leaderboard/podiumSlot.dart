@@ -8,7 +8,7 @@ class PodiumSlot extends StatelessWidget {
     return Stack(alignment: Alignment.bottomCenter, children: <Widget>[
       CircleAvatar(
         radius: 40,
-        backgroundImage: AssetImage('assets/raysmall.png'),
+        backgroundImage: AssetImage('assets/bballplayer2.jpeg'),
       ),
       Icon(Icons.looks_two)
     ]);

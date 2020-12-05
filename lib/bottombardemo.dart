@@ -82,6 +82,7 @@ class _BottomBarState extends State<BottomBar> {
             ],
             currentIndex: _selectedIndex,
             selectedItemColor: Colors.amber[800],
+            unselectedItemColor: Colors.white,
             onTap: _onItemTapped,
             backgroundColor: Color.fromRGBO(0, 19, 49, 1),
             elevation: 5,

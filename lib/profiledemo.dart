@@ -80,7 +80,7 @@ class _ProfileDemoState extends State<ProfileDemo> {
                                       CircleAvatar(
                                         radius: 40,
                                         backgroundImage:
-                                            AssetImage('assets/raysmall.png'),
+                                            AssetImage('assets/bball.jpeg'),
                                       ),
                                       Text(
                                           data["firstName"] +
@@ -170,7 +170,7 @@ class _ProfileDemoState extends State<ProfileDemo> {
                                           new BorderRadius.circular(20.0),
                                     ),
                                     child: Center(
-                                        child: Text('No badges to .',
+                                        child: Text('No badges to show.',
                                             style: TextStyle(
                                                 color: Colors.white)))),
                                 Container(

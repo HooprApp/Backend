@@ -146,7 +146,7 @@ class _ProfileDemoState extends State<ProfileDemo> {
                     ),
                     Expanded(
                       child: Container(
-                        height: 350,
+                        //height: 350,
                         decoration: new BoxDecoration(
                           border: Border.all(
                               width: 2.0, color: const Color(0xff001331)),
@@ -219,6 +219,12 @@ class _ProfileDemoState extends State<ProfileDemo> {
                         ),
                       ),
                     ),
+                    Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Text(
+                          'BETA v1.0',
+                          style: TextStyle(color: Colors.white),
+                        )),
                   ],
                 ),
               );

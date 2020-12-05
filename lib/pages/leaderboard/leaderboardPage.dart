@@ -34,7 +34,7 @@ class LeaderboardPage extends StatelessWidget {
                                 color: Colors.white,
                                 fontFamily: 'Open Sans',
                                 fontWeight: FontWeight.bold,
-                                fontSize: 40.0),
+                                fontSize: 30.0),
                             textAlign: TextAlign.center,
                           )
                         ])),
@@ -50,7 +50,13 @@ class LeaderboardPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Expanded(flex: 4, child: LeaderboardList())
+                Expanded(flex: 4, child: LeaderboardList()),
+                Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Text(
+                      'BETA v1.0',
+                      style: TextStyle(color: Colors.white),
+                    )),
               ],
             ),
           ),

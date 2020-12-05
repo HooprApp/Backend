@@ -29,7 +29,7 @@ class ChallengeCard extends StatelessWidget {
           Expanded(
             child: CircleAvatar(
               radius: 30,
-              backgroundImage: AssetImage('assets/raysmall.png'),
+              backgroundImage: AssetImage('assets/bballplayer2.jpeg'),
             ),
           ),
           Stack(children: <Widget>[
