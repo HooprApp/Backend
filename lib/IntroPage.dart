@@ -20,7 +20,7 @@ class _IntroPagetState extends State<IntroPage> {
                 padding: EdgeInsets.fromLTRB(20, 120.0, 20, 80.0),
                 child: CircleAvatar(
                   radius: 80,
-                  backgroundImage: AssetImage('assets/bballplayer.jpg'),
+                  backgroundImage: AssetImage('assets/bball.jpeg'),
                 )),
             Container(
               padding: EdgeInsets.fromLTRB(30, 0, 0, 0),

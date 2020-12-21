@@ -80,8 +80,8 @@ class _ProfileDemoState extends State<ProfileDemo> {
                                     children: [
                                       CircleAvatar(
                                         radius: 40,
-                                        backgroundImage:
-                                            AssetImage('assets/raysmall.png'),
+                                        backgroundImage: AssetImage(
+                                            'assets/bballplayer2.jpeg'),
                                       ),
                                       Text(
                                           data["firstName"] +

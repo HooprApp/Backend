@@ -33,7 +33,7 @@ class _ScoreCardState extends State<ScoreCard> {
                 height: 100,
                 child: CircleAvatar(
                   radius: 50,
-                  backgroundImage: AssetImage('assets/raysmall.png'),
+                  backgroundImage: AssetImage('assets/profile5.png'),
                 ),
               ),
               Text(
@@ -61,7 +61,7 @@ class _ScoreCardState extends State<ScoreCard> {
                 height: 100,
                 child: CircleAvatar(
                   radius: 50,
-                  backgroundImage: AssetImage('assets/raysmall.png'),
+                  backgroundImage: AssetImage('assets/profile5.png'),
                 ),
               ),
               Text(
