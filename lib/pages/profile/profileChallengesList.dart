@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:hoopr/pages/profile/scoreCard.dart';
 
 class ProfileChallengesList extends StatefulWidget {
-  const ProfileChallengesList(this.challengeId);
+  const ProfileChallengesList(this.challengeId, this.username);
 
   final List<dynamic> challengeId;
+  final String username;
 
   @override
   _ProfileChallengesListState createState() => _ProfileChallengesListState();
@@ -30,27 +31,17 @@ class _ProfileChallengesListState extends State<ProfileChallengesList> {
 
                 if (snapshot.connectionState == ConnectionState.done) {
                   Map<String, dynamic> data = snapshot.data.data;
-                  print(widget.challengeId);
-                  print(data.toString());
-                  return ScoreCard(data['challengerId'], data['receiverId'],
-                      data['winnerId'], data['score']);
+                  return ScoreCard(
+                      widget.username,
+                      data['receiverId'],
+                      data['winnerId'],
+                      data['challengerScore'],
+                      data["receiverScore"],
+                      data["challengeState"]);
                 } else {
                   return Container();
                 }
               });
         });
-
-    // if (users != null) {
-    //   return ListView.builder(
-    //       itemCount: users.length,
-    //       itemBuilder: (context, index) {
-    //         return ChallengeCard(
-    //             bp: users[index].bp,
-    //             name: users[index].username,
-    //             pic: AssetImage('assets/raysmall.png'));
-    //       });
-    // } else {
-    //   return Container();
-    // }
   }
 }

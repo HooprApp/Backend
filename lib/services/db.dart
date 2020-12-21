@@ -1,9 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:hoopr/models/challenge.dart';
 import 'package:hoopr/models/user.dart';
 
 class DatabaseService {
   final CollectionReference usersCollection =
       Firestore.instance.collection('users');
+
+  final CollectionReference userChallengesCollection =
+      Firestore.instance.collection("challenges");
 
   Future createUser(String userId, String firstName, String lastName,
       String username, int bp) async {
@@ -39,5 +43,26 @@ class DatabaseService {
 
   Stream<List<User>> get users {
     return usersCollection.snapshots().map(_userListFromSnapshot);
+  }
+
+  List<Challenge> _challengesListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc) {
+      return Challenge(
+          doc.documentID,
+          doc.data['challengeState'],
+          doc.data['challengerId'],
+          doc.data['challengerScore'],
+          doc.data['receiverId'],
+          doc.data['receiverScore'],
+          doc.data['winnerId'],
+          doc.data['createdAt'],
+          doc.data['completedAt']);
+    }).toList();
+  }
+
+  Stream<List<Challenge>> get challenges {
+    return userChallengesCollection
+        .snapshots()
+        .map(_challengesListFromSnapshot);
   }
 }

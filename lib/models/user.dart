@@ -3,6 +3,7 @@ class User {
   String firstName;
   String lastName;
   String username;
+  List<String> challengesId;
   int bp;
 
   User({
@@ -10,6 +11,7 @@ class User {
     this.firstName,
     this.lastName,
     this.username,
+    this.challengesId,
     this.bp,
   });
 }

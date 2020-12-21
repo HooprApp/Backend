@@ -44,7 +44,7 @@ class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     List<Widget> _widgetOptions = <Widget>[
-      ChallengesPage(),
+      ChallengesPage(widget.userId),
       LeaderboardPage(),
       ProfileDemo(
           auth: widget.auth,

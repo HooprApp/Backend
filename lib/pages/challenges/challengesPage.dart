@@ -1,23 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:hoopr/models/challenge.dart';
 import 'package:hoopr/models/user.dart';
 import 'package:hoopr/services/db.dart';
 import 'package:provider/provider.dart';
 import 'challengesList.dart';
 
 class ChallengesPage extends StatelessWidget {
-  List<String> challengerList = [
-    "it",
-    "is",
-    "all",
-    "coming",
-    "together",
-    "now",
-    "why",
-    "isnt",
-    "this",
-    "working",
-    "aiyahh"
-  ];
+  ChallengesPage(this.userId);
+
+  final String userId;
+
   final TextEditingController searchController = new TextEditingController();
 
   //below is sample code for searching
@@ -60,14 +52,10 @@ class ChallengesPage extends StatelessWidget {
   //   });
   // }
 
-  ChallengesPage({
-    Key key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<List<User>>.value(
-        value: DatabaseService().users,
+    return StreamProvider<List<Challenge>>.value(
+        value: DatabaseService().challenges,
         child: Scaffold(
           backgroundColor: const Color(0xff001331),
           body: Container(
@@ -89,7 +77,7 @@ class ChallengesPage extends StatelessWidget {
                       hintText: "Search",
                       fillColor: Colors.white),
                 )),
-                Expanded(child: ChallengesList())
+                Expanded(child: ChallengesList(userId))
               ],
             ),
           ),
