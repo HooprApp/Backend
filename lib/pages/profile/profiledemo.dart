@@ -171,7 +171,8 @@ class _ProfileDemoState extends State<ProfileDemo> {
                                     ),
                                     child: data['challenges'] != null
                                         ? ProfileChallengesList(
-                                            data['challenges'])
+                                            data['challenges'],
+                                            data["username"])
                                         : Text("No challenges")),
                               ],
                             ),
