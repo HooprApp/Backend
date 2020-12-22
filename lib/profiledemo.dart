@@ -1,8 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:hoopr/pages/profile/profileChallengesList.dart';
+import 'package:hoopr/ballerCard.dart';
 import 'package:hoopr/services/authentication.dart';
-import 'scoreCard.dart';
 
 class ProfileDemo extends StatefulWidget {
   ProfileDemo({this.auth, this.userId, this.logoutCallback});
@@ -80,8 +79,8 @@ class _ProfileDemoState extends State<ProfileDemo> {
                                     children: [
                                       CircleAvatar(
                                         radius: 40,
-                                        backgroundImage: AssetImage(
-                                            'assets/bballplayer2.jpeg'),
+                                        backgroundImage:
+                                            AssetImage('assets/bball.jpeg'),
                                       ),
                                       Text(
                                           data["firstName"] +
@@ -146,7 +145,7 @@ class _ProfileDemoState extends State<ProfileDemo> {
                     ),
                     Expanded(
                       child: Container(
-                        //height: 350,
+                        height: 350,
                         decoration: new BoxDecoration(
                           border: Border.all(
                               width: 2.0, color: const Color(0xff001331)),
@@ -160,8 +159,8 @@ class _ProfileDemoState extends State<ProfileDemo> {
                             IndexedStack(
                               index: screen,
                               children: [
-                                //ScoreCard(),
                                 Container(
+                                    height: 150,
                                     width: 350,
                                     decoration: new BoxDecoration(
                                       border: Border.all(
@@ -170,23 +169,30 @@ class _ProfileDemoState extends State<ProfileDemo> {
                                       borderRadius:
                                           new BorderRadius.circular(20.0),
                                     ),
-                                    child: data['challenges'] != null
-                                        ? ProfileChallengesList(
-                                            data['challenges'],
-                                            data["username"])
-                                        : Text("No challenges")),
+                                    child: Center(
+                                        child: Text('No badges to show.',
+                                            style: TextStyle(
+                                                color: Colors.white)))),
+                                Container(
+                                    height: 150,
+                                    width: 350,
+                                    decoration: new BoxDecoration(
+                                      border: Border.all(
+                                          width: 2.0,
+                                          color: const Color(0xff001331)),
+                                      borderRadius:
+                                          new BorderRadius.circular(20.0),
+                                    ),
+                                    child: Center(
+                                        child: Text('No matches to show.',
+                                            style: TextStyle(
+                                                color: Colors.white))))
                               ],
                             ),
                           ],
                         ),
                       ),
                     ),
-                    Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Text(
-                          'BETA v1.0',
-                          style: TextStyle(color: Colors.white),
-                        )),
                   ],
                 ),
               );
@@ -198,8 +204,6 @@ class _ProfileDemoState extends State<ProfileDemo> {
           }
         },
       );
-    } else {
-      return Container();
     }
   }
 
@@ -211,4 +215,48 @@ class _ProfileDemoState extends State<ProfileDemo> {
       print(e);
     }
   }
+  // return Column(
+  //   children: [
+  //     CircleAvatar(
+  //       radius: 40,
+  //       backgroundImage: AssetImage('assets/raysmall.png'),R
+  //     ),
+  //     Text("Raymond Tran",
+  //         style: TextStyle(
+  //           color: Colors.white,
+  //           fontWeight: FontWeight.bold,
+  //           fontSize: 15,
+  //         )),
+  //     Text("RayTran",
+  //         style: TextStyle(
+  //           color: Colors.white,
+  //         )),
+  //   ],
+  // );
 }
+
+/*Widget _badgeHistoryView() {
+    if (badgeView) {
+      return Container(
+          height: 255,
+          width: 350,
+          decoration: new BoxDecoration(
+            border: Border.all(width: 2.0, color: const Color(0xff001331)),
+            borderRadius: new BorderRadius.circular(20.0),
+          ),
+          child: Center(
+              child: Text('No badges to show.',
+                  style: TextStyle(color: Colors.white))));
+    } else {
+      return Container(
+          height: 255,
+          width: 350,
+          decoration: new BoxDecoration(
+            border: Border.all(width: 2.0, color: const Color(0xff001331)),
+            borderRadius: new BorderRadius.circular(20.0),
+          ),
+          child: Center(
+              child: Text('No matches to show.',
+                  style: TextStyle(color: Colors.white))));
+    }
+  }*/

@@ -35,7 +35,7 @@ class LeaderboardCard extends StatelessWidget {
               Expanded(
                 child: CircleAvatar(
                   radius: 40,
-                  backgroundImage: AssetImage('assets/raysmall.png'),
+                  backgroundImage: AssetImage('assets/bballplayer3.png'),
                 ),
               ),
               Expanded(

@@ -19,8 +19,8 @@ class _IntroPagetState extends State<IntroPage> {
                 alignment: Alignment.center,
                 padding: EdgeInsets.fromLTRB(20, 120.0, 20, 80.0),
                 child: CircleAvatar(
-                  radius: 90,
-                  backgroundImage: AssetImage('assets/raysmall.png'),
+                  radius: 80,
+                  backgroundImage: AssetImage('assets/bball.jpeg'),
                 )),
             Container(
               padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
@@ -80,7 +80,13 @@ class _IntroPagetState extends State<IntroPage> {
                               fontWeight: FontWeight.bold,
                               fontSize: 15.0)),
                       onPressed: () {},
-                    ))
+                    )),
+                Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Text(
+                      'BETA v1.0',
+                      style: TextStyle(color: Colors.white),
+                    )),
               ],
             ),
           ],
