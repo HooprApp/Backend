@@ -5,9 +5,9 @@ class PodiumSlot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(alignment: Alignment.bottomCenter, children: <Widget>[
-      Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Column(children: <Widget>[
+      Stack(
+        alignment: Alignment.bottomCenter,
         children: [
           CircleAvatar(
             radius: 30,
@@ -16,16 +16,11 @@ class PodiumSlot extends StatelessWidget {
           Icon(Icons.looks_two),
         ],
       ),
-      Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Text("Raymond Tran",
-              style: TextStyle(
-                  color: Colors.white, fontFamily: 'Open Sans', fontSize: 15)),
-          Text("500 BP",
-              style: TextStyle(color: Colors.white, fontFamily: 'Open Sans'))
-        ],
-      )
+      Text("Raymond Tran",
+          style: TextStyle(
+              color: Colors.white, fontFamily: 'Open Sans', fontSize: 15)),
+      Text("500 BP",
+          style: TextStyle(color: Colors.white, fontFamily: 'Open Sans'))
     ]);
   }
 }
