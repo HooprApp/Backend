@@ -162,7 +162,6 @@ class _ProfileDemoState extends State<ProfileDemo> {
                               children: [
                                 //ScoreCard(),
                                 Container(
-                                    height: 251,
                                     width: 350,
                                     decoration: new BoxDecoration(
                                       border: Border.all(
