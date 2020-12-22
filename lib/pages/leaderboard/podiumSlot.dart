@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
 
 class PodiumSlot extends StatelessWidget {
-  PodiumSlot({Key key}) : super(key: key);
+  PodiumSlot({Key key, this.position}) : super(key: key);
+
+  final int position;
+
+  Icon _getIcon() {
+    if (position == 1) {
+      return Icon(Icons.looks_one);
+    } else if (position == 2) {
+      return Icon(Icons.looks_two);
+    } else {
+      return Icon(Icons.looks_3);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +25,7 @@ class PodiumSlot extends StatelessWidget {
             radius: 30,
             backgroundImage: AssetImage('assets/bballplayer2.jpeg'),
           ),
-          Icon(Icons.looks_two),
+          _getIcon(),
         ],
       ),
       Text("Raymond Tran",

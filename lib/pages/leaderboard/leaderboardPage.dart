@@ -44,9 +44,9 @@ class LeaderboardPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
-                      PodiumSlot(),
-                      PodiumSlot(),
-                      PodiumSlot()
+                      PodiumSlot(position: 2),
+                      PodiumSlot(position: 1),
+                      PodiumSlot(position: 3)
                     ],
                   ),
                 ),
