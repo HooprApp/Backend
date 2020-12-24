@@ -49,6 +49,33 @@ class LeaderboardPage extends StatelessWidget {
                       PodiumSlot(position: 3)
                     ],
                   ),
+                ]),
+                //Expanded(
+                //flex: 1,
+                /*child:*/ Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    Column(
+                      children: [
+                        Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 40, vertical: 20),
+                            color: const Color(0xff001331)),
+                        PodiumSlot(position: 2),
+                      ],
+                    ),
+                    PodiumSlot(position: 1),
+                    Column(
+                      children: [
+                        Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 40, vertical: 20),
+                            color: const Color(0xff001331)),
+                        PodiumSlot(position: 3),
+                      ],
+                    ),
+                  ],
                 ),
                 Expanded(flex: 4, child: LeaderboardList()),
                 Align(
